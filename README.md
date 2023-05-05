@@ -7,6 +7,10 @@ if (Test-Path "RocketOS-Bootstrap") {
     Remove-Item -Recurse -Force "RocketOS-Bootstrap"
 }
 
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
+
+# Run the Script
 & "$env:USERPROFILE\RocketOS-Bootstrap\Windows.ps1"
 
 ```
