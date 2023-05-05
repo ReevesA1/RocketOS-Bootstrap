@@ -2,6 +2,10 @@
 
 ### Windows
 ```
+# Check if repo exists and delete it if it does
+if (Test-Path "RocketOS-Bootstrap") {
+    Remove-Item -Recurse -Force "RocketOS-Bootstrap"
+}
 
 & "$env:USERPROFILE\RocketOS-Bootstrap\Windows.ps1"
 
