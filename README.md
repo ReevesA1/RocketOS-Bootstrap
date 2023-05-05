@@ -21,7 +21,7 @@ if [ -d "RocketOS-Bootstrap" ]; then
 fi
 
 # Clone Repo
-git clone --force https://github.com/ReevesA1/RocketOS-Bootstrap.git
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 
 # Give Proper Permisions
  find $HOME/RocketOS-Bootstrap/Linux.sh -type f -print0 | xargs -0 chmod 775
