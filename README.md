@@ -5,8 +5,8 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 ```
 ### Windows
 ```
-cd RocketOS-Bootstrap
-./Windows.ps1
+& "$env:USERPROFILE\RocketOS-Bootstrap\Windows.ps1"
+
 ```
 
 ### Mac
