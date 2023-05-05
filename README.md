@@ -11,8 +11,8 @@ cd RocketOS-Bootstrap
 
 ### Mac
 ```
-cd RocketOS-Bootstrap
-./Mac.sh
+ find $HOME/RocketOS-Bootstrap/Mac.sh -type f -print0 | xargs -0 chmod 775
+$HOME/RocketOS-Bootstrap/Mac.sh
 ```
 
 ### Linux
