@@ -17,7 +17,7 @@ $HOME/RocketOS-Bootstrap/Mac.sh
 ```
 # Check if repo exist and delete it if it does
 if [ -d "RocketOS-Bootstrap" ]; then
-  rm -rf "RocketOS-Bootstrap"
+  command rm -rf "RocketOS-Bootstrap"
 fi
 
 # Clone Repo
