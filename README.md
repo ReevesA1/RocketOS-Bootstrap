@@ -9,8 +9,6 @@
 
 ### Mac
 ```
-### Linux
-```
 # Check if repo exist and delete it if it does
 if [ -d "RocketOS-Bootstrap" ]; then
   command rm -rf "RocketOS-Bootstrap"
@@ -26,7 +24,6 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
  $HOME/RocketOS-Bootstrap/Mac.sh
 ```
 
-```
 
 ### Linux
 ```
