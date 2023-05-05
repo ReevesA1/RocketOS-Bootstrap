@@ -1,7 +1,7 @@
 # RocketOS-Bootstrap
 
 ```
-git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
+git clone --force https://github.com/ReevesA1/RocketOS-Bootstrap.git
 ```
 ### Windows
 ```
