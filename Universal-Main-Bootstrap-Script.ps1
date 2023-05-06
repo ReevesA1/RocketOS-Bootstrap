@@ -12,7 +12,7 @@ if ($IsWindows) {
   #TODO Install Package Managers: Choco and Winget, ETC!!!!
     #* Check App MasterList for all package managers!!!
     #* Have a script for each package manager!!!! 
-  #TODO Install Apps: Git and Gum, ETC !!!
+  #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!!
 
 }
 
@@ -20,12 +20,9 @@ elseif ($IsMacOS) {
   #TODO Install Package Managers: Homebrew and Nix, ETC!!!
     #* Check App MasterList for all package managers!!! 
     #* Have a script for each package manager!!!!
-  #TODO Install Apps: Git and Gum, ETC !!! 
+  #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!! 
 
-  #! Package Managers
-  
-  #Nix
-  Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix.ps1"
+
 }
 
 elseif ($IsLinux) {
@@ -33,7 +30,7 @@ elseif ($IsLinux) {
     #* Check App MasterList for all package managers!!! 
     #* Have a script for each package manager!!!!
   #TODO Install Package managers according to distro: flatpaks,Snaps,Nix ETC!!!!
-  #TODO Install Apps: Git and Gum, ETC !!!
+  #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!!
 
 }
 
