@@ -14,7 +14,7 @@ if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Downloads\RocketOS-Bootstrap
 
 # Run the Script
-& "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Windows-PowershellSetup.ps1"
+Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Windows-PowershellSetup.ps1"
 
 ```
 
@@ -52,7 +52,7 @@ if ($IsWindows) {
     git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Downloads\RocketOS-Bootstrap
 
     # Run the Script
-    & "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Universal-Main-Bootstrap-Script.ps1"
+    Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Universal-Main-Bootstrap-Script.ps1"
 
 } elseif ($IsMacOS -or $IsLinux) {
     # Check if repo exists and delete it if it does
@@ -64,7 +64,7 @@ if ($IsWindows) {
     git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/RocketOS-Bootstrap
 
     # Run the Script
-    & "$HOME/Downloads/RocketOS-Bootstrap/Universal-Main-Bootstrap-Script.ps1"
+    Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/Universal-Main-Bootstrap-Script.ps1"
 }
 
 ```
