@@ -1,11 +1,15 @@
 if ($IsWindows) {
- Write-Host "Windows1"
+ # Install Choco and Winget, ETC!!!!
+ # Install Git and Gum, ETC !!!
 }
 
 elseif ($IsMacOS) {
- Write-Host "Mac1"
+ # Install Homebrew and Nix, ETC!!!
+ # Install Git and Gum, ETC !!! 
 }
 
 elseif ($IsLinux) {
- Write-Host "Linux1"
+ # Detect Distro Ubuntu, Fedora, Arch, NixOS
+ # Install flatpaks,Snaps,Nix ETC!!!!
+ # Install Git and Gum, ETC !!!
 }
