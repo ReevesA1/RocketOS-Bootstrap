@@ -40,10 +40,8 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 
 ## Run Universal Main Bootstrap Script
 
+
 ```
-
-
-# Run the Script
 if ($IsWindows) {
     # Check if repo exists and delete it if it does
     if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {

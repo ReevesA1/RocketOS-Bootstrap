@@ -7,7 +7,7 @@ if ($IsWindows) {
 elseif ($IsMacOS) {
   # Install Homebrew and Nix, ETC!!!
   # Install Git and Gum, ETC !!! 
-  write-host "test mac"
+  write-host "test mac2"
 }
 
 elseif ($IsLinux) {
