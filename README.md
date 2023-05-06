@@ -1,8 +1,9 @@
 # RocketOS-Bootstrap
 
-## Install Powershell 
+## Install Powershell
 
 ### Windows Powershell Setup
+
 ```
 # Check if repo exists and delete it if it does
 if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
@@ -18,6 +19,7 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Do
 ```
 
 ### Mac + Linux Powershell Setup Using Bash
+
 ```
 # Check if repo exist and delete it if it does
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
@@ -29,28 +31,11 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 
 # Give Proper Permisions
  find $HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh -type f -print0 | xargs -0 chmod 775
- 
+
 # Run the Script
  $HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh
 ```
 
-
-### Linux
-```
-# Check if repo exist and delete it if it does
-if [ -d "RocketOS-Bootstrap" ]; then
-  command rm -vrf "RocketOS-Bootstrap"
-fi
-
-# Clone Repo
-git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
-
-# Give Proper Permisions
- find $HOME/RocketOS-Bootstrap/Linux-PowershellSetup.sh -type f -print0 | xargs -0 chmod 775
- 
-# Run the Script
- $HOME/RocketOS-Bootstrap/Linux-PowershellSetup.sh
-```
 ## Run Universal Main Bootstrap Script
 
 ```
