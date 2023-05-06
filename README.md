@@ -38,7 +38,7 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 
 # Once Powershell in Installed
 
-## Run Universal Main Bootstrap Script
+## Run Universal Main Bootstrap Script With Powershell!
 
 
 ```
