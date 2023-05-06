@@ -3,9 +3,9 @@ if ($IsWindows) {
 }
 
 elseif ($IsMacOS) {
-  Invoke-Expression "$HOME/Downloads/RocketOS-source/setups/Universal-UpdateDotfiles.ps1"
+  Write-Host "test Nix mac "
 }
 
 elseif ($IsLinux) {
-  Invoke-Expression "$HOME/Downloads/RocketOS-source/setups/Universal-UpdateDotfiles.ps1"
+ 
 }
