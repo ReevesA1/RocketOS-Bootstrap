@@ -9,7 +9,7 @@
   #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!! 
 
 
-  # Package Managers
+  #! Package Managers
   
   #Nix
   Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix.ps1"
