@@ -13,7 +13,7 @@ if (Test-Path "RocketOS-Bootstrap") {
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 
 # Run the Script
-& "$env:USERPROFILE\RocketOS-Bootstrap\Windows.ps1"
+& "$env:USERPROFILE\RocketOS-Bootstrap\Windows-PowershellSetup.ps1"
 
 ```
 
@@ -28,10 +28,10 @@ fi
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 
 # Give Proper Permisions
- find $HOME/RocketOS-Bootstrap/Mac.sh -type f -print0 | xargs -0 chmod 775
+ find $HOME/RocketOS-Bootstrap/Mac-PowershellSetup.sh -type f -print0 | xargs -0 chmod 775
  
 # Run the Script
- $HOME/RocketOS-Bootstrap/Mac.sh
+ $HOME/RocketOS-Bootstrap/Mac-PowershellSetup.sh
 ```
 
 
@@ -46,9 +46,9 @@ fi
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 
 # Give Proper Permisions
- find $HOME/RocketOS-Bootstrap/Linux.sh -type f -print0 | xargs -0 chmod 775
+ find $HOME/RocketOS-Bootstrap/Linux-PowershellSetup.sh -type f -print0 | xargs -0 chmod 775
  
 # Run the Script
- $HOME/RocketOS-Bootstrap/Linux.sh
+ $HOME/RocketOS-Bootstrap/Linux-PowershellSetup.sh
 ```
 ## Run Universal Main Bootstrap
