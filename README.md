@@ -74,4 +74,4 @@ if ($IsWindows) {
 
 ```
 
-# Navigate to RocketOS Repo and Run it
+# I can now navigate to RocketOS repo and run it
