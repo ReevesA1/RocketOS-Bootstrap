@@ -33,8 +33,9 @@ fi
 # Clone Repo
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/RocketOS-Bootstrap
 
-# Give Proper Permisions
- find $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh -type f -print0 | xargs -0 chmod 775
+# Give Proper Permisions To Entire Folder
+find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
+
 
 # Run the Script
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
@@ -51,8 +52,8 @@ fi
 # Clone Repo
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/RocketOS-Bootstrap
 
-# Give Proper Permisions
- find $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh -type f -print0 | xargs -0 chmod 775
+# Give Proper Permisions To Entire Folder
+find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
 # Run the Script
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux.sh
