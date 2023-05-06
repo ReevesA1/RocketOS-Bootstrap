@@ -10,6 +10,7 @@
 #TODO Copy Notion MAc bootstrap Template shit in here
 #* started I added xcode already 
 #TODO make me choose between homebrew and nix right off the bat or install both? 
+#TODO make nix and homebrew methods both make powershell my default shell 
 
 #! --------Install Xcode-----------
 
@@ -19,19 +20,40 @@ xcode-select --install
   
 #Nix
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix-Bash.sh
+$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
 #! ----------Apps----------
 
-# Nix Apps
-if command -v nix-env >/dev/null; then
+echo "Please choose an option:"
+echo "1) Homebrew as Base"
+echo "2) Nix as Base"
+read -p "Enter your choice (1 or 2): " choice
 
-    # Channels
-    nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-    nix-channel --update
+# HOMEBREW Base
+if [[ $choice == "1" ]]; then
+    echo "You selected Homebrew as Base"
 
-    # Apps
-    nix-env -iA nixpkgs.powershell
 
+
+# NIX Base
+elif [[ $choice == "2" ]]; then
+    echo "You selected Nix as Base"
+    if command -v nix-env >/dev/null; then
+        # Channels
+        nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+        nix-channel --update
+
+        # Apps For RocketOS to work
+        nix-env -iA nixpkgs.powershell
+        nix-env -iA nixpkgs.mas
+        nix-env -iA nixpkgs.gum
+
+
+
+
+    else
+        echo "Nix is not installed or I must source the terminal"
+    fi
 else
-    echo "Nix is not installed"
+    echo "Invalid choice"
 fi
