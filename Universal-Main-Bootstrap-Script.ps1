@@ -1,11 +1,11 @@
 if ($IsWindows) {
- Write-Host "Windows"
+ Write-Host "Windows1"
 }
 
 elseif ($IsMacOS) {
- Write-Host "Mac"
+ Write-Host "Mac1"
 }
 
 elseif ($IsLinux) {
- Write-Host "Linux"
+ Write-Host "Linux1"
 }
