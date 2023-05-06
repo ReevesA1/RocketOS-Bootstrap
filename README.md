@@ -36,6 +36,8 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
  $HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh
 ```
 
+# Once Powershell in Installed
+
 ## Run Universal Main Bootstrap Script
 
 ```
