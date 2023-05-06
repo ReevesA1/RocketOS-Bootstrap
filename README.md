@@ -51,4 +51,8 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 # Run the Script
  $HOME/RocketOS-Bootstrap/Linux-PowershellSetup.sh
 ```
-## Run Universal Main Bootstrap
+## Run Universal Main Bootstrap Script
+
+```
+Universal-Main-Bootstrap-Script.ps1
+```
