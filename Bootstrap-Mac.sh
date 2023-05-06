@@ -12,4 +12,4 @@
   #! Package Managers
   
   #Nix
-  Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix-Bash.sh"
+  $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix-Bash.sh
