@@ -11,8 +11,7 @@
 #* started I added xcode already 
 #TODO make me choose between homebrew and nix right off the bat or install both? 
 #TODO make nix and homebrew methods both make powershell my default shell 
-#TODO add the path to nix to powershell profile, might have to do in linux to (actualy linux seems fine?!)
-#*  (I started testing in powershell mac profile)
+
 
 #! --------Install Xcode-----------
 
