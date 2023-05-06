@@ -1,5 +1,11 @@
 # RocketOS-Bootstrap
 
+## FYI's
+
+- Install Powershell on all windows mac and linux
+  - Install Powershershell-Preview with snap or build???? (arm can't do snaps but build only works on ubuntu and no preview so is nix the answer?)
+- Do I still need base and full scripts in RockOS?
+
 ### Windows Powershell Setup
 
 ```
@@ -34,7 +40,6 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
 ```
 
-
 ### Linux Powershell Setup Using Bash
 
 ```
@@ -52,6 +57,5 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 # Run the Script
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux.sh
 ```
-
 
 # I can now navigate to RocketOS repo and run it
