@@ -54,5 +54,46 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 ## Run Universal Main Bootstrap Script
 
 ```
-Universal-Main-Bootstrap-Script.ps1
+
+if ($IsWindows) {
+# Check if repo exists and delete it if it does
+if (Test-Path "RocketOS-Bootstrap") {
+    Remove-Item -Recurse -Force "RocketOS-Bootstrap"
+}
+
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
+
+# Run the Script
+& "$env:USERPROFILE\RocketOS-Bootstrap\Universal-Main-Bootstrap-Script.ps1"
+}
+
+elseif ($IsMacOS) {
+# Check if repo exist and delete it if it does
+if [ -d "RocketOS-Bootstrap" ]; then
+  command rm -rf "RocketOS-Bootstrap"
+fi
+
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
+ 
+# Run the Script
+ $HOME/RocketOS-Bootstrap/Universal-Main-Bootstrap-Script.ps1
+}
+
+elseif ($IsLinux) {
+# Check if repo exist and delete it if it does
+if [ -d "RocketOS-Bootstrap" ]; then
+  command rm -rf "RocketOS-Bootstrap"
+fi
+
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
+
+ 
+# Run the Script
+ $HOME/RocketOS-Bootstrap/Universal-Main-Bootstrap-Script.ps1
+}
+
+
 ```
