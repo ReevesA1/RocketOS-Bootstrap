@@ -8,7 +8,11 @@
 #* Have a script for each package manager!!!!
 #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!! 
 #TODO Copy Notion MAc bootstrap Template shit in here
+#TODO make me choose between homebrew and nix right off the bat or install both? 
 
+#! --------Install Xcode-----------
+
+xcode-select --install
 
 #! --------Package Managers------------
   
