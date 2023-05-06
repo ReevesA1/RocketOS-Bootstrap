@@ -1,5 +1,7 @@
 # RocketOS-Bootstrap
 
+## Install Powershell 
+
 ### Windows
 ```
 # Check if repo exists and delete it if it does
@@ -49,3 +51,4 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
 # Run the Script
  $HOME/RocketOS-Bootstrap/Linux.sh
 ```
+## Run Universal Main Bootstrap
