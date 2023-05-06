@@ -6,7 +6,7 @@
 #TODO Install Package Managers: Homebrew and Nix, ETC!!!
 #* Check App MasterList for all package managers!!! 
 #* Have a script for each package manager!!!!
-#TODO Install Apps: POWERSHELL, Git and Gum, ETC !!! 
+#TODO Install Apps: POWERSHELL, Git and Gum, ohmyzsh, ETC !!! 
 #TODO Copy Notion MAc bootstrap Template shit in here
 #* started I added xcode already 
 #TODO make me choose between homebrew and nix right off the bat or install both? 
@@ -22,7 +22,7 @@ xcode-select --install
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix-Bash.sh
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
-#! ----------Apps----------
+#! ----------Apps for RocketOS and Terminal to work----------
 
 echo "Please choose an option:"
 echo "1) Homebrew as Base"
@@ -43,7 +43,7 @@ elif [[ $choice == "2" ]]; then
         nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
         nix-channel --update
 
-        # Apps For RocketOS to work
+        # Apps (no need for nix-env -iA nixpkgs-unstable.packageName)
         nix-env -iA nixpkgs.powershell
         nix-env -iA nixpkgs.mas
         nix-env -iA nixpkgs.gum

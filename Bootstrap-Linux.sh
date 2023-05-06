@@ -8,3 +8,8 @@
 #TODO Install Package managers according to distro: flatpaks,Snaps,Nix ETC!!!!
 #* Nix will have two ways!!!!!!!!!!!!!
 #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!!
+
+
+#! --------Package Managers------------
+
+#! ----------Apps for RocketOS and Terminal to work----------

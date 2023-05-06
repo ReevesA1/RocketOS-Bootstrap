@@ -4,3 +4,8 @@
 #* Check App MasterList for all package managers!!!
 #* Have a script for each package manager!!!! 
 #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!!
+
+
+#! --------Package Managers------------
+
+#! ----------Apps for RocketOS and Terminal to work----------
