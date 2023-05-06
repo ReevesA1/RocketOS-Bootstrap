@@ -7,6 +7,7 @@
 #* Check App MasterList for all package managers!!! 
 #* Have a script for each package manager!!!!
 #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!! 
+#TODO Copy Notion MAc bootstrap Template shit in here
 
 
 #! --------Package Managers------------
