@@ -15,5 +15,5 @@ elseif ($IsLinux) {
   # Install flatpaks,Snaps,Nix ETC!!!!
   # Install Git and Gum, ETC !!!
 
-  write-host "test linux"
+  write-host "test linux2"
 }
