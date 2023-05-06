@@ -73,3 +73,5 @@ if ($IsWindows) {
 }
 
 ```
+
+# Navigate to RocketOS Repo and Run it
