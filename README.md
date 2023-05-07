@@ -40,7 +40,8 @@ sleep 3
 # Check if the .xip file exists on usb stick and install xcode from there
 if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
     # Extract the .xip file (to big to keep the unziped version on my stick 23 GB so keep it zipped)
-    cd /Applications # I must cd cause xip will not alow to choose output directory
+    # I must cd cause xip will not alow to choose output directory
+    cd /Applications
     xip -x "/Volumes/Stubby/Xcode_14.3.xip"
     sudo xcodebuild -runFirstLaunch
 else
