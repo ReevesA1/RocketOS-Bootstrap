@@ -36,13 +36,13 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 # ---------Installs Xcode Command Line Tools--------
 # Check if Xcode is already installed
 if xcode-select -p 1>/dev/null; then
-  print "\033[32mXcode Command Line Tools is allready installed... Press Enter to continue\033[0m"
+  echo "\033[32mXcode Command Line Tools is allready installed... Press Enter to exit\033[0m"
   read
-  exit 0
+  exit
 fi
 
 # Print a message in green color
-print "\033[32mInstalling Xcode Command Line Tools... Press Enter to continue\033[0m"
+echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to continue\033[0m"
 read
 
 # Check if the Xcode_14.3.xip file exists on the Stubby USB volume
@@ -61,8 +61,10 @@ else
 fi
 
 # Wait for the user to press enter before exiting
-echo "Press enter to exit."
+echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to exit\033[0m"
 read
+exit
+
 
 ```
 
