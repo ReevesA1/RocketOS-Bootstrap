@@ -41,7 +41,7 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
     - then the scirpt continues at -----Repo------
 
 ```
-
+# -------- Install Xcode Command Line Tools -----------
 print -P "\033[32mInstall Xcode Command Line Tools  \033[0m"
 sleep 3
 
