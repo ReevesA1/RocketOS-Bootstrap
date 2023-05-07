@@ -43,16 +43,16 @@ read -p "Press Enter to continue"
 
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
-#! ----------Apps (Only to get RocketOS Going)---------
+#! ----------Apps (Only to get RocketOS Going Properly)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
 
 echo -e "\033[32mInstall Apps need to get RocketOS Going  \033[0m"
 read -p "Press Enter to continue"
 
-brew install --cask powershell
-brew install --cask powershell-preview
+#brew install --cask powershell
+brew install --cask powershell-preview  # from cask-versions Tap
+brew install --cask font-jetbrains-mono #from cask-fonts Tap
 brew install --cask alacritty
-brew install --cask font-jetbrains-mono #from a Tap
 brew install mas
 brew install gum
 brew install starship

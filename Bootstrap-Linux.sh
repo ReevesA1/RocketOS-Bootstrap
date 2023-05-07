@@ -12,4 +12,4 @@
 
 #! --------Package Managers------------
 
-#! ----------Apps (Only to get RocketOS Going)---------
+#! ----------Apps (Only to get RocketOS Going Properly)---------
