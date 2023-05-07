@@ -16,10 +16,9 @@ arch -arm64 brew bundle
 brew analytics off
 
 # Add Homebrew taps
-tap "buo/cask-upgrade"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "buo/cask-upgrade"
+brew tap buo/cask-upgrade
+brew tap homebrew/cask-versions
+brew tap homebrew/bundle
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/core
