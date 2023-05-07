@@ -23,9 +23,8 @@
 
 sudo spctl --master-disable
 
-#! --------Install Xcode-----------
-
-xcode-select --install
+#! --------Rosetta 2 is a translation layer -----------
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 #! --------Package Managers------------
 

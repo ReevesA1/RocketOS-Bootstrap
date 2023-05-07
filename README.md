@@ -33,6 +33,12 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 ### Mac Powershell Setup Using Bash
 
 ```
+# --------Install Xcode-----------
+
+xcode-select --install
+
+# -------- Repo-----------
+
 # Check if repo exist and delete it if it does
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
   command rm -vrf "$HOME/Downloads/RocketOS-Bootstrap"
