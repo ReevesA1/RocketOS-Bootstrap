@@ -48,6 +48,9 @@ elif [[ $choice == "2" ]]; then
         nix-env -iA nixpkgs.powershell
         nix-env -iA nixpkgs.mas
         nix-env -iA nixpkgs.gum
+        nix-env -iA nixpkgs.alacritty
+        nix-env -iA nixpkgs.jetbrains-mono
+        nix-env -iA nixpkgs.starship
 
         # Append to Powershell $profile so it can see nix apps
         mkdir -p $HOME/.config/powershell && echo '`n$env:PATH += ":/nix/var/nix/profiles/default/bin/"' >> $HOME/.config/powershell/profile.ps1 
