@@ -33,13 +33,15 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 ### Mac Powershell Setup Using Bash
 
 ```
-# --------Install Xcode-----------
-
+# --------Install Xcode Command Line Tools-----------
+echo -e "\033[32mInstall Xcode Command Line Tools  \033[0m"
+read -p "Press Enter to continue"
 xcode-select --install
 
 # -------- Repo-----------
 
-# Check if repo exist and delete it if it does
+echo -e "\033[32mCheck if repo exist and delete it before cloning it  \033[0m"
+read -p "Press Enter to continue"
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
   command rm -vrf "$HOME/Downloads/RocketOS-Bootstrap"
 fi
@@ -51,7 +53,8 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
 
-# Run the Script
+echo -e "\033[32mRun the Script  \033[0m"
+read -p "Press Enter to continue"
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
 ```
 
