@@ -13,8 +13,6 @@
     - so is nix the answer?
   - Mac using homebrew because of preview version and if installed using nix then alacritty can't find pwsh or jetbrain fonts for that matter
   - Linux try nix?
-- Do I still need base and full scripts in RocketOS?
-  - yes I think for things like topgrade etc
 
 ### Windows Powershell Setup
 

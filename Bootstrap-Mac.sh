@@ -46,6 +46,21 @@ brew install starship
 # install oh-my-zsh (no homebrew for it)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Make powershell my default shell
+sudo chsh -s /usr/local/bin/pwsh-preview $env:USER
+
+#TODO Testing put these in base-mac-env.ps1
+
+# Turn natural scrolling off
+defaults write -g com.apple.swipescrolldirection -bool FALSE
+
+# Set trackpad speed
+defaults write -g com.apple.trackpad.scaling 9
+
+# Dock
+defaults write com.apple.dock minimize-to-application -bool TRUE; killall Dock
+
+echo "might have to logout and back in for default writes to work!?"
 
 #? ---------THEN END---------------
 echo "You should now be able to launch RocketOS from the repo readme!"
