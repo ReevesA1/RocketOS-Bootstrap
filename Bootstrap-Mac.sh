@@ -43,9 +43,6 @@ brew install mas
 brew install gum
 brew install starship
 
-# install oh-my-zsh (no homebrew for it)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Make powershell my default shell
 sudo chsh -s /usr/local/bin/pwsh-preview $env:USER
 
@@ -57,7 +54,7 @@ defaults write -g com.apple.swipescrolldirection -bool FALSE
 # Dock
 defaults write com.apple.dock minimize-to-application -bool TRUE
 defaults write com.apple.dock largesize -int 128 # Magnification = LARGE
-killall Dock # resets dock
+killall Dock                                     # resets dock
 
 echo "might have to logout and back in for default writes to work!?"
 
