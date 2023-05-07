@@ -9,7 +9,8 @@
 #* Nix will have two ways!!!!!!!!!!!!!
 #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!!
 
-
 #! --------Package Managers------------
+
+#! ----------Install Powershell with modules---------
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------

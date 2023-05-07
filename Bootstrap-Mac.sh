@@ -43,6 +43,9 @@ read -p "Press Enter to continue"
 
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
+
+#! ----------Install Powershell with modules---------
+
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
 
