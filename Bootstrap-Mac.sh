@@ -25,7 +25,7 @@ xcode-select --install
 
 
 #! --------Package Managers------------
-  
+
 #Nix
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix-Bash.sh
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew-Bash.sh
