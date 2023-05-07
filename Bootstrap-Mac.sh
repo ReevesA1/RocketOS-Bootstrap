@@ -65,6 +65,8 @@ read -p "Press Enter to continue"
 
 sudo chsh -s /usr/local/bin/pwsh-preview $env:USER
 
+
+#! --------TESING------------
 #TODO Testing put these in base-mac-env.ps1
 echo -e "\033[32mTesting Default Writes \033[0m"
 read -p "Press Enter to continue"
