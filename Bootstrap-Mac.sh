@@ -35,6 +35,18 @@ $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
 #! ----------Apps (Only to get RocketOS Going)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
+brew install --cask powershell
+brew install --cask powershell-preview
+brew install --cask alacritty
+brew install --cask font-jetbrains-mono #from a Tap
+brew install mas
+brew install gum
+brew install starship
 
+# install oh-my-zsh (no homebrew for it)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+#? ---------THEN END---------------
 echo "You should now be able to launch RocketOS from the repo readme!"
 read -p "Press Enter to continue"

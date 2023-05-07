@@ -1,12 +1,20 @@
 # RocketOS-Bootstrap
 
 ## Purpose
-- This Script is strickly to get RocketOS going!
-## FYI's
 
-- Install Powershell on all windows mac and linux
-  - Install Powershershell-Preview with snap or build???? (arm can't do snaps but build only works on ubuntu and no preview so is nix the answer?)
-- Do I still need base and full scripts in RockOS?
+- This Script is strickly to get RocketOS going!
+
+## FYI's and Questions?
+
+- Installing Powershershell Caviats
+  - arm
+    - can't do snaps
+    - building it from source only works on ubuntu and no preview version
+    - so is nix the answer?
+  - Mac using homebrew because of preview version and if installed using nix then alacritty can't find pwsh or jetbrain fonts for that matter
+  - Linux try nix?
+- Do I still need base and full scripts in RocketOS?
+  - yes I think for things like topgrade etc
 
 ### Windows Powershell Setup
 
