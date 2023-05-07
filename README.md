@@ -38,10 +38,13 @@ echo -e "\033[32mInstall Xcode Command Line Tools  \033[0m"
 read -p "Press Enter to continue"
 # Check if the .xip file exists on usb stick and install xcode from there
 if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
-    # Extract the .xip file (i'll extract it once because it took a while 23GB so I can comment this line out)
+    # Extract the .xip file (i'll extract it once because it took a while 23GB so I can comment the next two lines out)
+    #cd /Volumes/Stubby/ # I must cd cause xip will not alow to choose output directory
     #xip -x "/Volumes/Stubby/Xcode_14.3.xip"
+
     # Copy the Xcode.app file to the /Applications directory
-    sudo cp -R /path/to/extracted/Xcode.app /Applications
+    sudo cp -R /Volumes/Stubby/Xcode.app /Applications
+
     sudo xcodebuild -runFirstLaunch
 else
     # Install the Xcode Command Line Tools
