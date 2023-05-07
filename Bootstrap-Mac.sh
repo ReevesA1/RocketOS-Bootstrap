@@ -61,7 +61,7 @@ elif [[ $choice == "2" ]]; then
 
 
     echo "You should now be able to launch RocketOS from the repo readme!"
-    pause
+    read -p "Press Enter to continue"
 else
     echo "Invalid choice"
 fi
