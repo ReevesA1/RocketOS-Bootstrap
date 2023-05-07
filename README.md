@@ -34,8 +34,8 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ```
 # --------Install Xcode Command Line Tools-----------
-echo -e "\033[32mInstall Xcode Command Line Tools  \033[0m"
-read -p "Press Enter to continue"
+print -P "\033[32mInstall Xcode Command Line Tools  \033[0m"
+sleep 3
 
 # Check if the .xip file exists on usb stick and install xcode from there
 if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
