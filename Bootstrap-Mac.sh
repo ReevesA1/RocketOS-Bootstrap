@@ -54,9 +54,6 @@ sudo chsh -s /usr/local/bin/pwsh-preview $env:USER
 # Turn natural scrolling off
 defaults write -g com.apple.swipescrolldirection -bool FALSE
 
-# Set trackpad speed
-defaults write -g com.apple.trackpad.scaling 9
-
 # Dock
 defaults write com.apple.dock minimize-to-application -bool TRUE
 defaults write com.apple.dock largesize -int 128 # Magnification = LARGE
