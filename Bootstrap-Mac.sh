@@ -28,12 +28,12 @@ read
 echo "\033[32mInstall Homebrew... Press Enter to continue  \033[0m"
 read
 
-$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix.sh
+$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
 echo "\033[32mInstall Nix... Press Enter to continue  \033[0m"
 read
+$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix.sh
 
-$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 
 #! ----------Install Powershell with modules---------
 
