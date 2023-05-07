@@ -12,4 +12,4 @@
 
 #! --------Package Managers------------
 
-#! ----------Apps for RocketOS and Terminal to work----------
+#! ----------Apps (Only to get RocketOS Going)---------

@@ -21,9 +21,9 @@ xcode-select --install
   
 #Nix
 $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Nix-Bash.sh
-$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
+$HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew-Bash.sh
 
-#! ----------Apps for RocketOS and Terminal to work----------
+#! ----------Apps (Only to get RocketOS Going)---------
 
 echo "Please choose an option:"
 echo "1) Homebrew as Base"
@@ -49,12 +49,19 @@ elif [[ $choice == "2" ]]; then
         nix-env -iA nixpkgs.mas
         nix-env -iA nixpkgs.gum
 
+        # Append to Powershell $profile so it can see nix apps
+        mkdir -p $HOME/.config/powershell && echo '`n$env:PATH += ":/nix/var/nix/profiles/default/bin/"' >> $HOME/.config/powershell/profile.ps1 
+
 
 
 
     else
         echo "Nix is not installed or I must source the terminal"
     fi
+
+
+    echo "You should now be able to launch RocketOS from the repo readme!"
+    pause
 else
     echo "Invalid choice"
 fi

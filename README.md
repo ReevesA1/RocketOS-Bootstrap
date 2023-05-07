@@ -1,5 +1,7 @@
 # RocketOS-Bootstrap
 
+## Purpose
+- This Script is strickly to get RocketOS going!
 ## FYI's
 
 - Install Powershell on all windows mac and linux
