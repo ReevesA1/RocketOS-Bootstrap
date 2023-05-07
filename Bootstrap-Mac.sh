@@ -23,6 +23,7 @@ read -p "Press Enter to continue"
 
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
+
 #! --------Package Managers------------
 
 echo -e "\033[32mInstall Homebrew  \033[0m"

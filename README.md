@@ -14,7 +14,7 @@
   - Mac using homebrew because of preview version and if installed using nix then alacritty can't find pwsh or jetbrain fonts for that matter
   - Linux try nix?
 
-### Windows Powershell Setup
+# Windows Bootstrap
 
 ```
 # Check if repo exists and delete it if it does
@@ -30,34 +30,45 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ```
 
-### Mac Powershell Setup Using Bash
-
-- Install Xcode Command Line Tools - Code below
-  - For some reason it wasn't playng nice having all these as comments in zsh so I put them here as bullet points
-    - Check if the .xip file exists on usb stick and install xcode from there
-    - Extract the .xip file (to big to keep the unziped version on my stick 23 GB so keep it zipped)
-    - I must cd cause xip will not alow to choose output directory
-    - if it doesn't find it on usb it downloads and Install the Xcode Command Line Tools
-    - then the scirpt continues at -----Repo------
+# Mac Bootstrap
 
 ```
-# Install Xcode Command Line Tools
-print -P "\033[32mInstall Xcode Command Line Tools  \033[0m"
-sleep 3
-
-if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
-
-    cd /Applications
-    xip -x "/Volumes/Stubby/Xcode_14.3.xip"
-    sudo xcodebuild -runFirstLaunch
-else
-    xcode-select --install
+# ---------Installs Xcode Command Line Tools--------
+# Check if Xcode is already installed
+if xcode-select -p 1>/dev/null; then
+  echo "Xcode is already installed. Press enter to exit."
+  read
+  exit 0
 fi
 
-# -------- Repo-----------
+# Print a message in green color
+print "\033[32mInstalling Xcode Command Line Tools...\033[0m"
+read
 
-echo -e "\033[32mCheck if repo exist and delete it before cloning it  \033[0m"
-read -p "Press Enter to continue"
+# Check if the Xcode_14.3.xip file exists on the Stubby USB volume
+if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
+  # Change directory to /Applications
+  cd /Applications
+
+  # Extract the Xcode_14.3.xip file
+  xip -x "/Volumes/Stubby/Xcode_14.3.xip"
+
+  # Run xcodebuild with the -runFirstLaunch option
+  sudo xcodebuild -runFirstLaunch
+else
+  # Install Xcode Command Line Tools using xcode-select
+  xcode-select --install
+fi
+
+# Wait for the user to press enter before exiting
+echo "Press enter to exit."
+read
+
+```
+
+```
+echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
+read
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
   command rm -vrf "$HOME/Downloads/RocketOS-Bootstrap"
 fi
@@ -68,10 +79,9 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 # Give Proper Permisions To Entire Folder
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
-
-echo -e "\033[32mRun the Script  \033[0m"
-read -p "Press Enter to continue"
- $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
+echo "\033[32mRun Bootstrap-Mac.sh... Press Enter to Continue  \033[0m"
+read
+$HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
 ```
 
 ### Linux Powershell Setup Using Bash
