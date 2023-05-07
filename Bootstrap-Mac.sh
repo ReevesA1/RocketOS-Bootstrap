@@ -49,8 +49,8 @@ $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew.sh
 echo -e "\033[32mInstall Apps need to get RocketOS Going  \033[0m"
 read -p "Press Enter to continue"
 
-brew install --cask powershell
-brew install --cask powershell-preview  # from cask-versions Tap
+brew install --cask powershell # (Installs here /usr/local/microsoft/powershell/7/pwsh)
+brew install --cask powershell-preview  # from cask-versions Tap (installs here /usr/local/microsoft/powershell/7-preview/pwsh)
 brew install --cask font-jetbrains-mono #from cask-fonts Tap
 brew install --cask alacritty
 brew install mas
