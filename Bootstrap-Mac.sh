@@ -59,5 +59,5 @@ killall Dock                                     # resets dock
 echo "might have to logout and back in for default writes to work!?"
 
 #? ---------THEN END---------------
-echo "You should now be able to launch RocketOS from the repo readme!"
+echo -e "\033[32mYou should now be able to launch RocketOS from the repo readme command \033[0m"read -p "Press Enter to continue"
 read -p "Press Enter to continue"
