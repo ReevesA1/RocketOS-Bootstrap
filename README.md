@@ -32,20 +32,25 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ### Mac Powershell Setup Using Bash
 
+- Install Xcode Command Line Tools - Code below
+  - For some reason it wasn't playng nice having all these as comments in zsh so I put them here as bullet points
+    - Check if the .xip file exists on usb stick and install xcode from there
+    - Extract the .xip file (to big to keep the unziped version on my stick 23 GB so keep it zipped)
+    - I must cd cause xip will not alow to choose output directory
+    - if it doesn't find it on usb it downloads and Install the Xcode Command Line Tools
+    - then the scirpt continues at -----Repo------
+
 ```
-# --------Install Xcode Command Line Tools-----------
+
 print -P "\033[32mInstall Xcode Command Line Tools  \033[0m"
 sleep 3
 
-# Check if the .xip file exists on usb stick and install xcode from there
 if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
-    # Extract the .xip file (to big to keep the unziped version on my stick 23 GB so keep it zipped)
-    # I must cd cause xip will not alow to choose output directory
+
     cd /Applications
     xip -x "/Volumes/Stubby/Xcode_14.3.xip"
     sudo xcodebuild -runFirstLaunch
 else
-    # Install the Xcode Command Line Tools
     xcode-select --install
 fi
 
