@@ -33,25 +33,25 @@ $HOME/Downloads/RocketOS-Bootstrap/PackageManagers/Homebrew-Bash.sh
 #! ----------Apps (Only to get RocketOS Going)---------
 
 
-    if command -v nix-env >/dev/null; then
-        # Channels
-        nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-        nix-channel --update
+if command -v nix-env >/dev/null; then
+    # Channels
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+    nix-channel --update
 
-        # Apps (no need for nix-env -iA nixpkgs-unstable.packageName)
-        nix-env -iA nixpkgs.powershell
-        nix-env -iA nixpkgs.mas
-        nix-env -iA nixpkgs.gum
-        nix-env -iA nixpkgs.alacritty
-        nix-env -iA nixpkgs.jetbrains-mono
-        nix-env -iA nixpkgs.starship
+    # Apps (no need for nix-env -iA nixpkgs-unstable.packageName)
+    nix-env -iA nixpkgs.powershell
+    nix-env -iA nixpkgs.mas
+    nix-env -iA nixpkgs.gum
+    nix-env -iA nixpkgs.alacritty
+    nix-env -iA nixpkgs.jetbrains-mono
+    nix-env -iA nixpkgs.starship
 
-        # Append to Powershell $profile so it can see nix apps
-        mkdir -p $HOME/.config/powershell && echo '`n$env:PATH += ":/nix/var/nix/profiles/default/bin/"' >> $HOME/.config/powershell/profile.ps1 
-
-
+    # Append to Powershell $profile so it can see nix apps
+    mkdir -p $HOME/.config/powershell && echo '`n$env:PATH += ":/nix/var/nix/profiles/default/bin/"' >> $HOME/.config/powershell/profile.ps1 
 
 
 
-    echo "You should now be able to launch RocketOS from the repo readme!"
-    read -p "Press Enter to continue"
+
+
+echo "You should now be able to launch RocketOS from the repo readme!"
+read -p "Press Enter to continue"
