@@ -74,12 +74,11 @@ defaults write -g com.apple.mouse.scaling 9
 #defaults write -g com.apple.trackpad.scaling 9
 
 # Dock
-defaults write "com.apple.dock" "persistent-apps" -array         #Remove default apps in dock
-defaults write com.apple.dock largesize -int 128                 # Magnification = LARGE (did not work cause it has to be turned on first fack)
-defaults write com.apple.dock minimize-to-application -bool TRUE # Makes app minimise properly
-killall Dock                                                     # resets dock
-
-
+defaults write "com.apple.dock" "persistent-apps" -array                                #Remove default apps in dock
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' #Adds Launchpad to Dock
+defaults write com.apple.dock largesize -int 128                                        # Magnification = LARGE (did not work cause it has to be turned on first fack)
+defaults write com.apple.dock minimize-to-application -bool TRUE                        # Makes app minimise properly
+killall Dock                                                                            # resets dock
 
 #? ---------THEN END---------------
 echo "\033[31mRESTART PC FOR EVERYTHING TO WORK \033[0m"
