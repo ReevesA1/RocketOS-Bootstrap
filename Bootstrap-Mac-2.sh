@@ -62,14 +62,11 @@ Jetbrainurl="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/Je
 # Download the font
 curl -L -O $Jetbrainurl
 
-# Unzip the downloaded file
-unzip JetBrainsMono.zip
-
-# Move the unzipped font files to the fonts directory
-mv JetBrainsMono/*.ttf ~/Library/Fonts/
+# Unzip the downloaded file into the fonts directory
+unzip -j JetBrainsMono.zip -d ~/Library/Fonts/
 
 # Clean up
-rm -rf JetBrainsMono.zip JetBrainsMono
+rm -rf JetBrainsMono.zip
 #! --------Misc------------
 
 #Make powershell my default shell
