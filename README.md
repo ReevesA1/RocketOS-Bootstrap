@@ -107,7 +107,7 @@ read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 ```
 
-### Linux Powershell Setup Using Bash
+# Linux Powershell Setup Using Bash
 
 ```
 # ---------Clone repo and launch Bootstrap-Linux.sh --------
