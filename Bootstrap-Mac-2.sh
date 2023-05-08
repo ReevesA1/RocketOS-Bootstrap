@@ -79,8 +79,9 @@ defaults write com.apple.dock largesize -int 128                 # Magnification
 defaults write com.apple.dock minimize-to-application -bool TRUE # Makes app minimise properly
 killall Dock                                                     # resets dock
 
-echo "\033[32mmight have to logout and back in for default writes to work \033[0m"
+
 
 #? ---------THEN END---------------
-echo "\033[32mYou should now be able to launch RocketOS from the repo readme command... Press Enter to continue \033[0m"
+echo "\033[31mRESTART PC FOR EVERYTHING TO WORK \033[0m"
+echo "\033[32mTHEN RUN RocketOS (from the repo readme command)... Press Enter to continue \033[0m"
 read
