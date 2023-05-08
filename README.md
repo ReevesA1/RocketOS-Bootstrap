@@ -36,7 +36,7 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 # ---------Installs Xcode Command Line Tools--------
 # Check if Xcode is already installed
 if xcode-select -p 1>/dev/null; then
-  echo "\033[32mXcode Command Line Tools is allready installed... Press Enter to exit\033[0m"
+  echo "\033[32mXcode Command Line Tools is allready installed... Press Enter to continue\033[0m"
   read
 fi
 
