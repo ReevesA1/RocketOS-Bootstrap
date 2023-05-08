@@ -6,13 +6,22 @@
 # Homebrew #
 ############
 
-# Install dependencies using brew bundle
+#dependencies
+echo "\033[32mInstall dependencies using brew bundle... Press Enter to continue  \033[0m"
+read
+
 arch -arm64 brew bundle
 
-# Turn off Homebrew analytics
+# Analytics
+echo "\033[32mTurn off Homebrew analytics... Press Enter to continue  \033[0m"
+read
+
 brew analytics off
 
-# Add Homebrew taps
+#Taps
+echo "\033[32mHomebrew Taps... Press Enter to continue  \033[0m"
+read
+
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-versions
 brew tap homebrew/bundle
@@ -22,8 +31,14 @@ brew tap homebrew/core
 
 #! ----------Install Powershell with modules---------
 
+echo "\033[32mInstall Powershell and Powershell-Preview... Press Enter to continue  \033[0m"
+read
+
 brew install --cask powershell         # (Installs here /usr/local/microsoft/powershell/7/pwsh)
 brew install --cask powershell-preview # from cask-versions Tap (installs here /usr/local/microsoft/powershell/7-preview/pwsh)
+
+echo "\033[32mInstall Powershell Modules... Press Enter to continue  \033[0m"
+read
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
