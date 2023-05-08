@@ -70,8 +70,7 @@ defaults write -g com.apple.swipescrolldirection -bool FALSE
 
 # Dock
 defaults write com.apple.dock minimize-to-application -bool TRUE
-defaults write com.apple.dock largesize -int 128 # Magnification = LARGE
-killall Dock                                     # resets dock
+killall Dock # resets dock
 
 echo "\033[32mmight have to logout and back in for default writes to work \033[0m"
 
