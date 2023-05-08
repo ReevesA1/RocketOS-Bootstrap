@@ -32,6 +32,8 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 # Mac Bootstrap
 
+### 1
+
 ```
 # ---------Installs Xcode Command Line Tools--------
 # Check if Xcode is already installed
@@ -80,8 +82,14 @@ find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
 echo "\033[32mRun Bootstrap-Mac.sh... Press Enter to Continue  \033[0m"
 read
-$HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
+$HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-1.sh
 
+```
+
+### 2
+
+```
+$HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 ```
 
 ### Linux Powershell Setup Using Bash
