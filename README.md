@@ -45,60 +45,27 @@ fi
 echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to continue\033[0m"
 read
 
-# Check if the Xcode_14.3.xip file exists on the Stubby USB volume
-if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
-  # Change directory to /Applications
-  cd /Applications
+# Check if the Xcode Command Line tool file exists on the Stubby USB volume
+if [ -f "/Volumes/Stubby/Xcode_Command_Line_Tools.dmg" ]; then
 
-  # Extract the Xcode_14.3.xip file
-  xip -x "/Volumes/Stubby/Xcode_14.3.xip"
-
-  # Run xcodebuild with the -runFirstLaunch option
-  sudo xcodebuild -runFirstLaunch
-else
-  # Install Xcode Command Line Tools using xcode-select
-  xcode-select --install
-fi
-
-# Wait for the user to press enter before exiting
-echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to exit\033[0m"
-read
-exit
-
-```
-
-```
-# ---------Installs Xcode Command Line Tools DEPRICATED--------
-# Check if Xcode is already installed
-if xcode-select -p 1>/dev/null; then
-  echo "\033[32mXcode Command Line Tools is allready installed... Press Enter to exit\033[0m"
+  echo "\033[32mInstalling from usb drive... Press Enter to continue\033[0m"
   read
-  exit
-fi
 
-# Print a message in green color
-echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to continue\033[0m"
-read
+  # Mount the disk image
+  hdiutil attach /Volumes/Stubby/Xcode_Command_Line_Tools.dmg
 
-# Check if the Xcode_14.3.xip file exists on the Stubby USB volume
-if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
-  # Change directory to /Applications
-  cd /Applications
+  # Install the package
+  sudo installer -pkg /Volumes/Command\ Line\ Developer\ Tools/Command\ Line\ Tools.pkg -target / -verboseR
 
-  # Extract the Xcode_14.3.xip file
-  xip -x "/Volumes/Stubby/Xcode_14.3.xip"
+  # Unmount the disk image
+  hdiutil detach /Volumes/Command\ Line\ Developer\ Tools
 
-  # Run xcodebuild with the -runFirstLaunch option
-  sudo xcodebuild -runFirstLaunch
 else
-  # Install Xcode Command Line Tools using xcode-select
+  echo "\033[32mWarnin 30min Downloading and Installing from internet... Press Enter to continue\033[0m"
+  read
   xcode-select --install
 fi
 
-# Wait for the user to press enter before exiting
-echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to exit\033[0m"
-read
-exit
 
 
 ```
