@@ -77,8 +77,8 @@ defaults write -g com.apple.mouse.scaling 9
 defaults write "com.apple.dock" "persistent-apps" -array         # Remove default apps in dock
 defaults write com.apple.dock minimize-to-application -bool TRUE #Make apps minimise properly
 
-#Test then put in notion if yes (edit magnification if it works in notion)
-defaults write com.apple.dock tilesize -int 16         #Tiny dock icons
+#Magnification with tiny icons
+defaults write com.apple.dock tilesize -int 16         # Tiny dock icons
 defaults write com.apple.dock magnification -bool true # Turn on magnification
 defaults write com.apple.dock largesize -int 128       # Set maginifaction to large
 killall Dock                                           # resets dock
