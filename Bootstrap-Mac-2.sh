@@ -29,6 +29,14 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew tap homebrew/core
 
+############
+# Nix      #
+############
+
+# Add Unstable Channel
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+
 #! ----------Install Powershell with modules---------
 
 echo "\033[32mInstall Powershell and Powershell-Preview... Press Enter to continue  \033[0m"
