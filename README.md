@@ -32,7 +32,7 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 # Mac Bootstrap
 
-### 1
+### Script 1 - Install package managers and restart shell
 
 ```
 # ---------Installs Xcode Command Line Tools--------
@@ -86,7 +86,7 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-1.sh
 
 ```
 
-### 2
+### Script 2 - After Shell Restart 
 
 ```
 # ---------Clone repo and launch Bootstrap-Mac-2.sh --------
