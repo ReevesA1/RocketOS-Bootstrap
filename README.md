@@ -67,10 +67,6 @@ else
 fi
 
 
-
-```
-
-```
 # ---------Clone repo and launch Bootstrap-Mac.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
 read
