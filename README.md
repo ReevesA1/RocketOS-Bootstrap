@@ -38,7 +38,6 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 if xcode-select -p 1>/dev/null; then
   echo "\033[32mXcode Command Line Tools is allready installed... Press Enter to exit\033[0m"
   read
-  exit
 fi
 
 # Print a message in green color
