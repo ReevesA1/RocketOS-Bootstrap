@@ -14,6 +14,25 @@
   - Mac using homebrew because of preview version and if installed using nix then alacritty can't find pwsh or jetbrain fonts for that matter
   - Linux try nix?
 
+## TO DO
+
+- Windows
+- Mac
+
+  - Example of calling a script
+  - Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh"
+  - Install Package Managers: Homebrew and Nix, ETC!!!
+  - Check App MasterList for all package managers!!!
+  - Have a script for each package manager!!!!
+  - Copy Notion MAc bootstrap Template shit in here
+  - started I added xcode already
+  - make me choose between homebrew and nix right off the bat or install both?
+  - make nix and homebrew methods both make powershell my default shell
+  - install icon powershell module and install homebrew
+  - Get more default writes
+
+- Linux
+
 # Windows Bootstrap
 
 ```
@@ -86,7 +105,7 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-1.sh
 
 ```
 
-### Script 2 - After Shell Restart 
+### Script 2 - After Shell Restart
 
 ```
 # ---------Clone repo and launch Bootstrap-Mac-2.sh --------
