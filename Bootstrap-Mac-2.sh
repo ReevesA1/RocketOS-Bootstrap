@@ -43,7 +43,7 @@ brew install starship
 echo "\033[32mMake powershell my default shell...Press Enter to continue \033[0m"
 read
 
-sudo chsh -s /usr/local/bin/pwsh-preview
+chsh -s /usr/local/bin/pwsh-preview
 
 #! --------TESING------------
 #TODO Testing put these in base-mac-env.ps1
