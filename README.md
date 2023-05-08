@@ -67,7 +67,7 @@ else
   fi
 fi
 
-# ---------Clone repo and launch Bootstrap-Mac.sh --------
+# ---------Clone repo and launch Bootstrap-Mac-1.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
 read
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
@@ -89,6 +89,21 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-1.sh
 ### 2
 
 ```
+# ---------Clone repo and launch Bootstrap-Mac-2.sh --------
+echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
+read
+if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
+  command rm -vrf "$HOME/Downloads/RocketOS-Bootstrap"
+fi
+
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/RocketOS-Bootstrap
+
+# Give Proper Permisions To Entire Folder
+find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
+
+echo "\033[32mRun Bootstrap-Mac.sh... Press Enter to Continue  \033[0m"
+read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 ```
 
