@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
 # This script installs Homebrew and sets up the necessary environment variables
 

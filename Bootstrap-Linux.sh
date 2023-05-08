@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/zsh
+
 
 #? Example of calling a script
 #* Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh"

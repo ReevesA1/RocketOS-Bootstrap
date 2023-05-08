@@ -65,10 +65,46 @@ echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to exit\033[0m"
 read
 exit
 
+```
+
+```
+# ---------Installs Xcode Command Line Tools DEPRICATED--------
+# Check if Xcode is already installed
+if xcode-select -p 1>/dev/null; then
+  echo "\033[32mXcode Command Line Tools is allready installed... Press Enter to exit\033[0m"
+  read
+  exit
+fi
+
+# Print a message in green color
+echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to continue\033[0m"
+read
+
+# Check if the Xcode_14.3.xip file exists on the Stubby USB volume
+if [ -f "/Volumes/Stubby/Xcode_14.3.xip" ]; then
+  # Change directory to /Applications
+  cd /Applications
+
+  # Extract the Xcode_14.3.xip file
+  xip -x "/Volumes/Stubby/Xcode_14.3.xip"
+
+  # Run xcodebuild with the -runFirstLaunch option
+  sudo xcodebuild -runFirstLaunch
+else
+  # Install Xcode Command Line Tools using xcode-select
+  xcode-select --install
+fi
+
+# Wait for the user to press enter before exiting
+echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to exit\033[0m"
+read
+exit
+
 
 ```
 
 ```
+# ---------Clone repo and launch Bootstrap-Mac.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
 read
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
@@ -89,7 +125,9 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac.sh
 ### Linux Powershell Setup Using Bash
 
 ```
-# Check if repo exist and delete it if it does
+# ---------Clone repo and launch Bootstrap-Linux.sh --------
+echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
+read
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
   command rm -vrf "$HOME/Downloads/RocketOS-Bootstrap"
 fi
