@@ -60,16 +60,24 @@ read
 
 chsh -s /usr/local/bin/pwsh-preview
 
-#! --------TESING------------
+#! --------Default Env Settings Write------------
 echo "\033[32m Set Default env settings... Press Enter to continue \033[0m"
 read
 
 # Turn natural scrolling off
 defaults write -g com.apple.swipescrolldirection -bool FALSE
 
+# Set Mouse speed
+defaults write -g com.apple.mouse.scaling 9
+
+# Set trackpad speed (not needed the default is fast enough)
+#defaults write -g com.apple.trackpad.scaling 9
+
 # Dock
-defaults write com.apple.dock minimize-to-application -bool TRUE
-killall Dock # resets dock
+defaults write "com.apple.dock" "persistent-apps" -array         #Remove default apps in dock
+defaults write com.apple.dock largesize -int 128                 # Magnification = LARGE (did not work cause it has to be turned on first fack)
+defaults write com.apple.dock minimize-to-application -bool TRUE # Makes app minimise properly
+killall Dock                                                     # resets dock
 
 echo "\033[32mmight have to logout and back in for default writes to work \033[0m"
 
