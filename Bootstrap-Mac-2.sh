@@ -48,6 +48,8 @@ brew install --cask powershell-preview # from cask-versions Tap (installs here /
 echo "\033[32mInstall Powershell Modules... Press Enter to continue  \033[0m"
 read
 
+
+
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
 
@@ -110,3 +112,5 @@ killall Dock                                           # resets dock
 echo "\033[31mRESTART PC FOR EVERYTHING TO WORK \033[0m"
 echo "\033[32mTHEN RUN RocketOS (from the repo readme command)... Press Enter to continue \033[0m"
 read
+
+

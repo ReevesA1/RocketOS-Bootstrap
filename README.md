@@ -126,6 +126,14 @@ read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 ```
 
+### Script 3 - Install oh-my-zsh
+
+```
+#! install oh-my-zsh (no homebrew for it)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+```
+
 # Linux Powershell Setup Using Bash
 
 ```
