@@ -9,6 +9,7 @@
 #TODO Install Package managers according to distro: flatpaks,Snaps,Nix ETC!!!!
 #* Nix will have two ways!!!!!!!!!!!!!
 #TODO Install Apps: POWERSHELL, Git and Gum, ETC !!!
+#TODO Make sure to Install oh-my-zsh (in readme like mac os?)
 
 #! --------Package Managers------------
 
