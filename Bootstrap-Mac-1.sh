@@ -1,4 +1,5 @@
 #!/bin/zsh
+#Using this shbang for echo and read with color to work
 
 #! --------Disable Mac gate keeper-----------
 echo "\033[32mDisable Mac gate keeper... Press Enter to continue  \033[0m"

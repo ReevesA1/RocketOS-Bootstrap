@@ -1,4 +1,6 @@
 #!/bin/zsh
+#Using this shbang for echo and read with color to work
+
 
 #! --------Package Managers Part 2------------
 
