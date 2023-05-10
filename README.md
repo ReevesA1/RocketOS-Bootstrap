@@ -50,6 +50,26 @@
 
 # Windows Bootstrap
 
+`````
+#?                   .oodMMMMMMMMMMMMM
+#?       ..oodMMM  MMMMMMMMMMMMMMMMMMM
+#? oodMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#?
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+#? `^^^^^^MMMMMMM  MMMMMMMMMMMMMMMMMMM
+#?       ````^^^^  ^^MMMMMMMMMMMMMMMMM
+#?
+`````
+
 ```
 # Check if repo exists and delete it if it does
 if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
@@ -151,6 +171,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Linux Powershell Setup Using Bash
 
+### Script 1 - Install package managers and restart shell
+
+- Flatpaks Snaps ETC,
+- do a script 1 and a script 2 like mac
+- look at todo's above
+
+### Script 2 - After Shell Restart
+
 ```
 # ---------Clone repo and launch Bootstrap-Linux.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
@@ -168,5 +196,9 @@ find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 # Run the Script
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux.sh
 ```
+
+### Script 3 - Install oh-my-zsh
+
+- is it the same command as mac above?
 
 # I can now navigate to RocketOS repo and run it
