@@ -1,7 +1,6 @@
 #!/bin/zsh
 #Using this shbang for echo and read with color to work
 
-
 #! --------Package Managers Part 2------------
 
 ############
@@ -46,11 +45,6 @@ read
 
 brew install --cask powershell         # (Installs here /usr/local/microsoft/powershell/7/pwsh)
 brew install --cask powershell-preview # from cask-versions Tap (installs here /usr/local/microsoft/powershell/7-preview/pwsh)
-
-echo "\033[32mInstall Powershell Modules... Press Enter to continue  \033[0m"
-read
-
-
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
@@ -114,5 +108,3 @@ killall Dock                                           # resets dock
 echo "\033[31mRESTART PC FOR EVERYTHING TO WORK \033[0m"
 echo "\033[32mTHEN RUN RocketOS (from the repo readme command)... Press Enter to continue \033[0m"
 read
-
-
