@@ -16,6 +16,8 @@
 
 ## TO DO
 
+- FOR MAC AND LINUX LOOK AT ANSIBLE local.yml and FOR WINDOWS LOOK AT WINDOWS BASEENV.ps1 i had created (i can erase that file when done but keep ansible repo for reference)
+
 - Windows
 
   - Example of calling a script
