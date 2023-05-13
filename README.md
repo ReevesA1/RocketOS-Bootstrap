@@ -191,13 +191,7 @@ read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 ```
 
-### Script 3 - Install oh-my-zsh
 
-```
-#! install oh-my-zsh (no homebrew for it)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-```
 
 # Linux Powershell Setup Using Bash
 
@@ -246,9 +240,5 @@ find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 # Run the Script
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux.sh
 ```
-
-### Script 3 - Install oh-my-zsh
-
-- is it the same command as mac above?
 
 # I can now navigate to RocketOS repo and run it
