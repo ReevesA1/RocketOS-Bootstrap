@@ -6,7 +6,6 @@
 #########  PACKAGE MANAGERS PART 2  ##############
 ##################################################
 
-
 ############
 # Homebrew #
 ############
@@ -34,8 +33,8 @@ brew tap homebrew/core
 ############
 # Nix      #
 ############
-#echo "\033[32mFinish Nix Install... Press Enter to continue  \033[0m"
-#read
+echo "\033[32mFinish Nix Install... Press Enter to continue  \033[0m"
+read
 
 # Add Unstable Channel
 nix-channel --remove nixpkgs
