@@ -45,3 +45,5 @@ fi
 
 echo "\033[32mRestart Shell and Run Bootstrap-Mac-2.sh Script \033[0m"
 read
+
+#! Remember there is a part 2 to this after resetting the shell to install unstable channel etc
