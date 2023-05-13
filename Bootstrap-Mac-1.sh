@@ -48,9 +48,9 @@ read
 # Install Multi-User Nix Package Manager Non-Interactivily with the --yes flag only if nix is not installed
 if ! command -v nix >/dev/null; then
   if [[ "$(uname)" == "Darwin" ]]; then
-    sh <(curl -L https://nixos.org/nix/install)
+    sudo sh <(curl -L https://nixos.org/nix/install)
   else
-    sh <(curl -L https://nixos.org/nix/install) --daemon
+    sudo sh <(curl -L https://nixos.org/nix/install) --daemon
   fi
 else
   echo "Nix is already installed"
