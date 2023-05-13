@@ -38,4 +38,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ############
 #   Nix    #
 ############
-$HOME/Downloads/RocketOS-Bootstrap/Share-Code/NixPackageManager-MacLinux.sh
+
+# Give Proper Permisions To Entire Folder
+$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux.sh
