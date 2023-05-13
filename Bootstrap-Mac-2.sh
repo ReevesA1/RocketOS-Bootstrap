@@ -36,10 +36,10 @@ brew tap homebrew/core
 echo "\033[32mFinish Nix Install... Press Enter to continue  \033[0m"
 read
 
-# Add Unstable Channel
-nix-channel --remove nixpkgs
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+# Add Unstable Channel and use the unstable prefix to install apps like so `nix-env -iA unstable.gum`
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
 nix-channel --update
+
 
 #! Install Apps to get rocketOS Going
 #########################
