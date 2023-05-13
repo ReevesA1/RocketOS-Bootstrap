@@ -125,7 +125,7 @@ if xcode-select -p 1>/dev/null; then
   read
 else
   # Print a message in green color
-  echo "\033[32mInstalling Xcode Command Line Tools... Press Enter to continue\033[0m"
+  echo "\033[32mInstalling Xcode Command Line Tools... (Insert USB NOW if available) Press Enter to continue\033[0m"
   read
 
   # Check if the Xcode Command Line tool file exists on the Stubby USB volume
