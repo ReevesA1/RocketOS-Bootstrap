@@ -39,8 +39,9 @@ brew tap homebrew/core
 #read
 
 # Add Unstable Channel
-sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-sudo nix-channel --update
+nix-channel --remove nixpkgs
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
 
 #! Install Apps to get rocketOS Going
 #########################

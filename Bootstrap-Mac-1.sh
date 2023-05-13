@@ -40,17 +40,17 @@ read
 #Nix Package Manager Multi-User install
 
 # Check if the script is being run with sudo
-#if [ "$EUID" -eq 0 ]; then
-#  echo -e "\033[31mError: This script should not be run with sudo\033[0m"
-#  exit 1
-#fi
+if [ "$EUID" -eq 0 ]; then
+  echo -e "\033[31mError: This script should not be run with sudo\033[0m"
+  exit 1
+fi
 
-# Install Multi-User Nix Package Manager Non-Interactivily with the --yes flag only if nix is not installed
+# Install Multi-User Nix Package Manager Non-Interactivily only if its not installed
 if ! command -v nix >/dev/null; then
   if [[ "$(uname)" == "Darwin" ]]; then
-    sudo sh <(curl -L https://nixos.org/nix/install)
+    sh <(curl -L https://nixos.org/nix/install)
   else
-    sudo sh <(curl -L https://nixos.org/nix/install) --daemon
+    sh <(curl -L https://nixos.org/nix/install) --daemon
   fi
 else
   echo "Nix is already installed"
