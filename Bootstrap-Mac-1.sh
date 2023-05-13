@@ -14,6 +14,9 @@ read
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 #! --------Package Managers Part 1------------
+##################################################
+#########  PACKAGE MANAGERS PART 2  ##############
+##################################################
 
 ############
 # Homebrew #

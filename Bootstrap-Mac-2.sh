@@ -2,13 +2,18 @@
 #Using this shbang for echo and read with color to work
 
 #! --------Package Managers Part 2------------
+##################################################
+#########  PACKAGE MANAGERS PART 2  ##############
+##################################################
+echo "\033[32mBootstrap-Mac Part 2... Press Enter to continue  \033[0m"
+read
 
 ############
 # Homebrew #
 ############
 
 #dependencies
-echo "\033[32mInstall dependencies using brew bundle... Press Enter to continue  \033[0m"
+echo "\033[32mFinish Homebrew Install... Press Enter to continue  \033[0m"
 read
 
 arch -arm64 brew bundle
@@ -20,9 +25,6 @@ read
 brew analytics off
 
 #Taps
-echo "\033[32mHomebrew Taps... Press Enter to continue  \033[0m"
-read
-
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-versions
 brew tap homebrew/bundle
@@ -33,24 +35,27 @@ brew tap homebrew/core
 ############
 # Nix      #
 ############
+#? I think this causes a conflict with the sudo file that already has the unstable channel?
+#echo "\033[32mFinish Nix Install... Press Enter to continue  \033[0m"
+#read
 
 # Add Unstable Channel
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-nix-channel --update
+#nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+#nix-channel --update
 
-#! ----------Install Powershell with modules---------
+#! Install Apps to get rocketOS Going
+#########################
+######  APPS  ###########
+#########################
 
-echo "\033[32mInstall Powershell and Powershell-Preview... Press Enter to continue  \033[0m"
+echo "\033[32mInstall Apps to get RocketOS Going... Press Enter to continue  \033[0m"
 read
-
+#! ----------Install Powershell with modules---------
 brew install --cask powershell         # (Installs here /usr/local/microsoft/powershell/7/pwsh)
 brew install --cask powershell-preview # from cask-versions Tap (installs here /usr/local/microsoft/powershell/7-preview/pwsh)
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 #! I will use Homebrew for this, I tried using nix but it gets complicated. Just use nix for one of apps not for the base setup
-
-echo "\033[32mInstall Apps to get RocketOS Going... Press Enter to continue  \033[0m"
-read
 
 brew install --cask alacritty
 brew install mas
@@ -58,6 +63,10 @@ brew install gum
 brew install starship
 
 #! --------Fonts------------
+#################################
+#########  Fonts   ##############
+#################################
+
 #?JetBrains Mono must be from nerd font for everything to work so the brew command below is a no go and I must do it manualy
 #brew install --cask font-jetbrains-mono #from cask-fonts Tap
 
@@ -74,6 +83,9 @@ unzip -j JetBrainsMono.zip -d ~/Library/Fonts/
 # Clean up
 rm -rf JetBrainsMono.zip
 #! --------Misc------------
+#################################
+#########  Misc    ##############
+#################################
 
 #Make powershell my default shell
 echo "\033[32mMake powershell my default shell...Press Enter to continue \033[0m"
@@ -81,8 +93,10 @@ read
 
 chsh -s /usr/local/bin/pwsh-preview
 
-
 #? ---------THEN END---------------
+#################################
+#########  TH END   ##############
+#################################
 echo "\033[31mRESTART PC FOR EVERYTHING TO WORK \033[0m"
 echo "\033[32mTHEN RUN RocketOS (from the repo readme command)... Press Enter to continue \033[0m"
 read
