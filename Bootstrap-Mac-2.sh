@@ -35,13 +35,12 @@ brew tap homebrew/core
 ############
 # Nix      #
 ############
-#? I think this causes a conflict with the sudo file that already has the unstable channel?
 #echo "\033[32mFinish Nix Install... Press Enter to continue  \033[0m"
 #read
 
 # Add Unstable Channel
-#nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-#nix-channel --update
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+sudo nix-channel --update
 
 #! Install Apps to get rocketOS Going
 #########################
