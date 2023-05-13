@@ -117,6 +117,7 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ### Script 1 - Install package managers and restart shell
 
+
 ```
 # ---------Installs Xcode Command Line Tools--------
 # Check if Xcode is already installed
