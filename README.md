@@ -117,7 +117,6 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ### Script 1 - Install package managers and restart shell
 
-
 ```
 # ---------Installs Xcode Command Line Tools--------
 # Check if Xcode is already installed
@@ -164,7 +163,7 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 # Give Proper Permisions To Entire Folder
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
-echo "\033[32mRun Bootstrap-Mac.sh... Press Enter to Continue  \033[0m"
+echo "\033[32mBootstrap-Mac.sh Part 1... Press Enter to continue  \033[0m"
 read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-1.sh
 
@@ -186,12 +185,10 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 # Give Proper Permisions To Entire Folder
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
-echo "\033[32mRun Bootstrap-Mac.sh... Press Enter to Continue  \033[0m"
+echo "\033[32mBootstrap-Mac.sh Part 2... Press Enter to continue  \033[0m"
 read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 ```
-
-
 
 # Linux Powershell Setup Using Bash
 

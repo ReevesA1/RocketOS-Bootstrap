@@ -1,6 +1,10 @@
 #!/bin/zsh
 #Using this shbang for echo and read with color to work
 
+#############
+## Settings ##
+##############
+
 #! --------Disable Mac gate keeper-----------
 echo "\033[32mDisable Mac gate keeper... Press Enter to continue  \033[0m"
 read
@@ -15,7 +19,7 @@ read
 
 #! --------Package Managers Part 1------------
 ##################################################
-#########  PACKAGE MANAGERS PART 2  ##############
+#########  PACKAGE MANAGERS PART 1  ##############
 ##################################################
 
 ############
