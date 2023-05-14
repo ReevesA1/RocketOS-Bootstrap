@@ -58,7 +58,7 @@ brew install --cask powershell-preview # from cask-versions Tap (installs here /
 brew install --cask alacritty
 brew install mas
 brew install gum
-#brew install starship
+brew install starship
 
 #! --------Fonts------------
 #################################
