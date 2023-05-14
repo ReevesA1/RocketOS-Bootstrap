@@ -166,6 +166,7 @@ find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 echo "\033[32mBootstrap-Mac.sh Part 1... Press Enter to continue  \033[0m"
 read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-1.sh
+exit
 
 ```
 
@@ -188,6 +189,7 @@ find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 echo "\033[32mBootstrap-Mac.sh Part 2... Press Enter to continue  \033[0m"
 read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
+exit
 ```
 
 # Linux Powershell Setup Using Bash
