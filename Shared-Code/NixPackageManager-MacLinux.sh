@@ -1,7 +1,7 @@
 #!/bin/zsh
 #Using this shbang for echo and read with color to work
 
-echo "\033[32mInstall Nix... Press Enter to continue  \033[0m"
+echo "\033[32mInstall Nix Package Manager... Press Enter to continue  \033[0m"
 read
 
 #Nix Package Manager Multi-User install
