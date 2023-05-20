@@ -32,7 +32,11 @@ read
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Add Homebrew to the PATH
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/rocket/.zprofile
+FILE="/Users/rocket/.zprofile"
+if [ ! -f "$FILE" ]; then
+  touch "$FILE"
+fi
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>"$FILE"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ############
