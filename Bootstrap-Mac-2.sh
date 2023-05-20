@@ -23,6 +23,10 @@ read
 brew analytics off
 
 #Taps
+# Analytics
+echo "\033[32mTaping more Brews... Press Enter to continue  \033[0m"
+read
+
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-versions
 brew tap homebrew/bundle
