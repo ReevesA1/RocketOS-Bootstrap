@@ -101,4 +101,5 @@ chsh -s /usr/local/bin/pwsh-preview
 #################################
 echo "\033[31mRESTART PC FOR EVERYTHING TO WORK \033[0m"
 echo "\033[32mTHEN RUN RocketOS (from the repo readme command)... Press Enter to continue \033[0m"
+echo "\033[32mAlso FYI Moving forward everything is done in powershell no more BASH & ZSH \033[0m"
 read
