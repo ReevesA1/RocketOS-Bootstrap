@@ -11,8 +11,9 @@ sudo apt install snapd
 #! ----------Install Powershell with modules---------
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
+flatpak install flathub com.raggesilver.BlackBox
 
-#!SORT 
+#!SORT
 - Fonts $(sudo dnf install jetbrains-mono-fonts.noarch) then I have to manualy choose fonts in some terminals
 - $(sudo apt install conky-all) or nix-env -iA nixpkgs.conky
 - $(nix-env -iA nixpkgs.gum)
