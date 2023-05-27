@@ -6,7 +6,8 @@
 #? Linux Bootstrap Flatpak & Snaps get going
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #snap ill have to start socket?
-
+sudo apt install flatpak
+sudo apt install snapd
 #! ----------Install Powershell with modules---------
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
