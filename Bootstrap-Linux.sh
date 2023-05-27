@@ -11,9 +11,9 @@
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 
-#!SORT
+#!SORT 
 - Fonts $(sudo dnf install jetbrains-mono-fonts.noarch) then I have to manualy choose fonts in some terminals
-- $(sudo apt install conky-all)
+- $(sudo apt install conky-all) or nix-env -iA nixpkgs.conky
 - $(nix-env -iA nixpkgs.gum)
 - $(nix-env -iA nixpkgs.alacritty)
 - why not snaps???? $(sudo snap install alacritty --classic)
