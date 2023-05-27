@@ -82,7 +82,7 @@ if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
 git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Downloads\RocketOS-Bootstrap
 
 # Run the Script
-Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windows.ps1"
+Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windows-1.ps1"
 
 ```
 
@@ -237,7 +237,7 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
 # Run the Script
- $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux.sh
+ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-1.sh
 ```
 
 # I can now navigate to RocketOS repo and run it
