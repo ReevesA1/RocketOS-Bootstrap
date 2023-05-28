@@ -28,6 +28,13 @@ InstallPackageManagerPerDistroFamily() {
 InstallPackageManagerPerDistroFamily
 
 
+############
+#   Nix    #
+############
+
+$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part1.sh
+
+
 
 #! --------Fonts------------
 #################################

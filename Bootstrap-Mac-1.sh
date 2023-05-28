@@ -39,4 +39,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 #   Nix    #
 ############
 
-$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux.sh
+$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part1.sh
