@@ -24,6 +24,8 @@
 #?
 `````
 
+### Script 1 - Install package managers and restart shell
+
 ```
 # Check if repo exists and delete it if it does
 if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
@@ -35,7 +37,24 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Do
 
 # Run the Script
 Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windows-1.ps1"
+exit
 
+```
+
+### Script 2 - After Shell Restart
+
+```
+# Check if repo exists and delete it if it does
+if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
+    Remove-Item -Recurse -Force "$env:USERPROFILE\Downloads\RocketOS-Bootstrap"
+}
+
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Downloads\RocketOS-Bootstrap
+
+# Run the Script
+Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windows-2.ps1"
+exit
 ```
 
 - Windows Setup Complete - I can now navigate to RocketOS repo and run it
@@ -172,14 +191,30 @@ exit
 
 ### Script 1 - Install package managers and restart shell
 
-- Flatpaks Snaps ETC,
-- do a script 1 and a script 2 like mac
-- look at todo's above
+```
+# ---------Clone repo and launch Bootstrap-Linux-1.sh --------
+echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
+read
+if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
+  command rm -vrf "$HOME/Downloads/RocketOS-Bootstrap"
+fi
+
+# Clone Repo
+git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/RocketOS-Bootstrap
+
+# Give Proper Permisions To Entire Folder
+find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
+
+echo "\033[32mBootstrap-Mac.sh Part 1... Press Enter to continue  \033[0m"
+read
+$HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-1.sh
+exit
+```
 
 ### Script 2 - After Shell Restart
 
 ```
-# ---------Clone repo and launch Bootstrap-Linux.sh --------
+# ---------Clone repo and launch Bootstrap-Linux-2.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
 read
 if [ -d "$HOME/Downloads/RocketOS-Bootstrap" ]; then
@@ -193,7 +228,8 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
 # Run the Script
- $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-1.sh
+ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-2.sh
+ exit
 ```
 
 - Linux Bash Setup Complete - I can now navigate to RocketOS repo and run it using Powershell
