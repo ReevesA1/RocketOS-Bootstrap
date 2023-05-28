@@ -3,12 +3,31 @@
 
 #! --------Package Managers------------
 
-#? Linux Bootstrap Flatpak & Snaps get going
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#snap ill have to start socket?
-sudo apt install flatpak or nix-env -iA nixpkgs.flatpak
-sudo apt install snapd
-#! ----------Install Powershell with modules---------
+InstallPackageManagerPerDistroFamily() {
+  ID=$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')
+  ID_Like=$(grep "^ID_LIKE=" /etc/*-release | cut -d= -f2 | tr -d '"')
+
+  # Ubuntu/Debian
+  if [[ "$ID" =~ ubuntu ]] || [[ "$ID_Like" =~ ubuntu ]] || [[ "$ID" =~ debian ]] || [[ "$ID_Like" =~ debian ]]; then
+    echo "This Distro Belongs to the Ubuntu/Debian Family"
+  # Arch
+  elif [[ "$ID" =~ arch ]] || [[ "$ID_Like" =~ arch ]]; then
+    echo "This Distro Belongs to the Arch Family"
+  # Fedora
+  elif [[ "$ID" =~ fedora ]] || [[ "$ID_Like" =~ fedora ]]; then
+    echo "This Distro Belongs to the Fedora Family"
+  # NixOS
+  elif [[ "$ID" =~ nixos ]]; then
+    echo "This is NixOS"
+  else
+    echo "Cannot Detect Flavour"
+  fi
+}
+
+# Call the function
+InstallPackageManagerPerDistroFamily
+
+
 
 #! --------Fonts------------
 #################################
