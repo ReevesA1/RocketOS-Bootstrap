@@ -17,3 +17,4 @@ nix-env -iA nixpkgs.starship
 # Powershell
 nix-env -iA nixpkgs.powershell
 #sudo snap install powershell-preview --classic
+

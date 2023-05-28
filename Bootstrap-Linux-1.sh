@@ -30,13 +30,3 @@ unzip -j JetBrainsMono.zip -d ~/.local/share/fonts
 
 # Clean up
 rm -rf JetBrainsMono.zip
-
-#!SORT
-
-- why not snaps???? $(sudo snap install alacritty --classic)
-
-- if Gnome
-- $(flatpak install flathub ca.desrt.dconf-editor)
-- $(flatpak install flathub com.mattjakeman.ExtensionManager)
-
-nix-env -iA nixpkgs.lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core
