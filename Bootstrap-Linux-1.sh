@@ -10,7 +10,6 @@ sudo apt install flatpak or nix-env -iA nixpkgs.flatpak
 sudo apt install snapd
 #! ----------Install Powershell with modules---------
 
-
 #! --------Fonts------------
 #################################
 #########  Fonts   ##############
@@ -27,12 +26,10 @@ Jetbrainurl="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/Je
 curl -L -O $Jetbrainurl
 
 # Unzip the downloaded file into the fonts directory
-unzip -j JetBrainsMono.zip -d ~/Library/Fonts/
+unzip -j JetBrainsMono.zip -d ~/.local/share/fonts
 
 # Clean up
 rm -rf JetBrainsMono.zip
-
-
 
 #!SORT
 
