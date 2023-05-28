@@ -34,6 +34,8 @@ InstallPackageManagerPerDistroFamily() {
   #!
   # Ubuntu/Debian
   if [[ "$ID" =~ ubuntu ]] || [[ "$ID_Like" =~ ubuntu ]] || [[ "$ID" =~ debian ]] || [[ "$ID_Like" =~ debian ]]; then
+    #Update
+    sudo apt update && sudo apt upgrade
 
     #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
     #sudo apt install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -62,6 +64,9 @@ InstallPackageManagerPerDistroFamily() {
 
   # Arch
   elif [[ "$ID" =~ arch ]] || [[ "$ID_Like" =~ arch ]]; then
+    #Update
+    sudo pacman -Syu
+
     #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
     #sudo pacman -S flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -85,6 +90,8 @@ InstallPackageManagerPerDistroFamily() {
     #
   # Fedora
   elif [[ "$ID" =~ fedora ]] || [[ "$ID_Like" =~ fedora ]]; then
+    #Update
+    Sudo dnf upgrade
 
     #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
     #sudo yum install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
