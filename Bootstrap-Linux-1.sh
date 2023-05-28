@@ -10,14 +10,32 @@ sudo apt install flatpak or nix-env -iA nixpkgs.flatpak
 sudo apt install snapd
 #! ----------Install Powershell with modules---------
 
-#! ----------Apps (Only to get RocketOS Going Properly)---------
-flatpak install flathub com.raggesilver.BlackBox
+
+#! --------Fonts------------
+#################################
+#########  Fonts   ##############
+#################################
+
+#?JetBrains Mono must be from nerd font for everything to work so the brew command below is a no go and I must do it manualy
+#brew install --cask font-jetbrains-mono #from cask-fonts Tap
+
+#? Unfortunately, there isn’t a “latest” tag or URL that you can use to automatically download the most recent version of the JetBrains Mono Nerd Font. You will need to manually check the Nerd Fonts GitHub repository for new releases and update the download URL in the script accordingly.
+# Set the download URL
+Jetbrainurl="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/JetBrainsMono.zip"
+
+# Download the font
+curl -L -O $Jetbrainurl
+
+# Unzip the downloaded file into the fonts directory
+unzip -j JetBrainsMono.zip -d ~/Library/Fonts/
+
+# Clean up
+rm -rf JetBrainsMono.zip
+
+
 
 #!SORT
-- Fonts $(sudo dnf install jetbrains-mono-fonts.noarch) then I have to manualy choose fonts in some terminals
-- $(sudo apt install conky-all) or nix-env -iA nixpkgs.conky
-- $(nix-env -iA nixpkgs.gum)
-- $(nix-env -iA nixpkgs.alacritty)
+
 - why not snaps???? $(sudo snap install alacritty --classic)
 - Ubuntu
 - $(sudo apt update && sudo apt upgrade)
