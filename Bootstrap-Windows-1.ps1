@@ -166,43 +166,42 @@ choco install nerd-fonts-jetbrainsmono -y -ia "not (Get-ItemProperty -Path 'HKCU
 Write-Output "Installing Starship"
 #only if not allready installed
 if (-not (Get-Command -Name starship -ErrorAction SilentlyContinue)) {
-  winget install -e --id Starship.Starship
+  winget install -e --id Starship.Starship --accept-package-agreements --accept-source-agreements
 }
 
 
-
+<#
 #Powershell
 Write-Output "Installing Powershell 7 Stable"
 #only if not allready installed
 if (-not (Get-Command -Name pwsh -ErrorAction SilentlyContinue)) {
-  winget install -e --id Microsoft.PowerShell
+  winget install -e --id Microsoft.PowerShell --accept-package-agreements --accept-source-agreements
 }
+#>
 
 #Powershell-Preview
 Write-Output "Installing Powershell 7 Preview"
 #only if not allready installed
 if (-not (Get-Command -Name pwsh-preview -ErrorAction SilentlyContinue)) {
-  winget install -e --id Microsoft.PowerShell.Preview
+  winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
 }
 
+<#
 #Windows Terminal
 Write-Output "Installing latest windows terminal"
 #only if not allready installed (to many issues with the Preview version keep using standard)
 if (-not (Get-Command -Name wt -ErrorAction SilentlyContinue)) {
-  winget install -e --id Microsoft.WindowsTerminal
+  winget install -e --id Microsoft.WindowsTerminal --accept-package-agreements --accept-source-agreements
+}
+#>
+
+#Windows Terminal-Preview
+Write-Output "Installing latest windows terminal"
+#only if not allready installed (to many issues with the Preview version keep using standard)
+if (-not (Get-Command -Name wt -ErrorAction SilentlyContinue)) {
+  winget install -e --id Microsoft.WindowsTerminal.Preview --accept-package-agreements --accept-source-agreements
 }
 
-
-# Install Classic Right click Menu Yes or No 
-Write-Output "Install Classic Right click Menu Yes or No "
-$rightclickresponse = Read-Host "Do you want to install Classic right Click menu? (Y/N)"
-
-if ($rightclickresponse -eq "Y") {
-  New-Item -Path "HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" -Name "InprocServer32" -force -value ""       
-}
-else {
-  Remove-Item -Path "HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" -Recurse -Confirm:$false -Force
-}
 
 
 Write-Output "Charm-Gum"
