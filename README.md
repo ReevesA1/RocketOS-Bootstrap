@@ -38,6 +38,8 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ```
 
+- Windows Setup Complete - I can now navigate to RocketOS repo and run it
+
 ## Mac Bootstrap
 
 ```
@@ -144,6 +146,8 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 exit
 ```
 
+- Mac Bash Setup Complete - I can now navigate to RocketOS repo and run it using Powershell
+
 ## Linux Powershell Setup Using Bash
 
 ```
@@ -192,4 +196,4 @@ find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
  $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-1.sh
 ```
 
-# I can now navigate to RocketOS repo and run it
+- Linux Bash Setup Complete - I can now navigate to RocketOS repo and run it using Powershell
