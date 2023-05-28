@@ -52,7 +52,8 @@ nix-channel --update
 
 echo "\033[32mInstall Apps to get RocketOS Going... Press Enter to continue  \033[0m"
 read
-#! ----------Install Powershell with modules---------
+#! ----------Install Powershell ---------
+# The Modules will get installed with Universal-Env.ps1 script
 brew install --cask powershell         # (Installs here /usr/local/microsoft/powershell/7/pwsh)
 brew install --cask powershell-preview # from cask-versions Tap (installs here /usr/local/microsoft/powershell/7-preview/pwsh)
 

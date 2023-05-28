@@ -14,7 +14,7 @@ nix-env -iA nixpkgs.alacritty
 nix-env -iA nixpkgs.starship
 #sudo snap install starship --edge
 
-# Powershell
+# Powershell (The Modules will get installed with Universal-Env.ps1 script)
 nix-env -iA nixpkgs.powershell
 #sudo snap install powershell-preview --classic
 

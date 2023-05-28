@@ -43,7 +43,7 @@ Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 ####Base Windows Powershell Modules####
 #######################################
 #(use 'Get-Module -ListAvailable' to see all remember to scroll UP!!!
-
+#! This will only install windows specific modules, the universal ones get called in Universal-Env.ps1 script
 function WindowsPowershellModules {
   $modules = @(
     "PSWindowsUpdate",
