@@ -37,10 +37,7 @@ rm -rf JetBrainsMono.zip
 #!SORT
 
 - why not snaps???? $(sudo snap install alacritty --classic)
-- Ubuntu
-- $(sudo apt update && sudo apt upgrade)
-- $(sudo add-apt-repository ppa:aslatter/ppa -y)
-- $(sudo apt install alacritty)
+
 - if Gnome
 - $(flatpak install flathub ca.desrt.dconf-editor)
 - $(flatpak install flathub com.mattjakeman.ExtensionManager)
