@@ -1,56 +1,8 @@
 # RocketOS-Bootstrap
 
-## Purpose
+# This Script is strickly to get RocketOS going!
 
-- This Script is strickly to get RocketOS going!
-
-## FYI's and Questions?
-
-- Installing Powershershell Caviats
-  - arm
-    - can't do snaps
-    - building it from source only works on ubuntu and no preview version
-    - so is nix the answer?
-  - Mac using homebrew because of preview version and if installed using nix then alacritty can't find pwsh or jetbrain fonts for that matter
-  - Linux try nix?
-
-## TO DO
-
-- FOR MAC AND LINUX LOOK AT ANSIBLE local.yml and FOR WINDOWS LOOK AT WINDOWS BASEENV.ps1 i had created (i can erase that file when done but keep ansible repo for reference)
-
-- Windows
-
-  - Example of calling a script
-    - Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Windows-PowershellSetup.ps1"
-  - Install Package Managers: Choco and Winget, ETC!!!!
-  - Check App MasterList for all package managers!!!
-  - Have a script for each package manager!!!!
-  - Install Apps: POWERSHELL, Git and Gum, ETC !!!
-
-- Mac
-
-  - Example of calling a script
-    - Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh"
-  - Install Package Managers: Homebrew and Nix, ETC!!!
-  - Check App MasterList for all package managers!!!
-  - Have a script for each package manager!!!!
-  - Copy Notion MAc bootstrap Template shit in here
-    - started I added xcode already
-  - Get more default writes
-
-- Linux
-
-  - Example of calling a script
-    - Invoke-Expression "$HOME/Downloads/RocketOS-Bootstrap/Mac-PowershellSetup.sh"
-  - Detect Distro Ubuntu, Fedora, Arch, NixOS
-  - Check App MasterList for all package managers!!!
-  - Have a script for each package manager!!!!
-  - Install Package managers according to distro: flatpaks,Snaps,Nix ETC!!!!
-  - Nix will have two ways!!!!!!!!!!!!!
-  - Install Apps: POWERSHELL, Git and Gum, ETC !!!
-  - Make sure to Install oh-my-zsh (in readme like mac os?)
-
-# Windows Bootstrap
+## Windows Bootstrap
 
 `````
 #?                   .oodMMMMMMMMMMMMM
@@ -86,7 +38,7 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 
 ```
 
-# Mac Bootstrap
+## Mac Bootstrap
 
 ```
 #                       .888
@@ -192,7 +144,7 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Mac-2.sh
 exit
 ```
 
-# Linux Powershell Setup Using Bash
+## Linux Powershell Setup Using Bash
 
 ```
 #*    _nnnn_
