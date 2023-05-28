@@ -12,6 +12,10 @@
 
 $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part2.sh
 
+#Flatpak with Nix
+nix-env -iA nixpkgs.flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 flatpak install --user --assumeyes flathub com.raggesilver.BlackBox
 nix-env -iA nixpkgs.gum
