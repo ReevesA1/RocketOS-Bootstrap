@@ -34,7 +34,3 @@ InstallPackageManagerPerDistroFamily
 
 $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part1.sh
 
-
-#! --------Fonts------------
-$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/JetBrainsMonoFont-MacLinux.sh
-

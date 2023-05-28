@@ -1,8 +1,6 @@
 #!/bin/zsh
 #Using this shbang for echo and read with color to work
 
-
-
 #! --------Package Managers Part 2------------
 ##################################################
 #########  PACKAGE MANAGERS PART 2  ##############
@@ -13,7 +11,6 @@
 ############
 
 $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part2.sh
-
 
 #! ----------Apps (Only to get RocketOS Going Properly)---------
 flatpak install --user --assumeyes flathub com.raggesilver.BlackBox
@@ -32,3 +29,5 @@ nix-env -iA nixpkgs.starship
 nix-env -iA nixpkgs.powershell
 #sudo snap install powershell-preview --classic
 
+#! --------Fonts------------
+$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/JetBrainsMonoFont-MacLinux.sh
