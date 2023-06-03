@@ -14,25 +14,27 @@
 echo "\033[32mFinish Homebrew Install... Press Enter to continue  \033[0m"
 read
 
-arch -arm64 brew bundle
 
 # Analytics
 echo "\033[32mTurn off Homebrew analytics... Press Enter to continue  \033[0m"
 read
-
 brew analytics off
 
 #Taps
-# Analytics
 echo "\033[32mTaping more Brews... Press Enter to continue  \033[0m"
 read
 
 brew tap buo/cask-upgrade
 brew tap homebrew/cask-versions
-brew tap homebrew/bundle
-brew tap homebrew/cask
 brew tap homebrew/cask-fonts
-brew tap homebrew/core
+
+# Brew Doctor Command tells me these are unecessary
+#brew tap homebrew/cask
+#brew tap homebrew/core
+
+# [DEPRECATED] - Commands for old Ansible Brew Bundle Method
+#arch -arm64 brew bundle
+#brew tap homebrew/bundle
 
 ############
 #   Nix    #
