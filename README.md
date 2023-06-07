@@ -24,10 +24,12 @@
 #?
 `````
 
-### Install newest Powershell first
+### Install newest Powershell and Git first
 
 ```
 winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
+winget install -e --id Git.Git --accept-package-agreements --accept-source-agreements
+
 
 ```
 
