@@ -103,6 +103,9 @@ else {
 
 
 ###############################################################################################
+
+#Choco Method - Not Tested Because winget is installed by default now
+<#
 Write-Host "Install Winget Package Manager ... Press Enter to continue" -ForegroundColor Green
 Read-Host
 Write-Output "Installing Winget"
@@ -113,6 +116,8 @@ if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
 else {
   Write-Host "winget is already installed" -ForegroundColor Green
 }
+
+#>
 
 #OLD Way
 <#

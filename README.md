@@ -24,6 +24,13 @@
 #?
 `````
 
+### Install newest Powershell first
+
+```
+winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
+
+```
+
 ### Script 1 - Install package managers and restart shell
 
 ```
