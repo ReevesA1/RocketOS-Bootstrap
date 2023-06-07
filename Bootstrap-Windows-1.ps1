@@ -126,7 +126,7 @@ Install-Scoop
 Write-Output "Installing Nuget" #don't think it works on windows 10
 # If Nuget is not installed, install it
 # FYI Nuget allows the removal of lines like this `Get-AppxPackage -AllUser -Name Microsoft.MSPaint | Remove-AppxPackage -ErrorAction SilentlyContinue # Paint3D`
-#Winget version diod not work wiith line above
+#Winget version did not work 
 if (-not (Get-Command -Name nuget -ErrorAction SilentlyContinue)) {
   # nuget command is not available, install NuGet command-line utility
   choco install nuget.commandline
