@@ -10,13 +10,14 @@
 #ExecutionPolicy#
 #################
 
+Write-Host "Setting execution policy to RemoteSigned for the current user  ... Press Enter to continue" -ForegroundColor Green
+Read-Host
 
 $ExecutionPolicy = Get-ExecutionPolicy -Scope CurrentUser
 if ($ExecutionPolicy -eq "RemoteSigned") {
   Write-Verbose "Execution policy is already set to RemoteSigned for the current user, skipping..." -Verbose
 }
 else {
-  Write-Verbose "Setting execution policy to RemoteSigned for the current user..." -Verbose
   Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 }
 # use this line to see if it worked `Get-ExecutionPolicy -List`
@@ -25,6 +26,10 @@ else {
 ###################
 #Package Providers#
 ###################
+Write-Host "Set Package Providers  ... Press Enter to continue" -ForegroundColor Green
+Read-Host
+
+
 # use `Get-PackageProvider` to see all
 
 # Nuget is a dependecy of PSWindowUpdate Module
@@ -33,8 +38,11 @@ if (!(Get-PackageProvider -Name NuGet -ErrorAction SilentlyContinue)) {
 }
 
 #################
-#Trusted Repo'sy#
+#Trusted Repo's#
 #################
+Write-Host "Trust Repos  ... Press Enter to continue" -ForegroundColor Green
+Read-Host
+
 #use `Get-PSRepository` to see all
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
@@ -42,7 +50,9 @@ Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 #######################################
 ####Base Windows Powershell Modules####
 #######################################
-#(use 'Get-Module -ListAvailable' to see all remember to scroll UP!!!
+Write-Host "Install Windows Exclusive Powershell Modules  ... Press Enter to continue" -ForegroundColor Green
+Read-Host
+#use 'Get-Module -ListAvailable' to see all remember to scroll UP!!!
 #! This will only install windows specific modules, the universal ones get called in Universal-Env.ps1 script
 function WindowsPowershellModules {
   $modules = @(
@@ -74,6 +84,10 @@ Add-WUServiceManager -MicrosoftUpdate -Confirm:$false
 ##                                                            ##
 ################################################################
 
+
+Write-Host "Install Choco Package Manager ... Press Enter to continue" -ForegroundColor Green
+Read-Host
+
 # Instal Choco
 Write-Output "Installing Choco"
 # only if not installed
@@ -87,7 +101,21 @@ else {
 
 
 
+
+###############################################################################################
+Write-Host "Install Winget Package Manager ... Press Enter to continue" -ForegroundColor Green
+Read-Host
 Write-Output "Installing Winget"
+
+if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
+  choco install winget-cli
+}
+else {
+  Write-Host "winget is already installed" -ForegroundColor Green
+}
+
+#OLD Way
+<#
 # If Winget is not installed, install it
 $wingetInstalled = Get-Command winget -ErrorAction SilentlyContinue
 if (-not $wingetInstalled) {
@@ -106,8 +134,11 @@ else {
     winget upgrade --all --accept-package-agreements --accept-source-agreements
   }
 }
+#>
 
-
+###################################################################################################
+Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
+Read-Host 
 Write-Output "Installing Scoop"
 function Install-Scoop {
   if (-not (Test-Path "$env:USERPROFILE\scoop")) {
@@ -122,6 +153,10 @@ function Install-Scoop {
 #Call Function
 Install-Scoop
 
+
+######################################################################################################
+Write-Host "Install Nuget Package Manager ... Press Enter to continue" -ForegroundColor Green
+Read-Host
 
 Write-Output "Installing Nuget" #don't think it works on windows 10
 # If Nuget is not installed, install it
@@ -144,6 +179,8 @@ else {
 ##                                                            ##
 ##                                                            ##
 ################################################################
+Write-Host "Install Fonts ... Press Enter to continue" -ForegroundColor Green
+Read-Host
 
 # Jet Brains Fonts used  by my starship dotfiles so icons work in windows terminal and vscode 
 # It will only install Jetbrains if not allready installed!

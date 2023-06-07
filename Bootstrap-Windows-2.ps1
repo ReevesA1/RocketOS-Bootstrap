@@ -2,7 +2,8 @@
 #########################
 ######  APPS  ###########
 #########################
-
+Write-Host "Install Base Apps needed for RocketOS ... Press Enter to continue" -ForegroundColor Green
+Read-Host
 
 <#
 #Powershell
@@ -12,6 +13,7 @@ if (-not (Get-Command -Name pwsh -ErrorAction SilentlyContinue)) {
   winget install -e --id Microsoft.PowerShell --accept-package-agreements --accept-source-agreements
 }
 #>
+
 
 #Powershell-Preview
 Write-Output "Installing Powershell 7 Preview"
