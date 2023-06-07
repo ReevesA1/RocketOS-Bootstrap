@@ -142,6 +142,9 @@ else {
 #>
 
 ###################################################################################################
+
+#Scoop is now in the readme because it can't be installed as admin
+<#
 Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
 Read-Host 
 Write-Output "Installing Scoop"
@@ -158,6 +161,7 @@ function Install-Scoop {
 #Call Function
 Install-Scoop
 
+#>
 
 ######################################################################################################
 Write-Host "Install Nuget Package Manager ... Press Enter to continue" -ForegroundColor Green

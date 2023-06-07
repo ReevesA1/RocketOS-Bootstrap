@@ -24,11 +24,28 @@
 #?
 `````
 
-### Install newest Powershell and Git first
+### Install These First In a Non Admin Shell
 
 ```
 winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
 winget install -e --id Git.Git --accept-package-agreements --accept-source-agreements
+
+
+Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
+Read-Host 
+Write-Output "Installing Scoop"
+function Install-Scoop {
+  if (-not (Test-Path "$env:USERPROFILE\scoop")) {
+    # irm get.scoop.sh | iex
+    Invoke-Expression (Invoke-WebRequest -Uri 'https://get.scoop.sh' -UseBasicParsing).Content
+  }
+  else {
+    # nuget command is available, NuGet command-line utility is already installed
+    Write-Output "Scoop is already installed."
+  }
+}
+#Call Function
+Install-Scoop
 
 
 ```
