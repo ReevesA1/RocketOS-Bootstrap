@@ -53,7 +53,8 @@ else {
 Write-Output "Installing Starship"
 #only if not allready installed
 if (-not (Get-Command -Name starship -ErrorAction SilentlyContinue)) {
-  winget install -e --id Starship.Starship --accept-package-agreements --accept-source-agreements
+  choco install starship
+  #winget install -e --id Starship.Starship --accept-package-agreements --accept-source-agreements
 }
 
 

@@ -32,7 +32,7 @@ winget install -e --id Git.Git --accept-package-agreements --accept-source-agree
 
 
 Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
-Read-Host 
+Read-Host
 Write-Output "Installing Scoop"
 function Install-Scoop {
   if (-not (Test-Path "$env:USERPROFILE\scoop")) {
@@ -77,6 +77,13 @@ exit
 ### Script 2 - After Shell Restart
 
 ```
+# Check if running in an elevated session
+if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Write-Warning "You do not have Administrator rights to run this script!`nPlease re-run this script as an Administrator!"
+    Read-Host
+    exit
+}
+
 # Check if repo exists and delete it if it does
 if (Test-Path "$env:USERPROFILE\Downloads\RocketOS-Bootstrap") {
     Remove-Item -Recurse -Force "$env:USERPROFILE\Downloads\RocketOS-Bootstrap"
