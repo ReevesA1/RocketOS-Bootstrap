@@ -53,7 +53,7 @@ else {
 Write-Output "Installing Starship"
 #only if not allready installed
 if (-not (Get-Command -Name starship -ErrorAction SilentlyContinue)) {
-  choco install starship
+  choco install starship -y
   #winget install -e --id Starship.Starship --accept-package-agreements --accept-source-agreements
 }
 
@@ -63,7 +63,8 @@ if (-not (Get-Command -Name starship -ErrorAction SilentlyContinue)) {
 Write-Output "Installing Alacritty"
 #only if not allready installed
 if (-not (Get-Command -Name alacritty -ErrorAction SilentlyContinue)) {
-  winget install -e --id Alacritty.Alacritty --accept-package-agreements --accept-source-agreements
+  choco install alacritty -y
+  #winget install -e --id Alacritty.Alacritty --accept-package-agreements --accept-source-agreements
 }
 
 #Install Git
