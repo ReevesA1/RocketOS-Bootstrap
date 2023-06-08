@@ -56,7 +56,7 @@ Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windo
 exit
 
 ```
-### Script 3 - Install Scoop in a non admin shell
+### Script 2 - Install Scoop in a non admin shell
 ```
 Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
 Read-Host
@@ -74,7 +74,7 @@ function Install-Scoop {
 #Call Function
 Install-Scoop
 ```
-### Script 2 - After Shell Restart
+### Script 3 - After Shell Restart
 
 ```
 # Check if running in an elevated session
