@@ -23,10 +23,12 @@ if (-not (Get-Command -Name pwsh-preview -ErrorAction SilentlyContinue)) {
   winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
 }
 #>
-Write-Output "Installing Powershell 7 Preview"
 if ($PSVersionTable.PSVersion -notlike "*-preview*") {
   winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
+} else {
+  Write-Host "PowerShell Preview is already installed" -ForegroundColor Green
 }
+
 
 <#
 #Windows Terminal
@@ -46,7 +48,7 @@ if (-not (Get-Command -Name wt -ErrorAction SilentlyContinue)) {
 
 
 
-Write-Output "Charm-Gum"
+Write-Output "Installing Charm-Gum"
 if (!(scoop list | Select-String gum)) {
   Write-Host "Installing gum..."
   scoop install charm-gum
@@ -84,7 +86,6 @@ if (-not (Get-Command -Name git -ErrorAction SilentlyContinue)) {
 #################################
 #########  TH END   ##############
 #################################
-Write-Host "RESTART PC FOR EVERYTHING TO WORK" -ForegroundColor Red
+Write-Host "RESTART PC FOR EVERYTHING TO WORK" -ForegroundColor Green
 Write-Host "THEN RUN RocketOS (from the repo readme command)... Press Enter to continue" -ForegroundColor Green
-Write-Host "Also FYI Moving forward everything is done in powershell no more BASH & ZSH" -ForegroundColor Green
 Read-Host
