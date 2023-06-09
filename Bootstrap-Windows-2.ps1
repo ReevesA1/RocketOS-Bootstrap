@@ -25,8 +25,10 @@ if (-not (Get-Command -Name pwsh-preview -ErrorAction SilentlyContinue)) {
 #>
 if ($PSVersionTable.PSVersion -notlike "*-preview*") {
   winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
-} else {
+}
+else {
   Write-Host "PowerShell Preview is already installed" -ForegroundColor Green
+  Read-Host
 }
 
 
