@@ -16,9 +16,15 @@ if (-not (Get-Command -Name pwsh -ErrorAction SilentlyContinue)) {
 
 
 #Powershell-Preview
+<#
 Write-Output "Installing Powershell 7 Preview"
-#only if not allready installed
+#this method did not always detect pwsh-preview
 if (-not (Get-Command -Name pwsh-preview -ErrorAction SilentlyContinue)) {
+  winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
+}
+#>
+Write-Output "Installing Powershell 7 Preview"
+if ($PSVersionTable.PSVersion -notlike "*-preview*") {
   winget install -e --id Microsoft.PowerShell.Preview --accept-package-agreements --accept-source-agreements
 }
 
