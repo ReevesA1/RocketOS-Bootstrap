@@ -73,3 +73,12 @@ Write-Output "Installing Git"
 if (-not (Get-Command -Name git -ErrorAction SilentlyContinue)) {
   winget install -e --id Git.Git --accept-package-agreements --accept-source-agreements
 }
+
+#? ---------THEN END---------------
+#################################
+#########  TH END   ##############
+#################################
+Write-Host "RESTART PC FOR EVERYTHING TO WORK" -ForegroundColor Red
+Write-Host "THEN RUN RocketOS (from the repo readme command)... Press Enter to continue" -ForegroundColor Green
+Write-Host "Also FYI Moving forward everything is done in powershell no more BASH & ZSH" -ForegroundColor Green
+Read-Host
