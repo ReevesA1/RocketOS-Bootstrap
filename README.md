@@ -97,7 +97,6 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $env:USERPROFILE\Do
 
 # Run the Script
 Invoke-Expression "$env:USERPROFILE\Downloads\RocketOS-Bootstrap\Bootstrap-Windows-2.ps1"
-exit
 ```
 
 - Windows Setup Complete - I can now navigate to RocketOS repo and run it

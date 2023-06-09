@@ -32,6 +32,7 @@ else {
 }
 
 
+#! Atleast I think windows terminal is installed by default hence why both of these are # out
 <#
 #Windows Terminal
 Write-Output "Installing latest windows terminal"
@@ -41,12 +42,14 @@ if (-not (Get-Command -Name wt -ErrorAction SilentlyContinue)) {
 }
 #>
 
-#Windows Terminal-Preview
-Write-Output "Installing latest windows terminal"
-#only if not allready installed (to many issues with the Preview version keep using standard)
+<#
+#Windows Terminal-Preview - (to many issues with the Preview version keep using normal one that is there by default)
+Write-Output "Installing latest windows terminal preview"
+#only if not allready installed 
 if (-not (Get-Command -Name wt -ErrorAction SilentlyContinue)) {
   winget install -e --id Microsoft.WindowsTerminal.Preview --accept-package-agreements --accept-source-agreements
 }
+#>
 
 
 
@@ -64,6 +67,7 @@ Write-Output "Installing Starship"
 #only if not allready installed
 if (-not (Get-Command -Name starship -ErrorAction SilentlyContinue)) {
   choco install starship -y
+  #Winget version issues on arm64 for some reason?
   #winget install -e --id Starship.Starship --accept-package-agreements --accept-source-agreements
 }
 
@@ -74,14 +78,8 @@ Write-Output "Installing Alacritty"
 #only if not allready installed
 if (-not (Get-Command -Name alacritty -ErrorAction SilentlyContinue)) {
   choco install alacritty -y
+  #Winget version issues on arm64 for some reason?
   #winget install -e --id Alacritty.Alacritty --accept-package-agreements --accept-source-agreements
-}
-
-#Install Git
-Write-Output "Installing Git"
-#only if not allready installed
-if (-not (Get-Command -Name git -ErrorAction SilentlyContinue)) {
-  winget install -e --id Git.Git --accept-package-agreements --accept-source-agreements
 }
 
 #? ---------THEN END---------------
