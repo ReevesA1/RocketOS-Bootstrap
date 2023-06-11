@@ -4,7 +4,7 @@
 #May Need Zsh for linux Bootstrap
 zsh_warning() {
   if [ -n "$BASH_VERSION" ]; then
-    echo -e "\033[31mWarning: I haven't tested this yet but I may need to run Linux bootstrap in zsh only.\033[0m"
+    echo -e "\033[31mWarning: I haven't tested this echo function yet but I may need to run Linux bootstrap in zsh only.\033[0m"
     read -p "Press enter to continue"
   else
     echo "Double check I am using zsh"
