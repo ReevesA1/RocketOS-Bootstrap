@@ -1,131 +1,160 @@
 #!/bin/zsh
 #Using this shbang for echo and read with color to work
 
-#May Need Zsh for linux Bootstrap
-zsh_warning() {
-  if [ -n "$BASH_VERSION" ]; then
-    echo -e "\033[31mWarning: I haven't tested this echo function yet but I may need to run Linux bootstrap in zsh only.\033[0m"
-    read -p "Press enter to continue"
-  else
-    echo "Double check I am using zsh"
-  fi
-}
-zsh_warning
+##############
+#   NixOS    #
+##############
 
-#! --------Package Managers------------
+if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
-############
-#   Nix    #
-############
+  #Add Unstable Channel
+  sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+  sudo nix-channel --update
 
-$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part1.sh
+  #Install Jetbrains-Mono Fonts
+  # Download the script
+  curl -O https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/Shared-Code/JetBrainsMonoFont-MacLinux.sh
+  # Make the script executable
+  chmod +x JetBrainsMonoFont-MacLinux.sh
+  # Run the script
+  ./JetBrainsMonoFont-MacLinux.sh
+  # Delete the script
+  rm JetBrainsMonoFont-MacLinux.sh
+#!##################################################################################################################################
+#!##################################################################################################################################
+#!##################################################################################################################################
+else
 
-InstallPackageManagerPerDistroFamily() {
-  ID=$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')
-  ID_Like=$(grep "^ID_LIKE=" /etc/*-release | cut -d= -f2 | tr -d '"')
+  #May Need Zsh for linux Bootstrap
+  zsh_warning() {
+    if [ -n "$BASH_VERSION" ]; then
+      echo -e "\033[31mWarning: I haven't tested this echo function yet but I may need to run Linux bootstrap in zsh only.\033[0m"
+      read -p "Press enter to continue"
+    else
+      echo "Double check I am using zsh"
+    fi
+  }
+  zsh_warning
 
-  #!            .-/+oossssoo+/-.
-  #!        `:+ssssssssssssssssss+:
-  #!      -+ssssssssssssssssssyyssss+-
-  #!    .ossssssssssssssssssdMMMNysssso.
-  #!   /ssssssssssshdmmNNmmyNMMMMhssssss/
-  #!  +ssssssssshmydMMMMMMMNddddyssssssss+
-  #! /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/
-  #!.ssssssssdMMMNhsssssssssshNMMMdssssssss.
-  #!+sssshhhyNMMNyssssssssssssyNMMMysssssss+
-  #!ossyNMMMNyMMhsssssssssssssshmmmhssssssso
-  #!ossyNMMMNyMMhsssssssssssssshmmmhssssssso
-  #!+sssshhhyNMMNyssssssssssssyNMMMysssssss+
-  #!.ssssssssdMMMNhsssssssssshNMMMdssssssss.
-  #! /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/
-  #!  +sssssssssdmydMMMMMMMMddddyssssssss+
-  #!   /ssssssssssshdmNNNNmyNMMMMhssssss/
-  #!    .ossssssssssssssssssdMMMNysssso.
-  #!      -+sssssssssssssssssyyyssss+-
-  #!
-  # Ubuntu/Debian
-  if [[ "$ID" =~ ubuntu ]] || [[ "$ID_Like" =~ ubuntu ]] || [[ "$ID" =~ debian ]] || [[ "$ID_Like" =~ debian ]]; then
-    #Update
-    sudo apt update && sudo apt upgrade
+  #! --------Package Managers------------
 
-    #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
-    #sudo apt install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  ############
+  #   Nix    #
+  ############
 
-    #! Snap
-    sudo apt install snapd
+  $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part1.sh
 
-    #?##
-    #?####
-    #?######
-    #?########
-    #?##########
-    #?############
-    #?##############
-    #?################
-    #?##################
-    #?####################
-    #?######################
-    #?#########      #########
-    #?##########      ##########
-    #?###########      ###########
-    #?##########          ##########
-    #?#######                  #######
-    #?####                          ####
-    #?###
+  ################################
+  #  Default Package Managers    #
+  ################################
+  InstallPackageManagerPerDistroFamily() {
+    ID=$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')
+    ID_Like=$(grep "^ID_LIKE=" /etc/*-release | cut -d= -f2 | tr -d '"')
 
-  # Arch
-  elif [[ "$ID" =~ arch ]] || [[ "$ID_Like" =~ arch ]]; then
-    #Update
-    sudo pacman -Syu
+    #!            .-/+oossssoo+/-.
+    #!        `:+ssssssssssssssssss+:
+    #!      -+ssssssssssssssssssyyssss+-
+    #!    .ossssssssssssssssssdMMMNysssso.
+    #!   /ssssssssssshdmmNNmmyNMMMMhssssss/
+    #!  +ssssssssshmydMMMMMMMNddddyssssssss+
+    #! /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/
+    #!.ssssssssdMMMNhsssssssssshNMMMdssssssss.
+    #!+sssshhhyNMMNyssssssssssssyNMMMysssssss+
+    #!ossyNMMMNyMMhsssssssssssssshmmmhssssssso
+    #!ossyNMMMNyMMhsssssssssssssshmmmhssssssso
+    #!+sssshhhyNMMNyssssssssssssyNMMMysssssss+
+    #!.ssssssssdMMMNhsssssssssshNMMMdssssssss.
+    #! /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/
+    #!  +sssssssssdmydMMMMMMMMddddyssssssss+
+    #!   /ssssssssssshdmNNNNmyNMMMMhssssss/
+    #!    .ossssssssssssssssssdMMMNysssso.
+    #!      -+sssssssssssssssssyyyssss+-
+    #!
+    # Ubuntu/Debian
+    if [[ "$ID" =~ ubuntu ]] || [[ "$ID_Like" =~ ubuntu ]] || [[ "$ID" =~ debian ]] || [[ "$ID_Like" =~ debian ]]; then
+      #Update
+      sudo apt update && sudo apt upgrade
 
-    #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
-    #sudo pacman -S flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
+      #sudo apt install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    #! Snap
-    git clone https://aur.archlinux.org/snapd.git
-    cd snapd
-    makepkg -si
-    cd ~/ #back to home so it don't screw anything else up
-    sudo systemctl enable --now snapd.socket
-    sudo ln -s /var/lib/snapd/snap /snap
+      #! Snap
+      sudo apt install snapd
 
-    #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣦⡀⠒⢶⣄⠀⠀⠀⠀⠀⠀⠀
-    #⠀⢰⣶⣷⣶⣶⣤⣄⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⡆⠀⠀⠀⠀⠀⠀
-    #⠀⢿⣿⣿⣿⣿⡟⢁⣄⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀
-    #⠀⠘⣿⣿⣿⣿⣧⡈⠻⢷⣦⣄⡉⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-    #⠀⠀⠈⠻⣿⣿⣿⣿⣶⣄⡈⠙⠻⢷⣶⣤⣄⣈⡉⠛⠛⠛⠃⢠⣀⣀⡀⠀⠀⠀
-    #⠀⠀⠀⠀⠈⠙⠻⢿⣿⣿⣿⣿⣶⣦⣤⣍⣉⠙⠛⠛⠛⠿⠃⢸⣿⣿⣿⣷⡀⠀
-    #⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⣾⣿⣿⣿⣿⣿⣧⠀
-    #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠻⠏⠀⠉⠻⢿⣿⣿⣿⣿⠿⠋⠀
-    #
-  # Fedora
-  elif [[ "$ID" =~ fedora ]] || [[ "$ID_Like" =~ fedora ]]; then
-    #Update
-    Sudo dnf upgrade
+      #?##
+      #?####
+      #?######
+      #?########
+      #?##########
+      #?############
+      #?##############
+      #?################
+      #?##################
+      #?####################
+      #?######################
+      #?#########      #########
+      #?##########      ##########
+      #?###########      ###########
+      #?##########          ##########
+      #?#######                  #######
+      #?####                          ####
+      #?###
 
-    #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
-    #sudo yum install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    # Arch
+    elif [[ "$ID" =~ arch ]] || [[ "$ID_Like" =~ arch ]]; then
+      #Update
+      sudo pacman -Syu
 
-    #! Snap
-    sudo dnf install snapd
-    sudo ln -s /var/lib/snapd/snap /snap
+      #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
+      #sudo pacman -S flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    #*############
-    #*#############
-    #*##NIX #######
-    #*############
-    #*############
+      #! Snap
+      git clone https://aur.archlinux.org/snapd.git
+      cd snapd
+      makepkg -si
+      cd ~/ #back to home so it don't screw anything else up
+      sudo systemctl enable --now snapd.socket
+      sudo ln -s /var/lib/snapd/snap /snap
 
-  # NixOS
-  elif [[ "$ID" =~ nixos ]]; then
-    echo "This is NixOS"
+      #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣦⡀⠒⢶⣄⠀⠀⠀⠀⠀⠀⠀
+      #⠀⢰⣶⣷⣶⣶⣤⣄⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⡆⠀⠀⠀⠀⠀⠀
+      #⠀⢿⣿⣿⣿⣿⡟⢁⣄⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀
+      #⠀⠘⣿⣿⣿⣿⣧⡈⠻⢷⣦⣄⡉⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+      #⠀⠀⠈⠻⣿⣿⣿⣿⣶⣄⡈⠙⠻⢷⣶⣤⣄⣈⡉⠛⠛⠛⠃⢠⣀⣀⡀⠀⠀⠀
+      #⠀⠀⠀⠀⠈⠙⠻⢿⣿⣿⣿⣿⣶⣦⣤⣍⣉⠙⠛⠛⠛⠿⠃⢸⣿⣿⣿⣷⡀⠀
+      #⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⣾⣿⣿⣿⣿⣿⣧⠀
+      #⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠻⠏⠀⠉⠻⢿⣿⣿⣿⣿⠿⠋⠀
+      #
+    # Fedora
+    elif [[ "$ID" =~ fedora ]] || [[ "$ID_Like" =~ fedora ]]; then
+      #Update
+      Sudo dnf upgrade
 
-    ###########################################################
-  else
-    echo "Cannot Detect Flavour"
-  fi
-}
+      #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
+      #sudo yum install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Call the function
-InstallPackageManagerPerDistroFamily
+      #! Snap
+      sudo dnf install snapd
+      sudo ln -s /var/lib/snapd/snap /snap
+
+      #*############
+      #*#############
+      #*##NIX #######
+      #*############
+      #*############
+
+    # NixOS
+    elif [[ "$ID" =~ nixos ]]; then
+      echo "This is NixOS"
+
+      ###########################################################
+    else
+      echo "Cannot Detect Flavour"
+    fi
+  }
+
+  # Call the function
+  InstallPackageManagerPerDistroFamily
+
+fi
