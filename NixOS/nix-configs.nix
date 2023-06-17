@@ -281,6 +281,17 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
+
+  ##########################
+  ##  Insecure Packages   ##
+  ##########################
+{
+    nixpkgs.config.permittedInsecurePackages = [
+      "qtwebkit-5.212.0-alpha4"
+    ];
+}
+
+
   ##################
   ##   TESTING    ##
   ##################
