@@ -129,6 +129,7 @@
 
   #Gui Apps
   firefox
+  conky
 
   ##########################################
   ### PACKAGES TO GET GUMROCKETOS GOING  ###
