@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #Using this shbang for echo and read with color to work
 
 #################################
