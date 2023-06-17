@@ -8,10 +8,14 @@
 if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
   #Add Unstable Channel
+  echo "Adding unstable channel...Press Enter To Continue..."
+  read
   sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   sudo nix-channel --update
 
   #Install Jetbrains-Mono Fonts
+  echo "Installing Jetbrains-Mono font...Press Enter To Continue..."
+  read
   # Download the script
   curl -O https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/Shared-Code/JetBrainsMonoFont-MacLinux.sh
   # Make the script executable
@@ -22,10 +26,14 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   rm JetBrainsMonoFont-MacLinux.sh
 
   #COPY My NixOS Config to Proper folder and rebuild nix
+  echo "Copying NixOS Configs and rebuilding NixOS...Press Enter To Continue..."
+  read
   sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/nix-configs.nix
   sudo nixos-rebuild switch
 
   # Add Flathub
+  echo "Adding Flathub repo...Press Enter To Continue..."
+  read
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
   # Restart PC
