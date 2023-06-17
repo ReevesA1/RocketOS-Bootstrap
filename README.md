@@ -234,11 +234,12 @@ exit
 ### Script 1 - Install package managers and restart shell
 
 ```
-#IF NIXOS
- #Download Dependencies
+#IF NIXOS - Download Dependencies
   nix-env -iA nixos.unzip
   nix-env -iA nixos.git
   nix-env -iA nixos.zsh
+  echo "restart shell in zsh...Press Enter To Continue..."
+  read
 ```
 
 ```
