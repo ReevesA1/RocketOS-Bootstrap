@@ -255,7 +255,7 @@ git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git $HOME/Downloads/Roc
 # Give Proper Permisions To Entire Folder
 find "$HOME/Downloads/RocketOS-Bootstrap/" -print0 | xargs -0 chmod 775
 
-echo "\033[32mBootstrap-Mac.sh Part 1... Press Enter to continue  \033[0m"
+echo "\033[32mBootstrap-Linux.sh Part 1... Press Enter to continue  \033[0m"
 read
 $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-1.sh
 exit
