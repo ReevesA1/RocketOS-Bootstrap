@@ -57,7 +57,7 @@ exit
 
 ```
 
-### Script 2 - Install Scoop in a non admin shell
+### Script 2 - Install Scoop (in a non admin shell with pwsh-preview) 
 
 ```
 Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
