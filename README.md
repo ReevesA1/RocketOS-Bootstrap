@@ -236,11 +236,8 @@ exit
 ```
 #IF NIXOS
  #Download Dependencies
-  nix-env -iA nixos.curl
   nix-env -iA nixos.unzip
   nix-env -iA nixos.git
-  nix-env -iA nixos.findutils
-  nix-env -iA nixos.coreutils-full
   nix-env -iA nixos.zsh
 ```
 
