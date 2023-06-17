@@ -31,16 +31,8 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/nix-configs.nix
   sudo nixos-rebuild switch
 
-  # Add Flathub
-  echo "Adding Flathub repo...Press Enter To Continue..."
-  read
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
   # Restart PC
-  echo "Restart PC... Press Enter to continue"
-  read
-  echo "After reboot I can go to my rocketOS Read me to continue installation with custom dotfiles etc"
-  read
+  echo "Restart PC then run part 2... Press Enter to continue"
 
 #!##################################################################################################################################
 #!##################################################################################################################################

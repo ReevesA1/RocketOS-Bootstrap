@@ -1,37 +1,54 @@
 #!/usr/bin/env zsh
 #Using this shbang for echo and read with color to work
+##############
+#   NixOS    #
+##############
 
-#! --------Package Managers Part 2------------
-##################################################
-#########  PACKAGE MANAGERS PART 2  ##############
-##################################################
+if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
-############
-#   Nix    #
-############
+  # Add Flathub
+  echo "Adding Flathub repo...Press Enter To Continue..."
+  read
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part2.sh
+#!##################################################################################################################################
+#!##################################################################################################################################
+#!##################################################################################################################################
+else
 
-#Flatpak with Nix
-nix-env -iA nixpkgs.flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  #! --------Package Managers Part 2------------
+  ##################################################
+  #########  PACKAGE MANAGERS PART 2  ##############
+  ##################################################
 
-#! ----------Apps (Only to get RocketOS Going Properly)---------
-flatpak install --user --assumeyes flathub com.raggesilver.BlackBox
-nix-env -iA nixpkgs.gum
-nix-env -iA nixpkgs.git
+  ############
+  #   Nix    #
+  ############
 
-#Alacrity
-nix-env -iA nixpkgs.alacritty
-#sudo snap install alacritty --classic
+  $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/NixPackageManager-MacLinux-Part2.sh
 
-#StarShip
-nix-env -iA nixpkgs.starship
-#sudo snap install starship --edge
+  #Flatpak with Nix
+  nix-env -iA nixpkgs.flatpak
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Powershell (The Modules will get installed with Universal-Env.ps1 script)
-nix-env -iA nixpkgs.powershell
-#sudo snap install powershell-preview --classic
+  #! ----------Apps (Only to get RocketOS Going Properly)---------
+  flatpak install --user --assumeyes flathub com.raggesilver.BlackBox
+  nix-env -iA nixpkgs.gum
+  nix-env -iA nixpkgs.git
 
-#! --------Fonts------------
-$HOME/Downloads/RocketOS-Bootstrap/Shared-Code/JetBrainsMonoFont-MacLinux.sh
+  #Alacrity
+  nix-env -iA nixpkgs.alacritty
+  #sudo snap install alacritty --classic
+
+  #StarShip
+  nix-env -iA nixpkgs.starship
+  #sudo snap install starship --edge
+
+  # Powershell (The Modules will get installed with Universal-Env.ps1 script)
+  nix-env -iA nixpkgs.powershell
+  #sudo snap install powershell-preview --classic
+
+  #! --------Fonts------------
+  $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/JetBrainsMonoFont-MacLinux.sh
+
+fi
