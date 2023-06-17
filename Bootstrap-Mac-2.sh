@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #Using this shbang for echo and read with color to work
 
 #! --------Package Managers Part 2------------
@@ -13,7 +13,6 @@
 #dependencies
 echo "\033[32mFinish Homebrew Install... Press Enter to continue  \033[0m"
 read
-
 
 # Analytics
 echo "\033[32mTurn off Homebrew analytics... Press Enter to continue  \033[0m"
@@ -64,7 +63,6 @@ brew install starship
 
 #! --------Fonts------------
 $HOME/Downloads/RocketOS-Bootstrap/Shared-Code/JetBrainsMonoFont-MacLinux.sh
-
 
 #! --------Misc------------
 #################################
