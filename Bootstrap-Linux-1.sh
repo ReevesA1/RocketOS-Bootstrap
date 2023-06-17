@@ -20,6 +20,20 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   ./JetBrainsMonoFont-MacLinux.sh
   # Delete the script
   rm JetBrainsMonoFont-MacLinux.sh
+
+  #COPY My NixOS Config to Proper folder and rebuild nix
+  sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/nix-configs.nix
+  sudo nixos-rebuild switch
+
+  # Add Flathub
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+  # Restart PC
+  echo "Restart PC... Press Enter to continue"
+  read
+  echo "After reboot I can go to my rocketOS Read me to continue installation with custom dotfiles etc"
+  read
+
 #!##################################################################################################################################
 #!##################################################################################################################################
 #!##################################################################################################################################
