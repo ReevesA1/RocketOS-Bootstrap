@@ -109,6 +109,62 @@
   #! List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
 
+  ##########################################
+  ### PACKAGES TO GET GUMROCKETOS GOING  ###
+  ##########################################
+  gum
+  git
+  alacritty
+  blackbox-terminal
+  starship
+  unstable.powershell
+
+  ####################################################
+  ### Nix Packages - Command Line Core Utilities   ###
+  ####################################################
+  topgrade
+  coreutils
+  fish
+  findutils
+  fd
+  nettools
+  neofetch
+  exa
+  htop
+  bat
+  ripgrep
+  wget
+  curl
+  xclip
+  fzf
+  gnumake # is this make?
+  binutils
+  gcc
+  fakeroot
+  dmenu
+  rofi
+  ulauncher
+  cmatrix
+  figlet
+  colordiff
+  sysstat
+  pciutils
+  shellcheck
+  trash-cli
+  gnome.zenity
+  gdu
+  ffmpeg
+  wkhtmltopdf
+  plocate
+  pkg-config # needed if istalling topgrade with cargo
+  glow
+  micro
+  broot #like ranger but it displays pictures (activate pic with ctrl +  right arrow)
+  lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
+  zoxide
+
+
+
   ###################
   ### Essentials  ###
   ###################
@@ -118,28 +174,29 @@
   unzip
   curl
   wget
-  
-  #Flatpaks
+  zsh
+
+
+  #Gnome Extensions
+  gnomeExtensions.dash-to-dock
+  gnomeExtensions.burn-my-windows
+
+  #Gui Apps
+  conky
+  gparted
+  espanso
+
+
+  ###################
+  ### NixOS Only  ###
+  ###################
+  #Install Flatpaks Package Manager
   flatpak
   xdg-desktop-portal-gtk
   polkit_gnome
   
-  #Gnome Extensions
-  gnomeExtensions.dash-to-dock
 
-  #Gui Apps
-  firefox
-  conky
-
-  ##########################################
-  ### PACKAGES TO GET GUMROCKETOS GOING  ###
-  ##########################################
-  unstable.powershell
-  gum
-  alacritty
-  git
-  starship
-
+ 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -150,10 +207,6 @@
   #   enableSSHSupport = true;
   # };
 
-
-    #########################
-    #        Fonts          #
-    #########################
   
 
   #! List services that you want to enable:
