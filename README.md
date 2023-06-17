@@ -239,6 +239,7 @@ exit
   nix-env -iA nixos.curl
   nix-env -iA nixos.unzip
   nix-env -iA nixos.git
+  nix-env -iA nixos.findutils
 ```
 
 ```
