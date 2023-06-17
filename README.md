@@ -262,7 +262,7 @@ $HOME/Downloads/RocketOS-Bootstrap/Bootstrap-Linux-1.sh
 exit
 ```
 
-### Script 2 - After Shell Restart
+### Script 2 - After Shell Restart - make sure I still am in ZSH
 
 ```
 # ---------Clone repo and launch Bootstrap-Linux-2.sh --------
