@@ -21,6 +21,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   unzip -j JetBrainsMono.zip -d ~/Library/Fonts/
 else
   # On Linux
+  if [ ! -d ~/.local/share/fonts/ ]; then
+    mkdir -p ~/.local/share/fonts/
+  fi
   unzip -j JetBrainsMono.zip -d ~/.local/share/fonts/
 fi
 
