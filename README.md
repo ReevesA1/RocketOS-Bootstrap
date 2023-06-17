@@ -241,6 +241,7 @@ exit
   nix-env -iA nixos.git
   nix-env -iA nixos.findutils
   nix-env -iA nixos.coreutils-full
+  nix-env -iA nixos.zsh
 ```
 
 ```
