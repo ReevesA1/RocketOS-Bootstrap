@@ -7,11 +7,6 @@
 
 if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
-  #Download Dependencies
-  nix-env -iA nixos.curl
-  nix-env -iA nixos.unzip
-  nix-env -iA nixos.git
-
   #Add Unstable Channel
   sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   sudo nix-channel --update
