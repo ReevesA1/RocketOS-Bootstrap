@@ -57,7 +57,7 @@ exit
 
 ```
 
-### Script 2 - Install Scoop (in a non admin shell with pwsh-preview) 
+### Script 2 - Install Scoop (in a non admin shell with pwsh-preview)
 
 ```
 Write-Host "Install Scoop Package Manager ... Press Enter to continue" -ForegroundColor Green
@@ -232,6 +232,14 @@ exit
 ```
 
 ### Script 1 - Install package managers and restart shell
+
+```
+#IF NIXOS
+ #Download Dependencies
+  nix-env -iA nixos.curl
+  nix-env -iA nixos.unzip
+  nix-env -iA nixos.git
+```
 
 ```
 # ---------Clone repo and launch Bootstrap-Linux-1.sh --------
