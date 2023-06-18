@@ -204,12 +204,12 @@
   ################################
   #Browsers
   firefox
-  #microsoft-edge-dev
-  mullvad-browser
+  #microsoft-edge-dev #NO GO ON AARCH (aka paralells so use the flatpak)
+  #mullvad-browser #NO GO ON AARCH (aka paralells so use the flatpak)
 
   #Productivity
-  todoist-electron
-  unstable.obsidian
+  #todoist-electron #NO GO ON AARCH (aka paralells so use the flatpak)
+  unstable.obsidian 
 
   #Cloud
   megasync
@@ -220,6 +220,7 @@
 
   #Security
   protonvpn-gui
+  #veracrypt #NO GO ON AARCH (aka paralells so use the flatpak)
 
 
   #Utilities
@@ -229,18 +230,18 @@
   whatip
   qbittorrent
   conky
-  gparted
+  gparted 
   espanso
 
   #Dev
-  unstable.vscode
-  jetbrains.rider
+  #unstable.vscode #NO GO ON AARCH (aka paralells so use the flatpak)
+  #jetbrains.rider #NO GO ON AARCH (aka paralells so use the flatpak)
   unstable.godot_4
   gcolor3
   icon-library
+  #github-desktop #NO GO ON AARCH (aka paralells so use the flatpak)
 
-  #x86 only ?
-  veracrypt
+
   #distrobox (missing atoms but not needed)
   unstable.podman
   podman-desktop
