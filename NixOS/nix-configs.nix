@@ -168,7 +168,7 @@
   ###################
 
   #Dependencies
-  gnome.dconf-editor
+  gnome.dconf-editor 
   unzip
   curl
   wget
