@@ -48,7 +48,7 @@
   #! Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.wayland = false;
+  services.xserver.displayManager.gdm.wayland = true; # wayland is better for parallels but not virtualbox also no good for barrier
 
   #!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
   #virtualisation.virtualbox.guest.enable = true;
@@ -190,11 +190,6 @@
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
 
-  #Gui Apps
-  conky
-  gparted
-  espanso
-
 
   ###################
   ### NixOS Only  ###
@@ -204,8 +199,54 @@
   xdg-desktop-portal-gtk
   polkit_gnome
   
+  ################################
+  ### Nix Version Of Flatpaks  ###
+  ################################
+  #Browsers
+  firefox
+  microsoft-edge-dev
+  mullvad-browser
 
- 
+  #Productivity
+  todoist-electron
+  unstable.obsidian
+
+  #Cloud
+  megasync
+
+  #Media
+  spotify
+  vlc
+
+  #Security
+  protonvpn-gui
+
+
+  #Utilities
+  blackbox-terminal
+  barrier
+  sticky
+  whatip
+  qbittorrent
+  conky
+  gparted
+  espanso
+
+  #Dev
+  unstable.vscode
+  jetbrains.rider
+  unstable.godot_4
+  gcolor3
+  icon-library
+
+  #x86 only ?
+  veracrypt
+  #distrobox (missing atoms but not needed)
+  unstable.podman
+  podman-desktop
+  distrobox
+
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
