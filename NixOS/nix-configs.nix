@@ -11,9 +11,19 @@
   ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  # Use the systemd-boot EFI boot loader needed for sure for parallels on mac.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true; # this is usefule if I ever dual boot
+
+# here are grub options if ever I need them
+  #boot.loader.grub.enable = true;
+  #boot.loader.grub.device = "/dev/sda";
+  #boot.loader-grub.device = "/boot":
+  #boot.loader.grub.useOSProber = true;
+  #boot.loader.grub.efiInstallAsRemovable = true;
+  #boot.loader.grub.efiSupport = true:
+
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -23,7 +33,8 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  #networking.hostName = "nixos-xxx"; # Define your hostname. I don't use it so everything has the sanem hostname?
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -209,14 +220,15 @@
 
   #! List services that you want to enable:
 
-    #########################
-    # enable flatpak service#
-    #########################
+    ####################
+    #     Services     #
+    ####################
   services.flatpak.enable = true;
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
   };
+
   security.polkit.enable = true;
   systemd = {
   user.services.polkit-gnome-authentication-agent-1 = {
@@ -236,9 +248,6 @@
       DefaultTimeoutStopSec=10s
     '';
 }; 
-    #########################
-    #     More Services     #
-    #########################
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
