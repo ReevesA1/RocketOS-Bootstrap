@@ -115,7 +115,6 @@
   gum
   git
   alacritty
-  blackbox-terminal
   starship
   unstable.powershell
 
