@@ -148,20 +148,19 @@
   figlet
   colordiff
   sysstat
-  #pciutils
+  pciutils
   shellcheck
   trash-cli
   gnome.zenity
   gdu
   ffmpeg
-  wkhtmltopdf
   plocate
-  #pkg-config # needed if istalling topgrade with cargo
-  #glow
-  #micro
-  #broot #like ranger but it displays pictures (activate pic with ctrl +  right arrow)
-  #lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
-  #zoxide
+  pkg-config # needed if istalling topgrade with cargo
+  glow
+  micro
+  broot #like ranger but it displays pictures (activate pic with ctrl +  right arrow)
+  lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
+  zoxide
 
 
 
@@ -287,7 +286,7 @@
   ##########################
 
   #nixpkgs.config.permittedInsecurePackages = [
-  #  "qtwebkit-5.212.0-alpha4"
+  #  "qtwebkit-5.212.0-alpha4" # was needed for wkhtmltopdf but i don't use anymore fuck it
   #];
 
 
