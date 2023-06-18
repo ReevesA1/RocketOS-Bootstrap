@@ -122,13 +122,13 @@
   ####################################################
   ### Nix Packages - Command Line Core Utilities   ###
   ####################################################
-  #topgrade
-  #coreutils
-  #fish
-  #findutils
-  #fd
-  #nettools
-  #neofetch
+  topgrade
+  coreutils
+  fish
+  findutils
+  fd
+  nettools
+  neofetch
   #exa
   #htop
   #bat
