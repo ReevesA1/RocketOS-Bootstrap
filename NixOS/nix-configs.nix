@@ -286,9 +286,9 @@
   ##  Insecure Packages   ##
   ##########################
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "qtwebkit-5.212.0-alpha4"
-  ];
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  "qtwebkit-5.212.0-alpha4"
+  #];
 
 
   ##################
