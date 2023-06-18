@@ -129,15 +129,15 @@
   fd
   nettools
   neofetch
-  #exa
-  #htop
-  #bat
-  #ripgrep
-  #wget
-  #curl
-  #xclip
-  #fzf
-  #gnumake # is this make?
+  exa
+  htop
+  bat
+  ripgrep
+  wget
+  curl
+  xclip
+  fzf
+  gnumake # is this make?
   #binutils
   #gcc
   #fakeroot
