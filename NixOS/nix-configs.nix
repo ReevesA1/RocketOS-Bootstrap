@@ -204,7 +204,7 @@
   ################################
   #Browsers
   firefox
-  microsoft-edge-dev
+  #microsoft-edge-dev
   mullvad-browser
 
   #Productivity
