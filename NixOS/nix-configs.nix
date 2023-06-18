@@ -148,14 +148,14 @@
   figlet
   colordiff
   sysstat
-  #pciutils
-  #shellcheck
-  #trash-cli
-  #gnome.zenity
-  #gdu
-  #ffmpeg
-  #wkhtmltopdf
-  #plocate
+  pciutils
+  shellcheck
+  trash-cli
+  gnome.zenity
+  gdu
+  ffmpeg
+  wkhtmltopdf
+  plocate
   #pkg-config # needed if istalling topgrade with cargo
   #glow
   #micro
