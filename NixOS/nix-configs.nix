@@ -138,16 +138,16 @@
   xclip
   fzf
   gnumake # is this make?
-  #binutils
-  #gcc
-  #fakeroot
-  #dmenu
-  #rofi
-  #ulauncher
-  #cmatrix
-  #figlet
-  #colordiff
-  #sysstat
+  binutils
+  gcc
+  fakeroot
+  dmenu
+  rofi
+  ulauncher
+  cmatrix
+  figlet
+  colordiff
+  sysstat
   #pciutils
   #shellcheck
   #trash-cli
