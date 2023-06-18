@@ -122,46 +122,46 @@
   ####################################################
   ### Nix Packages - Command Line Core Utilities   ###
   ####################################################
-  topgrade
-  coreutils
-  fish
-  findutils
-  fd
-  nettools
-  neofetch
-  exa
-  htop
-  bat
-  ripgrep
-  wget
-  curl
-  xclip
-  fzf
-  gnumake # is this make?
-  binutils
-  gcc
-  fakeroot
-  dmenu
-  rofi
-  ulauncher
-  cmatrix
-  figlet
-  colordiff
-  sysstat
-  pciutils
-  shellcheck
-  trash-cli
-  gnome.zenity
-  gdu
-  ffmpeg
-  wkhtmltopdf
-  plocate
-  pkg-config # needed if istalling topgrade with cargo
-  glow
-  micro
-  broot #like ranger but it displays pictures (activate pic with ctrl +  right arrow)
-  lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
-  zoxide
+  #topgrade
+  #coreutils
+  #fish
+  #findutils
+  #fd
+  #nettools
+  #neofetch
+  #exa
+  #htop
+  #bat
+  #ripgrep
+  #wget
+  #curl
+  #xclip
+  #fzf
+  #gnumake # is this make?
+  #binutils
+  #gcc
+  #fakeroot
+  #dmenu
+  #rofi
+  #ulauncher
+  #cmatrix
+  #figlet
+  #colordiff
+  #sysstat
+  #pciutils
+  #shellcheck
+  #trash-cli
+  #gnome.zenity
+  #gdu
+  #ffmpeg
+  #wkhtmltopdf
+  #plocate
+  #pkg-config # needed if istalling topgrade with cargo
+  #glow
+  #micro
+  #broot #like ranger but it displays pictures (activate pic with ctrl +  right arrow)
+  #lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
+  #zoxide
 
 
 
