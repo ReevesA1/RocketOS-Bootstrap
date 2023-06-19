@@ -215,15 +215,22 @@
 
   #! List services that you want to enable:
 
-    ####################
-    #     Services     #
-    ####################
+####################
+#     Services     #
+####################
+
+  # FLATPAKS
   services.flatpak.enable = true;
   services.dbus.enable = true;
+
+  # FlatPaks Dependencies
   xdg.portal = {
-    enable = true;
+    enable = true; # This for sure needs to be on
+    #wlr.enable = true; # Not sure what this setting is for
+    #extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #Only needed if not gnome
   };
 
+  #Misc Stuff not sure if needed for flapaks?
   security.polkit.enable = true;
   systemd = {
   user.services.polkit-gnome-authentication-agent-1 = {
