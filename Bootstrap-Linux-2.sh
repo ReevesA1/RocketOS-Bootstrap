@@ -9,8 +9,10 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   # Add Flathub
   echo "Adding Flathub repo...Press Enter To Continue..."
   read
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
+  flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  echo "Reboot Again ...Press Enter To Continue..."
+  read
 #!##################################################################################################################################
 #!##################################################################################################################################
 #!##################################################################################################################################
@@ -29,7 +31,8 @@ else
 
   #Flatpak with Nix
   nix-env -iA nixpkgs.flatpak
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
   #! ----------Apps (Only to get RocketOS Going Properly)---------
   flatpak install --user --assumeyes flathub com.raggesilver.BlackBox
