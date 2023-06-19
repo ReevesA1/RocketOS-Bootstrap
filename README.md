@@ -231,17 +231,20 @@ exit
 #*
 ```
 
-### Script 1 - Install package managers and restart shell
+### IF NIXOS ONLY - Download Dependencies ETC
 
 ```
-#IF NIXOS - Download Dependencies
+  nix-env -iA nixos.gnome.dconf-editor
   nix-env -iA nixos.unzip
-  nix-env -iA nixos.git
+  nix-env -iA nixos.curl
+  nix-env -iA nixos.wget
   nix-env -iA nixos.zsh
+  nix-env -iA nixos.git
+
   echo "restart shell in zsh...Press Enter To Continue..."
   read
 ```
-
+### Script 1 - Install package managers and restart shell
 ```
 # ---------Clone repo and launch Bootstrap-Linux-1.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"

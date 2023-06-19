@@ -178,12 +178,13 @@
   ### Essentials  ###
   ###################
 
-  #Dependencies
+  #Dependencies (all in read me)
   gnome.dconf-editor 
   unzip
   curl
   wget
   zsh
+  git
 
 
   #Gnome Extensions
