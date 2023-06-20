@@ -68,6 +68,21 @@
   #virtualisation.virtualbox.guest.enable = true;
   #virtualisation.virtualbox.guest.x11 = true;
 
+  #A script I am trying to see if I can enable those two lines above automaticly
+{
+  options.virtualisation.isVirtualBoxGuest = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Whether the system is running inside a VirtualBox virtual machine.";
+  };
+
+  config = lib.mkIf config.virtualisation.isVirtualBoxGuest {
+    virtualisation.virtualbox.guest.enable = true;
+    virtualisation.virtualbox.guest.x11 = true;
+  };
+}
+
+#!##########################
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
