@@ -48,7 +48,21 @@
   #! Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.wayland = true; # wayland is better for parallels but not virtualbox also no good for barrier
+
+  #! Wayland Support
+  #Original line that works
+  #services.xserver.displayManager.gdm.wayland = true; # wayland is better for parallels but not virtualbox also wayland no good for barrier
+
+  #If statement depending on architecture
+  {
+  services.xserver.displayManager.gdm.wayland =
+    if builtins.currentSystem == "x86_64-linux" then
+      false
+    else if builtins.currentSystem == "aarch64-linux" then
+      true
+    else
+      false;
+}
 
   #!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
   #virtualisation.virtualbox.guest.enable = true;
