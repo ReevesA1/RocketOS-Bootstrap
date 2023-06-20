@@ -54,7 +54,7 @@
   #Original line that works
   #services.xserver.displayManager.gdm.wayland = true; #? wayland is better for parallels but not virtualbox also wayland no good for barrier
 
-  #If statement depending on architecture (seems to work)
+  #If statement depending on architecture (works)
   services.xserver.displayManager.gdm.wayland =
     if builtins.currentSystem == "x86_64-linux" then
       false
