@@ -56,9 +56,9 @@
 
   #If statement depending on architecture (works)
   services.xserver.displayManager.gdm.wayland =
-    if builtins.currentSystem == "x86_64-linux" then
+    if builtins.currentSystem == "x86_64-linux" then #aka not parallels and x86 using barrier
       false
-    else if builtins.currentSystem == "aarch64-linux" then
+    else if builtins.currentSystem == "aarch64-linux" then #aka parallels
       true
     else
       false;
