@@ -68,7 +68,9 @@
   #virtualisation.virtualbox.guest.enable = true;
   #virtualisation.virtualbox.guest.x11 = true;
 
-  #A script I am trying to see if I can enable those two lines above automaticly
+  #A script I am trying to see if I can enable those two lines above automaticly by detecting if in a virtual box
+  # did not work even when added this to top level { config, pkgs, lib, ... }:
+  /*
 {
   options.virtualisation.isVirtualBoxGuest = lib.mkOption {
     type = lib.types.bool;
@@ -81,7 +83,7 @@
     virtualisation.virtualbox.guest.x11 = true;
   };
 }
-
+*/
 #!##########################
   # Configure keymap in X11
   services.xserver = {
