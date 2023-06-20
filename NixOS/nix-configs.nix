@@ -16,10 +16,11 @@
   boot.loader.efi.canTouchEfiVariables = true; # this is usefule if I ever dual boot
 
 # here are grub options if ever I need them
-  #boot.loader.grub.enable = true;
-  #boot.loader.grub.device = "/dev/sda";
+  #boot.loader.grub.enable = true; #!Needed if in a virtual machine (disable the two systemd lines above)
+  #boot.loader.grub.device = "/dev/sda"; #!Needed if in a virtual machine (disable the two systemd lines above)
+  #boot.loader.grub.useOSProber = true; #!Needed if in a virtual machine (disable the two systemd lines above)
+  #? Other Examples of lines I could use with grub
   #boot.loader-grub.device = "/boot":
-  #boot.loader.grub.useOSProber = true;
   #boot.loader.grub.efiInstallAsRemovable = true;
   #boot.loader.grub.efiSupport = true:
 
