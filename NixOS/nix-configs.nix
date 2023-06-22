@@ -314,7 +314,7 @@
       DefaultTimeoutStopSec=10s
     '';
 
-  systemd.services.protonvpn = {
+  user.services.protonvpn = {
     description = "ProtonVPN";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
