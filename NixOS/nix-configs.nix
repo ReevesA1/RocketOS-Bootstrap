@@ -291,7 +291,11 @@
 
   #Misc Stuff not sure if needed for flatpaks?
   security.polkit.enable = true;
+
+  #SystemD Services
   systemd = {
+
+
   user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
@@ -308,6 +312,17 @@
     extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
+
+  systemd.services.protonvpn = {
+    description = "ProtonVPN";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA";
+      Restart = "always";
+      RestartSec = "30";
+    };
+  };
 }; 
 
   # Enable the OpenSSH daemon.
