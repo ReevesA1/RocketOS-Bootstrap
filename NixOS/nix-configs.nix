@@ -164,6 +164,7 @@
   ### Nix Packages - Command Line Core Utilities   ###
   ####################################################
   topgrade
+  gparted
   coreutils
   fish
   findutils
