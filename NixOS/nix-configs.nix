@@ -164,7 +164,6 @@
   ### Nix Packages - Command Line Core Utilities   ###
   ####################################################
   topgrade
-  gparted
   coreutils
   fish
   findutils
@@ -244,6 +243,8 @@
 
   #Misc
   veracrypt #(Not aarch64)
+  gparted
+  conky
 
 
   ];
