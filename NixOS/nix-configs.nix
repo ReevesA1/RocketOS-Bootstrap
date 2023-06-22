@@ -234,7 +234,7 @@
   xdg-desktop-portal-gtk
   polkit_gnome
 
-  #Got from christ titus https://github.com/ChrisTitusTech/nixos-titus/blob/main/configuration.nix
+  #Hoping this helps with screen tearing
   xorg.libX11
   xorg.libX11.dev
   xorg.libxcb
