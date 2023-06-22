@@ -1,6 +1,8 @@
+#! Most of these configs came from Titus https://github.com/ChrisTitusTech/nixos-titus/blob/main/configuration.nix
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+
 
 { config, pkgs, ... }:
 
@@ -231,6 +233,15 @@
   flatpak
   xdg-desktop-portal-gtk
   polkit_gnome
+
+  #Got from christ titus https://github.com/ChrisTitusTech/nixos-titus/blob/main/configuration.nix
+  xorg.libX11
+  xorg.libX11.dev
+  xorg.libxcb
+  xorg.libXft
+  xorg.libXinerama
+	xorg.xinit
+  xorg.xinput
 
   ########################
   ### Univeral Apps    ###
