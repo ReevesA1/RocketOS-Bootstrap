@@ -258,6 +258,7 @@
   veracrypt #(Not aarch64)
   gparted
   conky
+  protonvpn-cli
 
 
   ];
