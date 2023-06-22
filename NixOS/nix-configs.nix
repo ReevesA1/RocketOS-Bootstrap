@@ -273,10 +273,10 @@
   xdg.portal = {
     enable = true; # This for sure needs to be on
     #wlr.enable = true; # Not sure what this setting is for
-    #extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #Only needed if not gnome
+    #extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #Only needed if not using Gnome
   };
 
-  #Misc Stuff not sure if needed for flapaks?
+  #Misc Stuff not sure if needed for flatpaks?
   security.polkit.enable = true;
   systemd = {
   user.services.polkit-gnome-authentication-agent-1 = {
