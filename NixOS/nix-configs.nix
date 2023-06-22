@@ -221,6 +221,8 @@
   #Gnome Extensions
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
+  #gnomeExtensions.tray-icons-reloaded
+  gnomeExtensions.appindicator #good for protonvpn tray icon
 
 
   ###################
@@ -230,6 +232,18 @@
   flatpak
   xdg-desktop-portal-gtk
   polkit_gnome
+
+  ########################
+  ### Univeral Apps    ###
+  ########################
+
+  #podman
+  unstable.podman
+  podman-desktop
+  distrobox
+
+  #Misc
+  veracrypt #(Not aarch64)
 
 
   ];
