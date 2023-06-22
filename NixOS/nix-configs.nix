@@ -221,8 +221,7 @@
   #Gnome Extensions
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
-  #gnomeExtensions.tray-icons-reloaded
-  gnomeExtensions.appindicator #good for protonvpn tray icon
+  gnomeExtensions.tray-icons-reloaded #show megasync with syncing actions and barrier tray icons as of June 2023 and protonvpn just use native tray icon indicator now
 
 
   ###################
