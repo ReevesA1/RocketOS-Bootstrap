@@ -398,7 +398,7 @@
     ];
 
     # Tell Xorg to use the nvidia driver
-    services.xserver.videoDrivers = ["intel" "nvidia"];
+    services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
 
     hardware.nvidia = {
 
@@ -416,5 +416,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 #!######################################################
+
 
 }
