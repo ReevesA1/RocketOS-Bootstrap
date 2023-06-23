@@ -387,10 +387,10 @@
 
 
   # NVIDIA drivers are unfree.
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "nvidia-x11"
-    ];
+ # nixpkgs.config.allowUnfreePredicate = pkg:
+ #   builtins.elem (lib.getName pkg) [
+ #     "nvidia-x11"
+ #   ];
 
     # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
     services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
