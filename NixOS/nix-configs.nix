@@ -319,7 +319,8 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA";
+      #ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA";
+      ExecStart = "/run/current-system/sw/bin/protonvpn-cli connect --cc CA";
       Restart = "always";
       RestartSec = "30";
     };
