@@ -204,6 +204,8 @@
   broot #like ranger but it displays pictures (activate pic with ctrl +  right arrow)
   lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
   zoxide
+  cowsay
+  synergy
 
 
 
