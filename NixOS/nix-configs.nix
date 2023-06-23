@@ -398,7 +398,7 @@
     ];
 
     # Tell Xorg to use the nvidia driver
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = ["intel" "nvidia"];
 
     hardware.nvidia = {
 
