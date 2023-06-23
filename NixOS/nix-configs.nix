@@ -386,22 +386,15 @@
   #!NVIDA Settings
 
 
-  # NVIDIA drivers are unfree.
- # nixpkgs.config.allowUnfreePredicate = pkg:
- #   builtins.elem (lib.getName pkg) [
- #     "nvidia-x11"
- #   ];
-
     # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
     services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
     
   
 
   hardware = {
-    nvidia.optimus_prime.enable = true;
-    nvidia.optimus_prime.intelBusId = "PCI:00:02:0";
-    nvidia.optimus_prime.nvidiaBusId = "PCI:01:00:0";
-    # nvidiaOptimus.disable = true;
+    hardware.nvidia.prime.sync.enable = true;
+    hardware.nvidia.prime.intelBusId = "PCI:00:02:0";
+    hardware.nvidia.prime.nvidiaBusId = "PCI:01:00:0";
     opengl = {
     extraPackages = [
     pkgs.libGL_driver
