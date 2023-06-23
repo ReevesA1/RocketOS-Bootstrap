@@ -397,7 +397,7 @@
     nvidia.prime.nvidiaBusId = "PCI:01:00:0";
     opengl = {
     extraPackages = [
-    pkgs.libGL_driver
+    pkgs.mesa_drivers
     pkgs.linuxPackages.nvidia_x11.out
     pkgs.vaapiIntel
     pkgs.vaapiVdpau
