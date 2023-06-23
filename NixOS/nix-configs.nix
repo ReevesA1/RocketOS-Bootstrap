@@ -314,6 +314,7 @@
       DefaultTimeoutStopSec=10s
     '';
 
+#!No GO auto starting proton
 /*
   user.services.protonvpn = {
     description = "ProtonVPN";
