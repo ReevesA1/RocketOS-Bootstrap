@@ -383,7 +383,7 @@
   ##################
   ##   TESTING    ##
   ##################
-  #!NVIDA Settings
+  #!NVIDA Settings https://nixos.wiki/wiki/Nvidia
 
 
     # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
