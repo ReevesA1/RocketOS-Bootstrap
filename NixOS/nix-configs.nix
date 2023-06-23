@@ -384,6 +384,7 @@
   ##   TESTING    ##
   ##################
   #!NVIDA Settings
+
   # Make sure opengl is enabled
   hardware.opengl = {
     enable = true;
@@ -397,9 +398,10 @@
       "nvidia-x11"
     ];
 
-    # Tell Xorg to use the nvidia driver
-    services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
-
+    # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
+    boot.kernelModules = [ "kvm-intel" "nvidia" ];
+    services.xserver.videoDrivers = ["intel" "nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
+    
     hardware.nvidia = {
 
     # Modesetting is needed for most wayland compositors
@@ -415,6 +417,11 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  hardware.opengl.extraPackages = [
+    pkgs.libGL_driver
+    pkgs.linuxPackages.nvidia_x11.out
+];
 #!######################################################
 
 
