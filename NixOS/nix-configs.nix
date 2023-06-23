@@ -314,6 +314,7 @@
       DefaultTimeoutStopSec=10s
     '';
 
+/*
   user.services.protonvpn = {
     description = "ProtonVPN";
     wantedBy = [ "multi-user.target" ];
@@ -325,6 +326,7 @@
       RestartSec = "30";
     };
   };
+  */
 }; 
 
   # Enable the OpenSSH daemon.
