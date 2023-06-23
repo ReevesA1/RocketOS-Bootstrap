@@ -399,29 +399,28 @@
     ];
 
     # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
-    boot.kernelModules = [ "kvm-intel" "nvidia" ];
-    services.xserver.videoDrivers = ["intel" "nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
+    services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
     
-    hardware.nvidia = {
+  
 
-    # Modesetting is needed for most wayland compositors
-    modesetting.enable = true;
-
-    # Use the open source version of the kernel module
-    # Only available on driver 515.43.04+
-    open = true;
-
-    # Enable the nvidia settings menu
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
-  hardware.opengl.extraPackages = [
-    pkgs.mesa_drivers
+  hardware = {
+    nvidia.optimus_prime.enable = true;
+    nvidia.optimus_prime.intelBusId = "PCI:00:02:0";
+    nvidia.optimus_prime.nvidiaBusId = "PCI:01:00:0";
+    # nvidiaOptimus.disable = true;
+    opengl = {
+    extraPackages = [
+    pkgs.libGL_driver
     pkgs.linuxPackages.nvidia_x11.out
-];
+    pkgs.vaapiIntel
+    pkgs.vaapiVdpau
+    pkgs.libvdpau-va-gl
+    ];
+    driSupport = true;
+    driSupport32Bit = true;
+
+    };
+
 #!######################################################
 
 
