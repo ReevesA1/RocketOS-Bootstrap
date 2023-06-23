@@ -419,7 +419,7 @@
   };
 
   hardware.opengl.extraPackages = [
-    pkgs.libGL_driver
+    pkgs.mesa_drivers
     pkgs.linuxPackages.nvidia_x11.out
 ];
 #!######################################################
