@@ -392,9 +392,9 @@
   
 
   hardware = {
-    hardware.nvidia.prime.sync.enable = true;
-    hardware.nvidia.prime.intelBusId = "PCI:00:02:0";
-    hardware.nvidia.prime.nvidiaBusId = "PCI:01:00:0";
+    nvidia.prime.sync.enable = true;
+    nvidia.prime.intelBusId = "PCI:00:02:0";
+    nvidia.prime.nvidiaBusId = "PCI:01:00:0";
     opengl = {
     extraPackages = [
     pkgs.libGL_driver
