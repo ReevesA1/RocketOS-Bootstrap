@@ -214,7 +214,7 @@
   ###################
 
   #Dependencies (all in read me)
-  gnome.dconf-editor 
+  #gnome.dconf-editor #gets installed in gnome setup
   unzip
   curl
   wget
