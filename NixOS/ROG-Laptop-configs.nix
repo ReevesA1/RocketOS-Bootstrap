@@ -293,6 +293,8 @@
     #docker.enable = true; 
     #virtualbox.host.enable = true;
     #libvirtd.enable = true; 
+    virtualisation.podman.enable = true;
+    virtualisation.podman.dockerCompat = true;
   };
 
 
