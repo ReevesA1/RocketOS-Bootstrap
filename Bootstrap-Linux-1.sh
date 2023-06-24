@@ -45,7 +45,8 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo "1) ROG-Laptop"
   echo "2) Ser3"
   echo "3) VirtualBox"
-  read -p "Enter your choice [1-3]: " choice
+  echo -n "Enter your choice [1-3]: "
+  read choice
 
   case $choice in
   1)
@@ -66,8 +67,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
   # Restart PC
   echo "Reboot...then run part 2."
-  read 
-  
+  read
 
 #!##################################################################################################################################
 #!##################################################################################################################################
