@@ -159,6 +159,7 @@
     gnome-tour
     gnome-photos
     gnome-console
+    xterm
   ] ++ (with pkgs.gnome; [
     geary
     totem
