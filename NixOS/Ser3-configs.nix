@@ -339,19 +339,21 @@
   */
 }; 
 
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  services.udev.packages = with pkgs; [ logitech-udev-rules ]; #needed for solaar
 
 
-    #########################
-    #     Firewall    #
-    #########################
+  ###################
+  #     Firewall    #
+  ###################
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-    networking.firewall.enable = false;
-    networking.enableIPv6 = false;
+  networking.firewall.enable = false;
+  networking.enableIPv6 = false;
 
   ###########
   ## SHELL ##
