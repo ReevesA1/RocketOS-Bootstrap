@@ -240,7 +240,7 @@
   xdg-desktop-portal-gtk
   polkit_gnome
 
-  #Hoping this helps with screen tearing
+  #Not Sure I need These
   xorg.libX11
   xorg.libX11.dev
   xorg.libxcb
@@ -263,6 +263,8 @@
   gparted
   conky
   protonvpn-cli
+  #synergy #outdate
+  firefox
 
 
   ];

@@ -206,7 +206,6 @@
   lsb-release #instead of #sudo apt install lsb-release #paru lsb-release #sudo dnf install redhat-lsb-core 
   zoxide
   cowsay
-  #synergy #outdate
 
 
 
@@ -240,7 +239,7 @@
   xdg-desktop-portal-gtk
   polkit_gnome
 
-  #Hoping this helps with screen tearing
+  #Not Sure I need These
   xorg.libX11
   xorg.libX11.dev
   xorg.libxcb
@@ -263,6 +262,8 @@
   gparted
   conky
   protonvpn-cli
+  #synergy #outdate
+  firefox
 
 
   ];
