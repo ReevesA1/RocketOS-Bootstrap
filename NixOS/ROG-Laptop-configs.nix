@@ -451,8 +451,8 @@
 #]);
 
 environment.gnome.excludePackages = (with pkgs; [
-  gnome-photos
-  gnome-tour
+  #nome-photos
+  #gnome-tour
 ]) ++ (with pkgs.gnome; [
   geary # email reader
 ]);
