@@ -150,7 +150,27 @@
       };
     };
   };
+#######################
+#     Remove Bloat    #
+#######################
 
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-photos
+  ] ++ (with pkgs.gnome; [
+    geary
+    totem
+    cheese
+    epiphany
+    gnome-contacts
+    gnome-weather
+    gnome-clocks
+    gnome-maps
+    gnome-calculator
+    gnome-terminal
+    gnome-connections
+  ]);
+  
   #! List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
 
@@ -429,26 +449,6 @@
     };
 };
 
-#######################
-#     Remove Bloat    #
-#######################
-
-environment.gnome.excludePackages = with pkgs; [
-  gnome-tour
-  gnome-photos
-] ++ (with pkgs.gnome; [
-  geary
-  totem
-  cheese
-  epiphany
-  gnome-contacts
-  gnome-weather
-  gnome-clocks
-  gnome-maps
-  gnome-calculator
-  gnome-terminal
-  gnome-connections
-]);
 
 
   ##########################
