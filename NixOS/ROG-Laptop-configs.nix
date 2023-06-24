@@ -434,19 +434,19 @@
   #######################
 
 environment.gnome.excludePackages = with pkgs; [
-  gnome-geary
-  gnome.gnome-contacts
-  gnome.gnome-weather
-  gnome.gnome-clocks
-  gnome.gnome-maps
-  gnome.gnome-calculator
-  gnome.gnome-terminal
+  geary
+  totem
+  cheese
+  epiphany
+  gnome-tour
+  gnome-contacts
+  gnome-weather
+  gnome-clocks
+  gnome-maps
+  gnome-calculator
+  gnome-terminal
   gnome-connections
   gnome-photos
-  gnome.totem
-  gnome-tour
-  gnome.cheese
-  epiphany
 
 ];
 
