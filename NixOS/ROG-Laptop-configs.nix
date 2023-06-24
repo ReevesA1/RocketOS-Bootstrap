@@ -433,11 +433,7 @@
   #     Remove Bloat    #
   #######################
 
-environment.gnome.excludePackages = with pkgs.gnome; [
-  geary
-  totem
-  cheese
-  epiphany
+environment.gnome.excludePackages = with pkgs; [
   gnome-tour
   gnome-contacts
   gnome-weather
@@ -447,8 +443,13 @@ environment.gnome.excludePackages = with pkgs.gnome; [
   gnome-terminal
   gnome-connections
   gnome-photos
+] ++ (with pkgs.gnome; [
+  geary
+  totem
+  cheese
+  epiphany
+]);
 
-];
 
 
   ##########################
