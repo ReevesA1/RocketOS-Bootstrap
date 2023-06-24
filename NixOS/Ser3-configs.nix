@@ -257,13 +257,14 @@
   podman-desktop
   distrobox
 
-  #Misc
+  #Base Apps
   veracrypt #(Not aarch64)
   gparted
   conky
   protonvpn-cli
   #synergy #outdate
   firefox
+  megasync
 
   ########################
   ### SER3 Exclusives  ###
