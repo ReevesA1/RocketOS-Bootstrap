@@ -13,8 +13,14 @@
 Jetbrainurl="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/JetBrainsMono.zip"
 
 # Download the font
-if [ ! -f JetBrainsMono.zip ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # On macOS
   curl -L -O $Jetbrainurl
+else
+  # On Linux
+  if [ ! -f JetBrainsMono.zip ]; then
+    curl -L -O $Jetbrainurl
+  fi
 fi
 
 # Unzip the downloaded file into the fonts directory
