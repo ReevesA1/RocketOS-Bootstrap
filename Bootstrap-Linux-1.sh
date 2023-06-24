@@ -49,6 +49,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo -n "Enter your choice [1-4]: "
   read choice
 
+  #TODO when I add new entries here remember to go update the pwsh alias rebuildnix
   case $choice in
   1)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/ROG-Laptop-configs.nix
