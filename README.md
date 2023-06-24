@@ -235,11 +235,19 @@ exit
 
 ```
 # Same as the dependency section in main configuration.nix
-  nix-env -iA nixos.unzip
-  nix-env -iA nixos.curl
-  nix-env -iA nixos.wget
-  nix-env -iA nixos.zsh
-  nix-env -iA nixos.git
+  if [[ $(uname -a) == *"NixOS"* ]]; then
+    nix-env -iA nixos.unzip
+    nix-env -iA nixos.curl
+    nix-env -iA nixos.wget
+    nix-env -iA nixos.zsh
+    nix-env -iA nixos.git
+else
+    nix-env -iA nixpkgs.unzip
+    nix-env -iA nixpkgs.curl
+    nix-env -iA nixpkgs.wget
+    nix-env -iA nixpkgs.zsh
+    nix-env -iA nixpkgs.git
+fi
 
   echo "restart shell in zsh...Press Enter To Continue..."
   read
