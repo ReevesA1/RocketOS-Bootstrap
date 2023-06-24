@@ -235,7 +235,6 @@ exit
 
 ```
 # Same as the dependency section in main configuration.nix
-  nix-env -iA nixos.gnome.dconf-editor
   nix-env -iA nixos.unzip
   nix-env -iA nixos.curl
   nix-env -iA nixos.wget
