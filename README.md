@@ -242,11 +242,7 @@ exit
     nix-env -iA nixos.zsh
     nix-env -iA nixos.git
 else
-    nix-env -iA nixpkgs.unzip
-    nix-env -iA nixpkgs.curl
-    nix-env -iA nixpkgs.wget
-    nix-env -iA nixpkgs.zsh
-    nix-env -iA nixpkgs.git
+  sudo apt update && sudo apt upgrade && sudo apt install unzip curl wget zsh git
 fi
 
   echo "restart shell in zsh...Press Enter To Continue..."
