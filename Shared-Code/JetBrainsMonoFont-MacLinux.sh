@@ -18,12 +18,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   curl -L -O $Jetbrainurl
 else
   # On Linux
-  if [ ! -f JetBrainsMono.zip ]; then # I could do the same on mac it was just getting anoying when testing linux
+  if [ ! -f JetBrainsMono.zip ]; then #I could do the same for mac
     curl -L -O $Jetbrainurl
-  fi
-
-  if [ -f JetBrainsMono.zip ]; then # I could do the same on mac it was just getting anoying when testing linux
-    echo JetbrainsMono.zip exist
+  else
+    echo "JetbrainsMono.zip exists"
   fi
 fi
 
