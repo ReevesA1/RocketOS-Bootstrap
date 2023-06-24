@@ -98,10 +98,13 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 #*
 else
 
-  if [ -z "$ZSH_VERSION" ]; then
-    echo -e "\033[31mWarning: Please Use ZSH.\033[0m"
-    read -p "Press enter to continue"
-  fi
+  zsh_warning() {
+    if [ -z "$ZSH_VERSION" ]; then
+      echo -e "\033[31mWarning: Please Use ZSH.\033[0m"
+      read -p "Press enter to continue"
+    fi
+  }
+  zsh_warning
 
   #! --------Package Managers------------
 
