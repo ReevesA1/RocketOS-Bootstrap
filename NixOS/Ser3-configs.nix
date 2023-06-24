@@ -265,6 +265,10 @@
   #synergy #outdate
   firefox
 
+  ########################
+  ### SER3 Exclusives  ###
+  ########################
+  solaar
 
   ];
 

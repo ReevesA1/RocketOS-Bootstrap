@@ -266,6 +266,9 @@
   #synergy #outdate
   firefox
 
+  ##############################
+  ### ROG-Laptop Exclusives  ###
+  ##############################
 
   ];
 
