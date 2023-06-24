@@ -381,8 +381,9 @@
   #! https://nixos.wiki/wiki/Nvidia
 
     services.xserver.videoDrivers = ["nvidia"]; 
-    services.xserver.displayManager.gdm.nvidiaWayland = true;
-    
+    hardware.nvidia.modesetting.enable = true;
+    programs.xwayland.enable = true;
+
   
 
   hardware = {
