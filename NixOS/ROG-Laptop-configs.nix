@@ -285,7 +285,19 @@
 
   
 
-  #! List services that you want to enable:
+########################
+#    virtualisation    #
+########################
+
+  virtualisation = {
+    #docker.enable = true; 
+    virtualbox.host.enable = true;
+    #libvirtd.enable = true; 
+  };
+
+
+
+#! List services that you want to enable:
 
 ####################
 #     Services     #
