@@ -278,7 +278,8 @@ exit
   zsh_warning() {
     if [ -z "$ZSH_VERSION" ]; then
       echo -e "\033[31mWarning: Please Use ZSH.\033[0m"
-      read -p "Press enter to continue"
+      read -p "Press enter to exit"
+      exit
     fi
   }
   zsh_warning
