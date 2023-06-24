@@ -148,7 +148,7 @@ else
       #Update
       sudo apt update && sudo apt upgrade
 
-      #? Flatpak Going to try with nixo (it gets installed on part 2 of this script)
+      #? Flatpak Going to try with nixos (it gets installed on part 2 of this script)
       #sudo apt install flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
       #! Snap
