@@ -171,7 +171,7 @@
     gnome-connections
   ]);
   
-  #! List packages installed in system profile. To search, run:
+  #! List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
 
   ##########################################
