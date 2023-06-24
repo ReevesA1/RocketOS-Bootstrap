@@ -397,7 +397,7 @@
 
   hardware = {
     nvidia.prime.sync.enable = true;
-    nvidia.prime.intelBusId = "PCI:00:02:0"; # fyi need both nvidia and intel because laptop has both or else screen wont work
+    nvidia.prime.intelBusId = "PCI:00:02:0"; # fyi need both nvidia and intel because laptop has both or else built in screen wont work
     nvidia.prime.nvidiaBusId = "PCI:01:00:0";
     nvidia.modesetting.enable = true; #was only needed for wayland to work
     opengl = {
