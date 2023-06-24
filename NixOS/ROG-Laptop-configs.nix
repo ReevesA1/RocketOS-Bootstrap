@@ -266,7 +266,7 @@
   protonvpn-cli
   #synergy #outdate
   firefox
-  megasync
+  megasync #(Not aarch64)
 
   ##############################
   ### ROG-Laptop Exclusives  ###

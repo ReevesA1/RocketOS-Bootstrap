@@ -259,12 +259,13 @@
   distrobox
 
   #Base Apps
+  #veracrypt #(Not aarch64 not even flatpak)
   gparted
   conky
   protonvpn-cli
   #synergy #outdate
   firefox
-  megasync
+  #megasync #No GO on aarch64 will install with flatpak
 
   #############################
   ### Parallels Exclusives  ###

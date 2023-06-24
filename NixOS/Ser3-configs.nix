@@ -265,7 +265,7 @@
   protonvpn-cli
   #synergy #outdate
   firefox
-  megasync
+  megasync #(Not aarch64)
 
   ########################
   ### SER3 Exclusives  ###
