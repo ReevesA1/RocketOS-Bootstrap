@@ -66,8 +66,9 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   sudo nixos-rebuild switch
 
   # Restart PC
-  echo "Reboot...then run part 2."
-  read
+  echo "Rebooting in 5 seconds...then run part 2."
+  sleep 5 # I get a black screen or else so this is my way around it so it reboots on its own
+  reboot
 
 #!##################################################################################################################################
 #!##################################################################################################################################
