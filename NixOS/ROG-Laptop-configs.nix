@@ -341,8 +341,6 @@
 
   #SystemD Services
   systemd = {
-
-
   user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
@@ -381,6 +379,7 @@
   ########################
   #services.openssh.enable = true;
   #services.udev.packages = with pkgs; [ logitech-udev-rules ]; #needed for solaar
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
 
   ###################
