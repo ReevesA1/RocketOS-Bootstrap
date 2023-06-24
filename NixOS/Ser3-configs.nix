@@ -54,7 +54,7 @@
 
   #! Wayland Support
   #Original line that works
-  services.xserver.displayManager.gdm.wayland = true; #? wayland is better for parallels but not virtualbox also wayland no good for barrier
+  services.xserver.displayManager.gdm.wayland = false; #? wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
 
   #If statement depending on architecture (works)
   /*
