@@ -435,6 +435,12 @@
 
 environment.gnome.excludePackages = with pkgs; [
   gnome-tour
+  gnome-photos
+] ++ (with pkgs.gnome; [
+  geary
+  totem
+  cheese
+  epiphany
   gnome-contacts
   gnome-weather
   gnome-clocks
@@ -442,12 +448,6 @@ environment.gnome.excludePackages = with pkgs; [
   gnome-calculator
   gnome-terminal
   gnome-connections
-  gnome-photos
-] ++ (with pkgs.gnome; [
-  geary
-  totem
-  cheese
-  epiphany
 ]);
 
 
