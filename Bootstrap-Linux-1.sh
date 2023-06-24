@@ -74,7 +74,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo "Rebooting in 5 seconds...then run part 2."
   #read #Uncomment this for debugging
   sleep 5 # I get a black screen or else so this is my way around it so it reboots on its own
-  reboot # I get a black screen or else so this is my way around it so it reboots on its own
+  reboot  # I get a black screen or else so this is my way around it so it reboots on its own
 
 #!##################################################################################################################################
 #!##################################################################################################################################
@@ -98,13 +98,10 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 #*
 else
 
-  #May Need Zsh for linux Bootstrap
   zsh_warning() {
-    if [ -n "$BASH_VERSION" ]; then
-      echo -e "\033[31mWarning: I haven't tested this echo function yet but I may need to run Linux bootstrap in zsh only.\033[0m"
+    if [ -z "$ZSH_VERSION" ]; then
+      echo -e "\033[31mWarning: Please Use ZSH.\033[0m"
       read -p "Press enter to continue"
-    else
-      echo "Double check I am using zsh"
     fi
   }
   zsh_warning
