@@ -45,7 +45,8 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo "1) ROG-Laptop"
   echo "2) Ser3"
   echo "3) VirtualBox"
-  echo -n "Enter your choice [1-3]: "
+  echo "4) Parallels"
+  echo -n "Enter your choice [1-4]: "
   read choice
 
   case $choice in
@@ -57,6 +58,9 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
     ;;
   3)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/VirtualBox-configs.nix
+    ;;
+  4)
+    sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Parallels-configs.nix
     ;;
   *)
     echo "Invalid choice."
