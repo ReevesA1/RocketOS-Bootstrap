@@ -252,6 +252,14 @@ fi
 ### Script 1 - Install package managers and restart shell
 
 ```
+  zsh_warning() {
+    if [ -z "$ZSH_VERSION" ]; then
+      echo -e "\033[31mWarning: Please Use ZSH.\033[0m"
+      read -p "Press enter to exit"
+      exit
+    fi
+  }
+  zsh_warning
 
 # ---------Clone repo and launch Bootstrap-Linux-1.sh --------
 echo "\033[32mCheck if repo exist and delete it before cloning it... Press Enter to continue \033[0m"
