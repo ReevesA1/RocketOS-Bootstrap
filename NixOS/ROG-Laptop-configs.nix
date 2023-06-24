@@ -54,9 +54,10 @@
 
   #! Wayland Support
   #Original line that works
-  #services.xserver.displayManager.gdm.wayland = true; #? wayland is better for parallels but not virtualbox also wayland no good for barrier
+  services.xserver.displayManager.gdm.wayland = true; #? wayland is better for parallels but not virtualbox also wayland no good for barrier
 
   #If statement depending on architecture (works)
+  /*
   services.xserver.displayManager.gdm.wayland =
     if builtins.currentSystem == "x86_64-linux" then #aka not parallels and x86 using barrier
       false
@@ -64,7 +65,7 @@
       true
     else
       false;
-
+*/
 
   #!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
   #virtualisation.virtualbox.guest.enable = true;
@@ -373,22 +374,12 @@
   system.stateVersion = "23.05"; # Did you read the comment?
 
 
-  ##########################
-  ##  Insecure Packages   ##
-  ##########################
+    #########################
+    #     NVIDA Settings    #
+    #########################
 
-  #nixpkgs.config.permittedInsecurePackages = [
-  #  "qtwebkit-5.212.0-alpha4" # was needed for wkhtmltopdf but i don't use anymore fuck it
-  #];
+  #! https://nixos.wiki/wiki/Nvidia
 
-
-  ##################
-  ##   TESTING    ##
-  ##################
-  #!NVIDA Settings https://nixos.wiki/wiki/Nvidia
-
-
-    # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
     services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
     
   
@@ -410,6 +401,16 @@
 
     };
 
-#!######################################################
+
+  ##########################
+  ##  Insecure Packages   ##
+  ##########################
+
+
+
+  ##################
+  ##   TESTING    ##
+  ##################
+
   };
 }

@@ -54,9 +54,10 @@
 
   #! Wayland Support
   #Original line that works
-  #services.xserver.displayManager.gdm.wayland = true; #? wayland is better for parallels but not virtualbox also wayland no good for barrier
+  services.xserver.displayManager.gdm.wayland = false; #? wayland is better for parallels but not virtualbox also wayland no good for barrier
 
   #If statement depending on architecture (works)
+  /*
   services.xserver.displayManager.gdm.wayland =
     if builtins.currentSystem == "x86_64-linux" then #aka not parallels and x86 using barrier
       false
@@ -64,11 +65,11 @@
       true
     else
       false;
-
+*/
 
   #!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
-  #virtualisation.virtualbox.guest.enable = true;
-  #virtualisation.virtualbox.guest.x11 = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
 
   #A script I am trying to see if I can enable those two lines above automaticly by detecting if in a virtual box
   # did not work even when added this to top level { config, pkgs, lib, ... }:
@@ -377,39 +378,7 @@
   ##  Insecure Packages   ##
   ##########################
 
-  #nixpkgs.config.permittedInsecurePackages = [
-  #  "qtwebkit-5.212.0-alpha4" # was needed for wkhtmltopdf but i don't use anymore fuck it
-  #];
-
-
   ##################
   ##   TESTING    ##
   ##################
-  #!NVIDA Settings https://nixos.wiki/wiki/Nvidia
-
-
-    # Tell Xorg to use the nvidia driver, also need intel for for ROG-Strix-Laptop 
-    services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
-    
-  
-
-  hardware = {
-    nvidia.prime.sync.enable = true;
-    nvidia.prime.intelBusId = "PCI:00:02:0";
-    nvidia.prime.nvidiaBusId = "PCI:01:00:0";
-    opengl = {
-    extraPackages = [
-    pkgs.mesa_drivers
-    pkgs.linuxPackages.nvidia_x11.out
-    pkgs.vaapiIntel
-    pkgs.vaapiVdpau
-    pkgs.libvdpau-va-gl
-    ];
-    driSupport = true;
-    driSupport32Bit = true;
-
-    };
-
-#!######################################################
-  };
 }
