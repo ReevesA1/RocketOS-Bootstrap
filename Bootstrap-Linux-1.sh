@@ -43,8 +43,8 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   read
   echo "Which config would you like to curl?"
   echo "1) ROG-Laptop"
-  echo "2) ROG-Desktop"
-  echo "3) Ser3"
+  echo "2) Ser3"
+  echo "3) VirtualBox"
   read -p "Enter your choice [1-3]: " choice
 
   case $choice in
@@ -52,10 +52,10 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/ROG-Laptop-configs.nix
     ;;
   2)
-    sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/ROG-Desktop-configs.nix
+    sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Ser3-configs.nix
     ;;
   3)
-    sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Ser3-configs.nix
+    sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/VirtualBox-configs.nix
     ;;
   *)
     echo "Invalid choice."
