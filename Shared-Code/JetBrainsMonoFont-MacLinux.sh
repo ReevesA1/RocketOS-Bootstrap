@@ -30,7 +30,7 @@ if [ ! -f JetBrainsMono.zip ]; then
   fi
 
 else
-  echo "JetbrainsMono.zip exists"
+  echo "JetbrainsMono.zip exists ...skipping"
 fi
 
 #! I don't think I need to seperate mac and linux
