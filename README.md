@@ -235,7 +235,7 @@ exit
 
 ```
 # Same as the dependency section in main configuration.nix
-  if [[ $(uname -a) == *"NixOS"* ]]; then
+  if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
     nix-env -iA nixos.unzip
     nix-env -iA nixos.curl
     nix-env -iA nixos.wget
