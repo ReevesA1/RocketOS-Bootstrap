@@ -380,13 +380,14 @@
 
   #! https://nixos.wiki/wiki/Nvidia
 
-    services.xserver.videoDrivers = ["nvidia"]; #? Adding "intel" here with nvidia I was able to get laptop screen to work as well as external monitor but very glitchy
+    services.xserver.videoDrivers = ["nvidia"]; 
+    service.xserver.displayManager.gdm.nvidiaWayland = true;
     
   
 
   hardware = {
     nvidia.prime.sync.enable = true;
-    nvidia.prime.intelBusId = "PCI:00:02:0";
+    nvidia.prime.intelBusId = "PCI:00:02:0"; # fyi need both nvidia and intel because laptop has both or else screen wont work
     nvidia.prime.nvidiaBusId = "PCI:01:00:0";
     opengl = {
     extraPackages = [
