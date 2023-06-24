@@ -157,12 +157,12 @@
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
     gnome-photos
+    gnome-console
   ] ++ (with pkgs.gnome; [
     geary
     totem
     cheese
     epiphany
-    terminal
     gnome-contacts
     gnome-weather
     gnome-clocks
