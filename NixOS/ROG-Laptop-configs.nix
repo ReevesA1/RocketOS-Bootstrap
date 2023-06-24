@@ -450,12 +450,9 @@
 #  gnome-connections
 #]);
 
-environment.gnome.excludePackages = (with pkgs; [
-  #nome-photos
-  #gnome-tour
-]) ++ (with pkgs.gnome; [
-  geary # email reader
-]);
+environment.gnome.excludePackages = with pkgs; [
+gnome-tour
+];
 
   ##########################
   ##  Insecure Packages   ##
