@@ -343,8 +343,7 @@
   ########################
   #     Misc Services    #
   ########################
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  #services.openssh.enable = true;
   services.udev.packages = with pkgs; [ logitech-udev-rules ]; #needed for solaar
 
 
