@@ -167,6 +167,7 @@
   ### Nix Packages - Command Line Core Utilities   ###
   ####################################################
   topgrade
+  cron
   coreutils
   fish
   findutils
