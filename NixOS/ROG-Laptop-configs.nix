@@ -162,12 +162,12 @@
     totem
     cheese
     epiphany
+    terminal
     gnome-contacts
     gnome-weather
     gnome-clocks
     gnome-maps
     gnome-calculator
-    gnome-terminal
     gnome-connections
   ]);
   
