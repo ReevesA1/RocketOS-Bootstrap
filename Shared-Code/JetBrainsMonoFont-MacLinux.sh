@@ -21,6 +21,10 @@ else
   if [ ! -f JetBrainsMono.zip ]; then # I could do the same on mac it was just getting anoying when testing linux
     curl -L -O $Jetbrainurl
   fi
+
+  if [ -f JetBrainsMono.zip ]; then # I could do the same on mac it was just getting anoying when testing linux
+    echo JetbrainsMono.zip exist
+  fi
 fi
 
 # Unzip the downloaded file into the fonts directory
