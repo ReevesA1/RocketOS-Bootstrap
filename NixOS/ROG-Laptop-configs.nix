@@ -407,8 +407,8 @@ user.services.synergy = {
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
-    Restart = "always";
+    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy --hide-window";
+    #Restart = "always";
     Environment = "PATH=${pkgs.flatpak}/bin";
   };
 };
