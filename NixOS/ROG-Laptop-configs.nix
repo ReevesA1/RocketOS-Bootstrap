@@ -291,6 +291,8 @@
   blackbox-terminal
   vlc
   appimage-run
+
+  #testing
   wmctrl #close windows
 
   ##############################
