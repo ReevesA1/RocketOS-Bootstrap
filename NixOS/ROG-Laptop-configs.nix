@@ -409,7 +409,8 @@ user.services.synergy = {
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStart = "${pkgs.bash}/bin/bash -c 'nohup ${pkgs.flatpak}/bin/flatpak run com.symless.synergy; ${pkgs.wmctrl}/bin/wmctrl -c Synergy'";
+    ExecStartPre = "${pkgs.bash}/bin/bash -c 'nohup ${pkgs.flatpak}/bin/flatpak run com.symless.synergy";
+    ExecStart = "${pkgs.wmctrl}/bin/wmctrl -c Synergy'";
   };
 };
 
