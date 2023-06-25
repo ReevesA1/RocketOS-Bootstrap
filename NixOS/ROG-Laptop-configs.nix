@@ -382,7 +382,12 @@ user.services.protonvpn-cli = {
   script = "${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
   wantedBy = [ "default.target" ];
   after = [ "graphical-session.target" ];
+  serviceConfig = {
+    Restart = "on-failure";
+    RestartSec = 5;
+  };
 };
+
 }; 
 
   ########################
