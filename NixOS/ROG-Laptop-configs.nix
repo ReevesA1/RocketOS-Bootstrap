@@ -390,14 +390,13 @@ user.services.protonvpn-cli = {
 
 #! Synergy start at boot
 #see if it worked with systemctl --user status ulauncher and systemctl --user start ulauncher to start it
-  user.services.synergy = {
-    enable = true;
-    description = "Start Synergy";
-    script = "/var/lib/flatpak/exports/bin/com.symless.synergy";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-  };
+user.services.synergy = {
+  enable = true;
+  description = "Start Synergy";
+  script = "/var/lib/flatpak/exports/bin/com.symless.synergy";
+  wantedBy = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
+};
 }; 
 
   ########################
