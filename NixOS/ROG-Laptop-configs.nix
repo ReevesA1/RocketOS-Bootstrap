@@ -363,6 +363,7 @@
     '';
 
 #! Ulauncher start at boot
+#see if it worked with systemctl --user status ulauncher and systemctl --user start ulauncher to start it
   user.services.ulauncher = {
     enable = true;
     description = "Start Ulauncher";
@@ -370,7 +371,6 @@
 
     documentation = [ "https://github.com/Ulauncher/Ulauncher/blob/f0905b9a9cabb342f9c29d0e9efd3ba4d0fa456e/contrib/systemd/ulauncher.service" ];
     wantedBy = [ "graphical.target" "multi-user.target" ];
-    after = [ "display-manager.service" ];
   };
 
 #!No GO auto starting proton
