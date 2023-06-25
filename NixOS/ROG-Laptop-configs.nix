@@ -157,7 +157,7 @@
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
     gnome-photos
-    gnome-console
+    #gnome-console #dont remove or ill lose the right click open in terminal option in nautilus
   ] ++ (with pkgs.gnome; [
     geary
     totem
@@ -248,8 +248,8 @@
   gnome.gnome-tweaks
   gnome.gnome-session
   guake
-  nautilus-open-any-terminal
-  gnome.nautilus-python
+  #nautilus-open-any-terminal
+  #gnome.nautilus-python
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
   gnomeExtensions.tray-icons-reloaded #show megasync with syncing actions and barrier tray icons as of June 2023 and protonvpn just use native tray icon indicator now
