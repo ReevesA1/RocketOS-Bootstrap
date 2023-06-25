@@ -374,6 +374,8 @@
   };
 
 #!ProtonVPN at boot
+#see if it worked with systemctl --user status protonvpn-cli and systemctl --user start protonvpn-cli to start it
+# make sure protonvpn-cli killswitch --off
 user.services.protonvpn-cli = {
   enable = true;
   description = "Start ProtonVPN";
