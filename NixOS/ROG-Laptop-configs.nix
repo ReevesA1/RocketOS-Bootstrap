@@ -400,7 +400,7 @@ user.services.protonvpn-cli = {
     wants = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
   };
-};
+
 
 }; 
 
