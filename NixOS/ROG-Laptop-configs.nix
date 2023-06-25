@@ -380,15 +380,14 @@
 
 #! ProtonVPN at boot (no go - could be a good example of starting a command or a script)
 user.services.protonvpn-cli = {
-  enable = true;
-  description = "Start ProtonVPN";
-  script = "/run/current-system/sw/bin/bash protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA";
-  wantedBy = [ "default.target" ];
-  #after = [ "graphical-session.target" ];
-  #serviceConfig = {
-  #  Restart = "on-failure";
-  #  RestartSec = 5;
-  #};
+  description = "Start protonvpn-cli";
+  wantedBy = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
+  serviceConfig = {
+    ExecStart = "/run/current-system/sw/bin/bash protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA";
+    #Restart = "always";
+    Environment = "PATH=${pkgs.bash}/bin";
+  };
 };
 
 #! Synergy start at boot (no go - could be a example of starting a flatpak)
