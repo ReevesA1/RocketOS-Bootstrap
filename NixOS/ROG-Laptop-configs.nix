@@ -395,12 +395,8 @@ user.services.protonvpn-cli = {
 user.services.synergy = {
   enable = true;
   description = "Start Synergy";
-  script = ''
-    export PATH=$PATH:${pkgs.flatpak}/bin
-    /var/lib/flatpak/exports/bin/com.symless.synergy
-  '';
-  wantedBy = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
+  script = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy";
+  wantedBy = [ "default.target" ];
 };
 
 }; 
