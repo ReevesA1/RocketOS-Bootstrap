@@ -287,7 +287,9 @@
   protonvpn-cli
   #synergy #outdate
   firefox
-  #megasync #No GO on aarch64 will install with flatpak
+  #megasync #No GO on aarch64 (flatpak either)
+  blackbox-terminal
+  vlc
 
   #############################
   ### Parallels Exclusives  ###

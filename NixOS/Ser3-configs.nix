@@ -287,6 +287,8 @@
   #synergy #outdate
   firefox
   megasync #(Not aarch64)
+  blackbox-terminal
+  vlc
 
   ########################
   ### SER3 Exclusives  ###
