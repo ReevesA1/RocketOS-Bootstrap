@@ -399,6 +399,7 @@ user.services.synergy = {
   serviceConfig = {
     ExecStart = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy";
     Restart = "always";
+    Environment = "PATH=${pkgs.flatpak}/bin";
   };
 };
 
