@@ -381,8 +381,13 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-  networking.enableIPv6 = false;
+  networking = {
+    enableIPv6 = false;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 24800 ]; #needed for barrier/synergy
+    };
+  };
 
   ###########
   ## SHELL ##
