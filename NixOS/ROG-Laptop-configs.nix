@@ -291,6 +291,7 @@
   blackbox-terminal
   vlc
   appimage-run
+  wmctrl #close windows
 
   ##############################
   ### ROG-Laptop Exclusives  ###
@@ -388,23 +389,14 @@ user.services.protonvpn-cli = {
   };
 };
 
-#! Synergy start at boot (no go - could be a example of starting a flatpak)
-#?worked
-# user.services.synergy = {
-#   enable = true;
-#   description = "Start Ulauncher";
-#   script = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
-#   wantedBy = [ "graphical-session.target" ];
-#   wants = [ "graphical-session.target" ];
-#   after = [ "graphical-session.target" ];
-# };
+#! Synergy start at boot (example of starting a flatpak)
 
 user.services.synergy = {
   description = "Start Synergy";
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy --hide-window";
+    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
     #Restart = "always";
     Environment = "PATH=${pkgs.flatpak}/bin";
   };
