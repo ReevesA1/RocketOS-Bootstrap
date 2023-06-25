@@ -382,7 +382,7 @@
 user.services.protonvpn-cli = {
   enable = true;
   description = "Start ProtonVPN";
-  script = "${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
+  script = "/run/current-system/sw/bin/bash $HOME/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
   wantedBy = [ "default.target" ];
   #after = [ "graphical-session.target" ];
   #serviceConfig = {
@@ -392,14 +392,13 @@ user.services.protonvpn-cli = {
 };
 
 #! Synergy start at boot (no go)
-user.services.synergy = {
-  description = "Start Synergy";
-  wantedBy = [ "multi-user.target" ];
-  after = [ "network.target" ];
-  serviceConfig = {
-    ExecStart = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy";
-    Restart = "always";
-    Environment = "PATH=${pkgs.flatpak}/bin";
+  user.services.synergy = {
+    enable = true;
+    description = "Start Ulauncher";
+    script = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
   };
 };
 
