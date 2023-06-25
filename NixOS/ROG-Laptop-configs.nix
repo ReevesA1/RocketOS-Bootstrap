@@ -404,7 +404,7 @@ user.services.protonvpn-cli = {
 #  };
 #};
 
-systemd.user.services.synergy = {
+user.services.synergy = {
   description = "Start Synergy";
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
