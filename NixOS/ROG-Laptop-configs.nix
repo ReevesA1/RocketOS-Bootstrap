@@ -381,7 +381,7 @@
   ########################
   #services.openssh.enable = true;
   #services.udev.packages = with pkgs; [ logitech-udev-rules ]; #needed for solaar
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  #services.xserver.excludePackages = [ pkgs.xterm ]; #I removed xterm but then distrobox icon entries don't work
 
 
   ###################
