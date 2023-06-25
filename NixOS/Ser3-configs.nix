@@ -277,7 +277,7 @@
   #podman
   unstable.podman
   podman-desktop
-  #distrobox
+  distrobox
 
   #Base Apps
   veracrypt #(Not aarch64)
