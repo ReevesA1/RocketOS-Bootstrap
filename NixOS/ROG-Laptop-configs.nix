@@ -368,8 +368,7 @@
 #systemctl --user status foo 
 #systemctl --user start foo
 
-#! Ulauncher start at boot
-#see if it worked with systemctl --user status ulauncher and systemctl --user start ulauncher to start it
+#! Ulauncher start at boot (works)
   user.services.ulauncher = {
     enable = true;
     description = "Start Ulauncher";
@@ -379,9 +378,7 @@
     after = [ "graphical-session.target" ];
   };
 
-#! ProtonVPN at boot
-#see if it worked with systemctl --user status protonvpn-cli and systemctl --user start protonvpn-cli to start it
-# make sure protonvpn-cli killswitch --off
+#! ProtonVPN at boot (no go)
 user.services.protonvpn-cli = {
   enable = true;
   description = "Start ProtonVPN";
@@ -394,8 +391,7 @@ user.services.protonvpn-cli = {
   };
 };
 
-#! Synergy start at boot
-#see if it worked with systemctl --user status ulauncher and systemctl --user start ulauncher to start it
+#! Synergy start at boot (no go)
 user.services.synergy = {
   enable = true;
   description = "Start Synergy";
