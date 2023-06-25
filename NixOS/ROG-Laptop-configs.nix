@@ -385,8 +385,6 @@ user.services.protonvpn-cli = {
   after = [ "graphical-session.target" ];
   serviceConfig = {
     ExecStart = "/run/current-system/sw/bin/bash protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA";
-    #Restart = "always";
-    Environment = "PATH=${pkgs.bash}/bin";
   };
 };
 
