@@ -398,7 +398,7 @@ user.services.synergy = {
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy && wmctrl -c "Synergy"";
+    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy && wmctrl -c Synergy";
     #Restart = "always";
     Environment = "PATH=${pkgs.flatpak}/bin";
   };
