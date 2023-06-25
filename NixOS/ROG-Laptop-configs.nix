@@ -381,7 +381,7 @@
     after = [ "graphical-session.target" ];
   };
 
-#! ProtonVPN at boot (no go - could be a good example of starting a command or a script)
+#! ProtonVPN at boot (Works - example of starting a command or a script)
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
   wantedBy = [ "graphical-session.target" ];
@@ -391,17 +391,25 @@ user.services.protonvpn-cli = {
     ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
   };
 };
-#! Synergy start at boot (example of starting a flatpak)
+#! Synergy start at boot (Works - example of starting a flatpak)
 
-user.services.synergy = {
+#user.services.synergy = {
+#  description = "Start Synergy";
+#  wantedBy = [ "graphical-session.target" ];
+#  after = [ "graphical-session.target" ];
+#  serviceConfig = {
+#    #ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy"; #!works
+#    #Restart = "always";
+#    Environment = "PATH=${pkgs.flatpak}/bin";
+#  };
+#};
+
+systemd.user.services.synergy = {
   description = "Start Synergy";
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    #ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy && sleep 5 && wmctrl -c Synergy";
-    ExecStart = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy && ${pkgs.wmctrl}/bin/wmctrl -c Synergy";
-    #Restart = "always";
-    Environment = "PATH=${pkgs.flatpak}/bin";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'nohup ${pkgs.flatpak}/bin/flatpak run com.symless.synergy; ${pkgs.wmctrl}/bin/wmctrl -c Synergy'";
   };
 };
 
