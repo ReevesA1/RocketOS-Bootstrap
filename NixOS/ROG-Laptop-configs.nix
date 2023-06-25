@@ -387,10 +387,10 @@ user.services.protonvpn-cli = {
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStart = "/run/current-system/sw/bin/bash protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA";
+    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+    ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
   };
 };
-
 #! Synergy start at boot (example of starting a flatpak)
 
 user.services.synergy = {
@@ -398,7 +398,7 @@ user.services.synergy = {
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy && wmctrl -c Synergy";
+    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy && sleep 5 && wmctrl -c Synergy";
     #Restart = "always";
     Environment = "PATH=${pkgs.flatpak}/bin";
   };
