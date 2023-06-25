@@ -371,7 +371,7 @@
 #systemctl --user status foo 
 #systemctl --user start foo
 
-#! Ulauncher start at boot (works)
+#! Ulauncher start at boot (works - example of starting a nix package)
   user.services.ulauncher = {
     enable = true;
     description = "Start Ulauncher";
