@@ -248,12 +248,13 @@
   gnome.gnome-tweaks
   gnome.gnome-session
   guake
-  nautilus-open-any-terminal
-  gnome.nautilus-python
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
   gnomeExtensions.tray-icons-reloaded #show megasync with syncing actions and barrier tray icons as of June 2023 and protonvpn just use native tray icon indicator now
-
+  #Testing
+  nautilus-open-any-terminal
+  gnome.nautilus-python
+  appimage-run
 
   ###################
   ### NixOS Only  ###
