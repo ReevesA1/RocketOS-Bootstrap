@@ -379,7 +379,7 @@
 user.services.protonvpn-cli = {
   enable = true;
   description = "Start ProtonVPN";
-  script = "${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA";
+  script = "${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA ";
   wantedBy = [ "default.target" ];
   after = [ "network.target" ];
 };
