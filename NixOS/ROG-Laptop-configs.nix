@@ -392,7 +392,7 @@ user.services.protonvpn-cli = {
 };
 
 #! Synergy start at boot (no go)
-systemd.services.synergy = {
+user.services.synergy = {
   description = "Start Synergy";
   wantedBy = [ "multi-user.target" ];
   after = [ "network.target" ];
