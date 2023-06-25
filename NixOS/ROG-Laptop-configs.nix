@@ -362,6 +362,12 @@
       DefaultTimeoutStopSec=10s
     '';
 
+#?#######BOOT SERVICES
+#? Diagnose with these next commands
+#journalctl --user-unit foo.service  
+#systemctl --user status foo 
+#systemctl --user start foo
+
 #! Ulauncher start at boot
 #see if it worked with systemctl --user status ulauncher and systemctl --user start ulauncher to start it
   user.services.ulauncher = {
