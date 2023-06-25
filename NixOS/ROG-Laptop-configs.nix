@@ -292,13 +292,16 @@
   vlc
   appimage-run
 
-  #testing
-  wmctrl #close windows
+
 
   ##############################
   ### ROG-Laptop Exclusives  ###
   ##############################
   dotnet-sdk_7
+
+  ###############
+  ### Testing ###
+  ###############
 
   ];
 
