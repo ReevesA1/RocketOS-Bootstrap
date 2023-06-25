@@ -399,7 +399,7 @@ user.services.synergy = {
   after = [ "graphical-session.target" ];
   serviceConfig = {
     #ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy && sleep 5 && wmctrl -c Synergy";
-    ExecStart = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy && sleep 5 && wmctrl -c Synergy";
+    ExecStart = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy && ${pkgs.wmctrl}/bin/wmctrl -c Synergy";
     #Restart = "always";
     Environment = "PATH=${pkgs.flatpak}/bin";
   };
