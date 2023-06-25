@@ -379,7 +379,7 @@
 user.services.protonvpn-cli = {
   enable = true;
   description = "Start ProtonVPN";
-  script = "${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA ";
+  script = "${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
   wantedBy = [ "default.target" ];
   after = [ "graphical-session.target" ];
 };
