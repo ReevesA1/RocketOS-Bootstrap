@@ -159,7 +159,7 @@
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
     gnome-photos
-    gnome-console
+    #gnome-console #dont remove or ill lose the right click open in terminal option in nautilus
   ] ++ (with pkgs.gnome; [
     geary
     totem
