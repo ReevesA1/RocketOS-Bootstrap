@@ -396,7 +396,7 @@ user.services.synergy = {
   script = "/var/lib/flatpak/exports/bin/com.symless.synergy";
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
-};
+  };
 }; 
 
   ########################
