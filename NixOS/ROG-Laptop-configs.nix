@@ -393,8 +393,7 @@ user.services.protonvpn-cli = {
   user.services.synergy = {
     enable = true;
     description = "Start Synergy";
-    script = "com.symless.synergy --hide-window";
-    #/var/lib/flatpak/exports/bin/com.symless.synergy
+    script = "/var/lib/flatpak/exports/bin/com.symless.synergy";
     wantedBy = [ "graphical-session.target" ];
     wants = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
