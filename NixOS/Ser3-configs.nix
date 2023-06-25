@@ -289,6 +289,7 @@
   megasync #(Not aarch64)
   blackbox-terminal
   vlc
+  appimage-run
 
   ########################
   ### SER3 Exclusives  ###

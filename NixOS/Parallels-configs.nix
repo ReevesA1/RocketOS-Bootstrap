@@ -289,6 +289,7 @@
   #megasync #No GO on aarch64 (flatpak either)
   blackbox-terminal
   vlc
+  appimage-run
 
   #############################
   ### Parallels Exclusives  ###
