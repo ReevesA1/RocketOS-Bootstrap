@@ -395,7 +395,7 @@ networking = {
   enableIPv6 = false;
   firewall = {
     enable = true;
-    #allowedTCPPorts = [ 24800 ];
+    allowedTCPPorts = [ 24800 ];
   };
 };
 
