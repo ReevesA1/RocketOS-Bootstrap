@@ -392,11 +392,14 @@ user.services.protonvpn-cli = {
 };
 
 #! Synergy start at boot (no go)
-user.services.synergy = {
-  enable = true;
+systemd.services.synergy = {
   description = "Start Synergy";
-  script = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy";
-  wantedBy = [ "default.target" ];
+  wantedBy = [ "multi-user.target" ];
+  after = [ "network.target" ];
+  serviceConfig = {
+    ExecStart = "${pkgs.flatpak}/bin/flatpak run com.symless.synergy";
+    Restart = "always";
+  };
 };
 
 }; 
