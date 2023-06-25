@@ -378,11 +378,11 @@
     after = [ "graphical-session.target" ];
   };
 
-#! ProtonVPN at boot (no go)
+#! ProtonVPN at boot (no go - could be a good example of starting a command or a script)
 user.services.protonvpn-cli = {
   enable = true;
   description = "Start ProtonVPN";
-  script = "/run/current-system/sw/bin/bash $HOME/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
+  script = "/run/current-system/sw/bin/bash protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA";
   wantedBy = [ "default.target" ];
   #after = [ "graphical-session.target" ];
   #serviceConfig = {
@@ -391,15 +391,27 @@ user.services.protonvpn-cli = {
   #};
 };
 
-#! Synergy start at boot (no go)
-  user.services.synergy = {
-    enable = true;
-    description = "Start Ulauncher";
-    script = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
+#! Synergy start at boot (no go - could be a example of starting a flatpak)
+#?worked
+# user.services.synergy = {
+#   enable = true;
+#   description = "Start Ulauncher";
+#   script = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
+#   wantedBy = [ "graphical-session.target" ];
+#   wants = [ "graphical-session.target" ];
+#   after = [ "graphical-session.target" ];
+# };
+
+user.services.synergy = {
+  description = "Start Synergy";
+  wantedBy = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
+  serviceConfig = {
+    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
+    Restart = "always";
+    Environment = "PATH=${pkgs.flatpak}/bin";
   };
+};
 
 
 }; 
