@@ -393,26 +393,18 @@ user.services.protonvpn-cli = {
 };
 #! Synergy start at boot (Works - example of starting a flatpak)
 
-#user.services.synergy = {
-#  description = "Start Synergy";
-#  wantedBy = [ "graphical-session.target" ];
-#  after = [ "graphical-session.target" ];
-#  serviceConfig = {
-#    #ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy"; #!works
-#    #Restart = "always";
-#    Environment = "PATH=${pkgs.flatpak}/bin";
-#  };
-#};
-
 user.services.synergy = {
   description = "Start Synergy";
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStartPre = "${pkgs.bash}/bin/bash -c 'nohup ${pkgs.flatpak}/bin/flatpak run com.symless.synergy; ${pkgs.coreutils}/bin/sleep 5'";
-    ExecStart = "${pkgs.wmctrl}/bin/wmctrl -c Synergy'";
+    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
+    #Restart = "always";
+    Environment = "PATH=${pkgs.flatpak}/bin";
   };
 };
+
+
 
 
 
