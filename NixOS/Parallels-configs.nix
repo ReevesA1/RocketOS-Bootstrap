@@ -351,21 +351,24 @@
       DefaultTimeoutStopSec=10s
     '';
 
-#!No GO auto starting proton
-/*
-  user.services.protonvpn = {
-    description = "ProtonVPN";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    serviceConfig = {
-      #ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA";
-      ExecStart = "/run/current-system/sw/bin/protonvpn-cli connect --cc CA";
-      Restart = "always";
-      RestartSec = "30";
+  #?#######BOOT SERVICES
+  #? Diagnose with these next commands
+  #journalctl --user-unit foo.service  
+  #systemctl --user status foo 
+  #systemctl --user start foo
+  
+  #! Ulauncher start at boot (works)
+    user.services.ulauncher = {
+      enable = true;
+      description = "Start Ulauncher";
+      script = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
     };
-  };
-  */
-}; 
+  
+
+
 
 
   ########################
