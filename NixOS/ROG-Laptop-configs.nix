@@ -381,7 +381,7 @@ user.services.protonvpn-cli = {
   description = "Start ProtonVPN";
   script = "${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && protonvpn-cli killswitch --on && protonvpn-cli connect --cc CA ";
   wantedBy = [ "default.target" ];
-  after = [ "network.target" ];
+  after = [ "graphical-session.target" ];
 };
 }; 
 
