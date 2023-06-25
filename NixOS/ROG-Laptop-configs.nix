@@ -363,7 +363,7 @@
     '';
 
 #! Ulauncher start at boot
-  systemd.user.services.ulauncher = {
+  user.services.ulauncher = {
     enable = true;
     description = "Start Ulauncher";
     script = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
