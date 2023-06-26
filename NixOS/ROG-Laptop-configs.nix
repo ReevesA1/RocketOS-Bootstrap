@@ -394,7 +394,7 @@ user.services.protonvpn-cli = {
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA && ${pkgs.kill}/bin/kill conky && ${pkgs.conky}/bin/conky; fi; sleep 30; done'";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA && ${pkgs.kill}/bin/kill ${pkgs.conky}/bin/conky && ${pkgs.conky}/bin/conky; fi; sleep 30; done'";
     Restart = "always";
   };
 };
