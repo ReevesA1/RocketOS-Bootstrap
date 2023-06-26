@@ -403,7 +403,8 @@ user.services.protonvpn-cli = {
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA; fi'";
+    Restart = "always";
   };
 };
 #! Synergy start at boot (Works - example of starting a flatpak)
