@@ -412,7 +412,16 @@ user.services.synergy = {
   };
 };
 
-
+#!Restart Conky when network adapter changes
+services.conky-restart = {
+    description = "Restart Conky when network adapter changes";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.bash}/bin/bash -c 'current_device=$(nmcli -t -f DEVICE,STATE device | grep -w connected | cut -d: -f1); while true; do new_device=$(nmcli -t -f DEVICE,STATE device | grep -w connected | cut -d: -f1); if [ \"$current_device\" != \"$new_device\" ]; then killall conky; conky &; current_device=$new_device; fi; sleep 5; done'";
+      Restart = "always";
+    };
+  };
+}
 
 
 
