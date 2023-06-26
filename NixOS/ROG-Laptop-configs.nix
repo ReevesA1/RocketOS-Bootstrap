@@ -414,7 +414,7 @@ user.services.synergy = {
 
 
 #!Restart Conky when network adapter changes
-services.conky-restart = {
+user.services.conky-restart = {
     description = "Restart Conky when network adapter changes";
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
