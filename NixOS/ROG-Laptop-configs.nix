@@ -386,7 +386,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
-
+#! Also it Restarts Conky when network adapter changes
 
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
@@ -394,7 +394,7 @@ user.services.protonvpn-cli = {
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA; fi; sleep 30; done'";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA && ${pkgs.pkill}/bin/pkill conky && ${pkgs.conky}/bin/conky; fi; sleep 30; done'";
     Restart = "always";
   };
 };
@@ -412,17 +412,6 @@ user.services.synergy = {
   };
 };
 
-
-#!Restart Conky when network adapter changes
-user.services.conky-restart = {
-    description = "Restart Conky when network adapter changes";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'current_device=$(nmcli -t -f DEVICE,STATE device | ${pkgs.gnugrep}/bin/grep -w connected | ${pkgs.coreutils}/bin/cut -d: -f1); while true; do new_device=$(nmcli -t -f DEVICE,STATE device | ${pkgs.gnugrep}/bin/grep -w connected | ${pkgs.coreutils}/bin/cut -d: -f1); if [ \"$current_device\" != \"$new_device\" ]; then killall conky; ${pkgs.conky}/bin/conky &; current_device=$new_device; fi; ${pkgs.coreutils}/bin/sleep 5; done'";
-      Restart = "always";
-    };
-  };
 
 }; 
 
