@@ -386,6 +386,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
+#? this one works but not after sleep
 #user.services.protonvpn-cli = {
 #  description = "Start protonvpn-cli";
 #  wantedBy = [ "graphical-session.target" ];
