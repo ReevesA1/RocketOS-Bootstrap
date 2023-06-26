@@ -419,7 +419,7 @@ user.services.conky-restart = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'current_device=$(nmcli -t -f DEVICE,STATE device | grep -w connected | cut -d: -f1); while true; do new_device=$(nmcli -t -f DEVICE,STATE device | grep -w connected | cut -d: -f1); if [ \"$current_device\" != \"$new_device\" ]; then killall conky; conky &; current_device=$new_device; fi; sleep 5; done'";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'current_device=$(nmcli -t -f DEVICE,STATE device | ${pkgs.gnugrep}/bin/grep -w connected | ${pkgs.coreutils}/bin/cut -d: -f1); while true; do new_device=$(nmcli -t -f DEVICE,STATE device | ${pkgs.gnugrep}/bin/grep -w connected | ${pkgs.coreutils}/bin/cut -d: -f1); if [ \"$current_device\" != \"$new_device\" ]; then killall conky; ${pkgs.conky}/bin/conky &; current_device=$new_device; fi; ${pkgs.coreutils}/bin/sleep 5; done'";
       Restart = "always";
     };
   };
