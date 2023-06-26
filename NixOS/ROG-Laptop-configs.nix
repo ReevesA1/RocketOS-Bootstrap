@@ -387,7 +387,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
-#! Also it Restarts Conky when network adapter changes
+#! Also it kills Conky 
 
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
@@ -396,6 +396,17 @@ user.services.protonvpn-cli = {
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
     ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA ; ${pkgs.killall}/bin/killall conky ; fi; sleep 30; done'";
+    Restart = "always";
+  };
+};
+
+user.services.conky = {
+  description = "Start conky";
+  wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
+  after = [ "suspend.target" "graphical-session.target" ];
+  serviceConfig = {
+    ExecStartPre = "${pkgs.coreutils}/bin/sleep 15";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ! ${pkgs.pgrep}/bin/pgrep conky; then ${pkgs.conky}/bin/conky; fi; sleep 30; done'";
     Restart = "always";
   };
 };
