@@ -386,13 +386,23 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
+#user.services.protonvpn-cli = {
+#  description = "Start protonvpn-cli";
+#  wantedBy = [ "graphical-session.target" ];
+#  after = [ "graphical-session.target" ];
+#  serviceConfig = {
+#    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+#    #ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
+#    ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
+#  };
+#};
+
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
-  wantedBy = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
+  wantedBy = [ "multi-user.target" "sleep.target" ];
+  after = [ "suspend.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    #ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
     ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
   };
 };
