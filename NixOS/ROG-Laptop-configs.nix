@@ -387,6 +387,7 @@
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
 #? this one works but not after sleep
+#? KEEP FOR REFERENCE
 #user.services.protonvpn-cli = {
 #  description = "Start protonvpn-cli";
 #  wantedBy = [ "graphical-session.target" ];
@@ -403,7 +404,7 @@ user.services.protonvpn-cli = {
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "/home/rocket/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
+    ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
     Restart = "always";
   };
 };
