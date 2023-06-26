@@ -402,6 +402,7 @@ user.services.protonvpn-cli = {
   wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
+    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
     ExecStart = "/home/rocket/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
     Restart = "always";
   };
