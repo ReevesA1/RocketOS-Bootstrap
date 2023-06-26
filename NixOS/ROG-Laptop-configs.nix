@@ -412,6 +412,7 @@ user.services.synergy = {
   };
 };
 
+
 #!Restart Conky when network adapter changes
 services.conky-restart = {
     description = "Restart Conky when network adapter changes";
@@ -421,10 +422,8 @@ services.conky-restart = {
       Restart = "always";
     };
   };
-}
 
-
-
+}; 
 
   ########################
   #     Misc Services    #
