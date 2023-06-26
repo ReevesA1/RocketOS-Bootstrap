@@ -386,28 +386,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
-#? this one works but not after sleep
-#? KEEP FOR REFERENCE
-#user.services.protonvpn-cli = {
-#  description = "Start protonvpn-cli";
-#  wantedBy = [ "graphical-session.target" ];
-#  after = [ "graphical-session.target" ];
-#  serviceConfig = {
-#    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-#    ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
-#  };
-#};
 
-#user.services.protonvpn-cli = {
-#  description = "Start protonvpn-cli";
-#  wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
-#  after = [ "suspend.target" "graphical-session.target" ];
-#  serviceConfig = {
-#    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-#    ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
-#    Restart = "always";
-#  };
-#};
 
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
