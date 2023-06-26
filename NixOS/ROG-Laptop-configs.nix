@@ -398,16 +398,28 @@
 #  };
 #};
 
+#user.services.protonvpn-cli = {
+#  description = "Start protonvpn-cli";
+#  wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
+#  after = [ "suspend.target" "graphical-session.target" ];
+#  serviceConfig = {
+#    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+#    ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
+#    Restart = "always";
+#  };
+#};
+
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
   wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/ProtonVPN-NixOS.sh";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA; fi; sleep 60; done'";
     Restart = "always";
   };
 };
+
 #! Synergy start at boot (Works - example of starting a flatpak)
 
 user.services.synergy = {
