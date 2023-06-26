@@ -302,7 +302,7 @@
   ###########################################
   ### Testing Add to all other ones if yes###
   ##########################################
-  telnet
+  inetutils #needed for telnet command in conky
 
   ];
 
