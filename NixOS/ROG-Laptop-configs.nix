@@ -401,7 +401,7 @@ user.services.protonvpn-cli = {
 };
 
 #! Restart Conly always
-systemd.user.services."conky.service" = {
+user.services.conky-restart = {
   description = "Conky System Monitor";
   wantedBy = [ "default.target" ];
   after = [ "network.target" ];
