@@ -405,7 +405,7 @@ user.services.conky = {
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 15";
-    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ! /run/current-system/sw/bin/pgrep conky; then ${pkgs.conky}/bin/conky; fi; sleep 30; done'";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ! /run/current-system/sw/bin/pgrep conky; then /run/current-system/sw/bin/conky; fi; sleep 30; done'";
     Restart = "always";
   };
 };
