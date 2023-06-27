@@ -384,6 +384,7 @@
     wants = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
   };
+};
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
 #! also stops conky
