@@ -403,7 +403,7 @@ user.services.protonvpn-cli = {
 
 
 #! Restart Conky 
-services.conkyRestart = {
+user.services.conkyRestart = {
     description = "Restart Conky";
     wantedBy = [ "multi-user.target" ];
     after = [ "conky.service" ];
