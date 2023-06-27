@@ -401,20 +401,6 @@ user.services.protonvpn-cli = {
 };
 
 
-
-#! Restart Conky 
-user.services.conkyRestart = {
-    description = "Restart Conky";
-    wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
-    after = [ "suspend.target" "graphical-session.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/nixos-autostarts/conky-systemd-restart.sh"; 
-      #ExecStart = "${pkgs.conky}/bin/conky"; # I cant call it like this conky wont display shit correctly
-      Restart = "always";
-      RestartSec = 5;
-    };
-  };
-
 #! Synergy start at boot (Works - example of starting a flatpak)
 
 user.services.synergy = {
