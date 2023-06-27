@@ -386,7 +386,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
-#! Also it kills Conky and I just have to restart it manualy only way I could figure out how
+#! Also it kills Conky and relaunches it with a script
 
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
@@ -394,7 +394,7 @@ user.services.protonvpn-cli = {
   after = [ "suspend.target" "graphical-session.target" ];
   serviceConfig = {
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA ; /run/current-system/sw/bin/pkill conky ; fi; sleep 30; done'";
+    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA ; /run/current-system/sw/bin/pkill conky && ${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/nixos-autostarts/conky-systemd-restart.sh ; fi; sleep 30; done'";
     Restart = "always";
   };
 };
