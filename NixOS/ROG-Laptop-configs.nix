@@ -406,7 +406,8 @@ user.services.protonvpn-cli = {
     after = [ "conky.service" ];
     requires = [ "conky.service" ];
     serviceConfig = {
-      ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/nixos-autostarts/conky-systemd-restart.sh";
+      ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/nixos-autostarts/conky-systemd-restart.sh"; 
+      #ExecStart = "${pkgs.conky}/bin/conky"; # I cant call it like this conky wont display shit correctly
       Restart = "always";
       RestartSec = 5;
     };
