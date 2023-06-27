@@ -399,16 +399,21 @@ user.services.protonvpn-cli = {
   };
 };
 
+#! Conky start if terminated
 user.services.conky = {
-  description = "Start conky";
-  wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
-  after = [ "suspend.target" "graphical-session.target" ];
+  enable = true;
+  description = "Start Conky";
+  script = "${pkgs.conky}/bin/conky";
+  wantedBy = [ "graphical-session.target" ];
+  wants = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
   serviceConfig = {
-    ExecStartPre = "${pkgs.coreutils}/bin/sleep 15";
-    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ! /run/current-system/sw/bin/pgrep conky; then /run/current-system/sw/bin/conky; fi; sleep 30; done'";
     Restart = "always";
+    RestartSec = "5";
+    ExecStartPre = "${pkgs.coreutils}/bin/sleep 20";
   };
 };
+
 
 #! Synergy start at boot (Works - example of starting a flatpak)
 
