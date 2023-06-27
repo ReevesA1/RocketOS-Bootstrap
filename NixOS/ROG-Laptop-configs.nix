@@ -400,17 +400,21 @@ user.services.protonvpn-cli = {
   };
 };
 
-#! Restart Conly always
-user.services.conky-restart = {
-  description = "Conky System Monitor";
-  wantedBy = [ "default.target" ];
-  after = [ "network.target" ];
-  serviceConfig.ExecStart = ''
-    export PATH="${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:$PATH"
-    ${pkgs.conky}/bin/conky
-  '';
-  serviceConfig.Restart = "always";
-};
+#! Restart Conky always
+  user.services.conky-restart = {
+    description = "Conky System Monitor";
+    wantedBy = [ "default.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+      ExecStart = ''
+        export PATH="${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:$PATH"
+        ${pkgs.conky}/bin/conky
+      '';
+      Restart = "always";
+    };
+  };
+
 
 
 #! Synergy start at boot (Works - example of starting a flatpak)
