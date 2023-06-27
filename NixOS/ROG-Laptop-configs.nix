@@ -406,7 +406,7 @@ systemd.user.services."conky.service" = {
   wantedBy = [ "default.target" ];
   after = [ "network.target" ];
   serviceConfig.ExecStart = ''
-    export PATH="${pkgs.curl}/bin:${pkgs.protoncli-vpn}/bin:$PATH"
+    export PATH="${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:$PATH"
     ${pkgs.conky}/bin/conky
   '';
   serviceConfig.Restart = "always";
