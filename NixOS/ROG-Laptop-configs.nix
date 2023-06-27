@@ -386,6 +386,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
+#! also stops conky
 
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
@@ -398,7 +399,19 @@ user.services.protonvpn-cli = {
   };
 };
 
-
+#! Restart Conky 
+  systemd.services.conkyRestart = {
+    description = "Restart Conky";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "conky.service" ];
+    requires = [ "conky.service" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.bash}/bin/bash /home/rocket/MEGAsync/Scripts/Apps-Autostart/nixos-autostarts/conky-systemd-restart.sh";
+      Restart = "always";
+      RestartSec = 5;
+    };
+  };
+}
 
 
 #! Synergy start at boot (Works - example of starting a flatpak)
