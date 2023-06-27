@@ -386,7 +386,7 @@
   };
 
 #! ProtonVPN at boot (Works - example of starting a command or a script)
-#! Also it kills Conky 
+#! Also it kills Conky and I just have to restart it manualy only way I could figure out how
 
 user.services.protonvpn-cli = {
   description = "Start protonvpn-cli";
@@ -399,20 +399,7 @@ user.services.protonvpn-cli = {
   };
 };
 
-#! Conky start if terminated
-user.services.conky = {
-  enable = true;
-  description = "Start Conky";
-  script = "${pkgs.conky}/bin/conky";
-  wantedBy = [ "graphical-session.target" ];
-  wants = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
-  serviceConfig = {
-    Restart = "always";
-    RestartSec = "5";
-    ExecStartPre = "${pkgs.coreutils}/bin/sleep 20";
-  };
-};
+
 
 
 #! Synergy start at boot (Works - example of starting a flatpak)
