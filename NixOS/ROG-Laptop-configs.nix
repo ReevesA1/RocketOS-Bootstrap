@@ -426,10 +426,7 @@ user.services.synergy = {
   #services.openssh.enable = true;
   #services.udev.packages = with pkgs; [ logitech-udev-rules ]; #needed for solaar
   #services.xserver.excludePackages = [ pkgs.xterm ]; #I removed xterm but then distrobox icon entries don't work
-services.firefox = {
-  enable = true;
-  after = [ "network.target" ];
-};
+  services.firefox.enable = true;
 
 
   ###################
