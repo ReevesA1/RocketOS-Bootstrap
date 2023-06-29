@@ -296,6 +296,7 @@
   blackbox-terminal
   vlc
   appimage-run
+  vscode
 
 
 
