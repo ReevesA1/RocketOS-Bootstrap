@@ -403,7 +403,7 @@ user.services.protonvpn-cli = {
 #! Restart Conky always
   user.services.conky-restart = {
     description = "Conky System Monitor";
-    script = "${pkgs.conky}/bin/conky --hide-window";
+    script = "${pkgs.conky}/bin/conky";
     wantedBy = [ "default.target" ];
     after = [ "network.target" ];
     serviceConfig = {
