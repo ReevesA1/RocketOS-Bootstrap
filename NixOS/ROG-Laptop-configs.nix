@@ -350,7 +350,16 @@
   #Misc Stuff not sure if needed for flatpaks?
   security.polkit.enable = true;
 
+
+
+#?#######SYSTEMD BOOT SERVICES
+#? Diagnose with these next commands
+#journalctl --user-unit foo.service  
+#systemctl --user status foo 
+#systemctl --user start foo
   #SystemD Services
+
+  #! Pole Kit from Chirs Titus
   systemd = {
   user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
@@ -369,77 +378,49 @@
       DefaultTimeoutStopSec=10s
     '';
 
-#?#######BOOT SERVICES
-#? Diagnose with these next commands
-#journalctl --user-unit foo.service  
-#systemctl --user status foo 
-#systemctl --user start foo
 
-#! Ulauncher start at boot (works - example of starting a nix package)
-  user.services.ulauncher = {
-    enable = true;
-    description = "Start Ulauncher";
-    script = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-  };
+#Todo the next three lines worked but systemD is not really intended to be used this way, I will create .desktop files with rocketOS instead
 
-
-#! ProtonVPN at boot (Works - example of starting a command or a script)
-#! also stops conky
-
-user.services.protonvpn-cli = {
-  description = "Start protonvpn-cli";
-  wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
-  after = [ "suspend.target" "graphical-session.target" ];
-  serviceConfig = {
-    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA && /run/current-system/sw/bin/pkill conky ; fi; sleep 30; done'";
-    Restart = "always";
-  };
-};
-
-#! Restart Conky always (only got public ip to work)
-  #user.services.conky-restart = {
-  #  description = "Conky System Monitor";
-  #  script = "${pkgs.conky}/bin/conky";
-  #  wantedBy = [ "default.target" ];
-  #  after = [ "network.target" ];
-  #  serviceConfig = {
-  #  Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";      
-  #  Restart = "always";
-  #  };
-  #};
-
-#! Restart Conky always
-user.services.conky-restart = {
-  description = "Conky System Monitor";
-  wantedBy = [ "default.target" ];
-  after = [ "network.target" ];
-  serviceConfig = {
-    Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";
-    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-    ExecStart = lib.mkForce ''
-      ${pkgs.conky}/bin/conky -c /home/rocket/.conkyrc
-    '';
-    Restart = "always";
-  };
-};
-
-#! Synergy start at boot (Works - example of starting a flatpak)
-
-user.services.synergy = {
-  description = "Start Synergy";
-  wantedBy = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
-  serviceConfig = {
-    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
-    #Restart = "always";
-    Environment = "PATH=${pkgs.flatpak}/bin";
-  };
-};
-
+##! Ulauncher start at boot (works - example of starting a nix package)
+#  user.services.ulauncher = {
+#    enable = true;
+#    description = "Start Ulauncher";
+#    script = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
+#    wantedBy = [ "graphical-session.target" ];
+#    wants = [ "graphical-session.target" ];
+#    after = [ "graphical-session.target" ];
+#  };
+#
+#
+##! ProtonVPN at boot (Works - example of starting a command or a script)
+##! also stops conky
+#
+#user.services.protonvpn-cli = {
+#  description = "Start protonvpn-cli";
+#  wantedBy = [ "multi-user.target" "sleep.target" "graphical-session.target" ];
+#  after = [ "suspend.target" "graphical-session.target" ];
+#  serviceConfig = {
+#    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+#    ExecStart = "${pkgs.bash}/bin/bash -c 'while true; do if ${pkgs.protonvpn-cli}/bin/protonvpn-cli status | ${pkgs.gnugrep}/bin/grep -q \"No active Proton VPN connection.\"; then ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA && /run/current-system/sw/bin/pkill conky ; fi; sleep 30; done'";
+#    Restart = "always";
+#  };
+#};
+#
+#
+#
+##! Synergy start at boot (Works - example of starting a flatpak)
+#
+#user.services.synergy = {
+#  description = "Start Synergy";
+#  wantedBy = [ "graphical-session.target" ];
+#  after = [ "graphical-session.target" ];
+#  serviceConfig = {
+#    ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
+#    #Restart = "always";
+#    Environment = "PATH=${pkgs.flatpak}/bin";
+#  };
+#};
+#
 
 
 
