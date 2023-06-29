@@ -213,6 +213,7 @@
   rofi
   ulauncher
   cmatrix
+  asciiquarium
   figlet
   colordiff
   sysstat
