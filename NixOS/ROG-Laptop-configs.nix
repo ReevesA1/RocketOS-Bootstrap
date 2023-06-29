@@ -418,7 +418,7 @@ user.services.conky-restart = {
   wantedBy = [ "default.target" ];
   after = [ "network.target" ];
   serviceConfig = {
-    #Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";
+    Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";
     ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
     ExecStart = lib.mkForce ''
       ${pkgs.conky}/bin/conky -c /home/rocket/.conkyrc
