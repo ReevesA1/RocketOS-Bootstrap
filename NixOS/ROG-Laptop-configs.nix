@@ -305,6 +305,7 @@
   ### Testing Add to all other ones if yes###
   ##########################################
   inetutils #needed for telnet good to have
+  hddtemp #needed for conky
 
   ];
 
