@@ -407,8 +407,8 @@ user.services.protonvpn-cli = {
     wantedBy = [ "default.target" ];
     after = [ "network.target" ];
     serviceConfig = {
-      Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin";
-      Restart = "always";
+    Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.route}/bin:${pkgs.grep}/bin";      
+    Restart = "always";
     };
   };
 
