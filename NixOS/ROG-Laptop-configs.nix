@@ -296,7 +296,7 @@
   blackbox-terminal
   vlc
   appimage-run
-  vscode
+  vscode #use this over the flatpak version so in shells they see the word code
 
 
 
