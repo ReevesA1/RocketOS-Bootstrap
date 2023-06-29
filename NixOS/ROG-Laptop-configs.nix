@@ -296,7 +296,7 @@
   blackbox-terminal
   vlc
   appimage-run
-  vscode #use this over the flatpak version so in shells they see the word code
+  vscode #use this over the flatpak version so in shells they see the word code therefor my vspowershell custom profil will work 
 
 
 
