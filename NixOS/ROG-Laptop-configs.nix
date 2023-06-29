@@ -252,8 +252,8 @@
   guake
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
-  #gnomeExtensions.tray-icons-reloaded #Tray icons - this one works as of june 29. (does not show protonvpn tho but its ok)
-  gnomeExtensions.appindicator #tray icon - testing
+  #gnomeExtensions.tray-icons-reloaded #Tray icons - this one works as of june 29 2023. (does not show protonvpn tho but its ok)
+  gnomeExtensions.appindicator #tray icon - This is the better one
 
   ###################
   ### NixOS Only  ###
