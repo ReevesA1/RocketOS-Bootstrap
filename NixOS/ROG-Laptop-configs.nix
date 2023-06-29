@@ -400,19 +400,32 @@ user.services.protonvpn-cli = {
   };
 };
 
+#! Restart Conky always (only got public ip to work)
+  #user.services.conky-restart = {
+  #  description = "Conky System Monitor";
+  #  script = "${pkgs.conky}/bin/conky";
+  #  wantedBy = [ "default.target" ];
+  #  after = [ "network.target" ];
+  #  serviceConfig = {
+  #  Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";      
+  #  Restart = "always";
+  #  };
+  #};
+
 #! Restart Conky always
-  user.services.conky-restart = {
-    description = "Conky System Monitor";
-    script = "${pkgs.conky}/bin/conky";
-    wantedBy = [ "default.target" ];
-    after = [ "network.target" ];
-    serviceConfig = {
-    Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";      
+user.services.conky-restart = {
+  description = "Conky System Monitor";
+  wantedBy = [ "default.target" ];
+  after = [ "network.target" ];
+  serviceConfig = {
+    #Environment = "PATH=${pkgs.coreutils}/bin:${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:${pkgs.iproute2}/bin:${pkgs.gnugrep}/bin";
+    ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
+    ExecStart = lib.mkForce ''
+      ${pkgs.conky}/bin/conky -c /home/rocket/.conkyrc
+    '';
     Restart = "always";
-    };
   };
-
-
+};
 
 #! Synergy start at boot (Works - example of starting a flatpak)
 
