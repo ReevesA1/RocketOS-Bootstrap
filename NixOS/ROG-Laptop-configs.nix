@@ -406,8 +406,8 @@ user.services.protonvpn-cli = {
     script = "${pkgs.conky}/bin/conky";
     wantedBy = [ "default.target" ];
     after = [ "network.target" ];
-    Environment = "PATH=${pkgs.coreutils}/bin";
     serviceConfig = {
+      Environment = "PATH=${pkgs.coreutils}/bin";
       Restart = "always";
     };
   };
