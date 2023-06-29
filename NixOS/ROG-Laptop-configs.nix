@@ -406,12 +406,8 @@ user.services.protonvpn-cli = {
     script = "${pkgs.conky}/bin/conky";
     wantedBy = [ "default.target" ];
     after = [ "network.target" ];
+    Environment = "PATH=${pkgs.coreutils}/bin";
     serviceConfig = {
-      ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-      ExecStart = lib.mkForce ''
-        export PATH="${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:$PATH"
-        ${pkgs.conky}/bin/conky
-        '';
       Restart = "always";
     };
   };
