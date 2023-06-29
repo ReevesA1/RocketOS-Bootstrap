@@ -408,10 +408,10 @@ user.services.protonvpn-cli = {
     after = [ "network.target" ];
     serviceConfig = {
       ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-      ExecStart = ''
+      ExecStart = lib.mkForce ''
         export PATH="${pkgs.curl}/bin:${pkgs.protonvpn-cli}/bin:$PATH"
         ${pkgs.conky}/bin/conky
-      '';
+        '';
       Restart = "always";
     };
   };
