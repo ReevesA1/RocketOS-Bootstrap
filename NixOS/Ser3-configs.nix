@@ -330,6 +330,12 @@
   #Misc Stuff not sure if needed for flatpaks?
   security.polkit.enable = true;
 
+
+#?#######SYSTEMD BOOT SERVICES
+#? Diagnose with these next commands
+#journalctl --user-unit foo.service  
+#systemctl --user status foo 
+#systemctl --user start foo
   #SystemD Services
   systemd = {
 
@@ -350,47 +356,6 @@
     extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
-
-  #?#######BOOT SERVICES
-  #? Diagnose with these next commands
-  #journalctl --user-unit foo.service  
-  #systemctl --user status foo 
-  #systemctl --user start foo
-  
-  #! Ulauncher start at boot (works - example of starting a nix package)
-    user.services.ulauncher = {
-      enable = true;
-      description = "Start Ulauncher";
-      script = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-    };
-  
-  #! ProtonVPN at boot (Works - example of starting a command or a script)
-  user.services.protonvpn-cli = {
-    description = "Start protonvpn-cli";
-    wantedBy = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      ExecStartPre = "${pkgs.coreutils}/bin/sleep 10";
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --off && ${pkgs.protonvpn-cli}/bin/protonvpn-cli killswitch --on && ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect --cc CA'";
-    };
-  };
-  #! Synergy start at boot (Works - example of starting a flatpak)
-  
-  user.services.synergy = {
-    description = "Start Synergy";
-    wantedBy = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/flatpak run com.symless.synergy";
-      #Restart = "always";
-      Environment = "PATH=${pkgs.flatpak}/bin";
-    };
-  };
-
-
 
 
 

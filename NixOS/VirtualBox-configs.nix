@@ -331,8 +331,16 @@
   #Misc Stuff not sure if needed for flatpaks?
   security.polkit.enable = true;
 
+
+#?#######SYSTEMD BOOT SERVICES
+#? Diagnose with these next commands
+#journalctl --user-unit foo.service  
+#systemctl --user status foo 
+#systemctl --user start foo
   #SystemD Services
   systemd = {
+
+
 
 
   user.services.polkit-gnome-authentication-agent-1 = {
@@ -352,22 +360,6 @@
       DefaultTimeoutStopSec=10s
     '';
 
-  #?#######BOOT SERVICES
-  #? Diagnose with these next commands
-  #journalctl --user-unit foo.service  
-  #systemctl --user status foo 
-  #systemctl --user start foo
-  
-  #! Ulauncher start at boot (works - example of starting a nix package)
-    user.services.ulauncher = {
-      enable = true;
-      description = "Start Ulauncher";
-      script = "${pkgs.ulauncher}/bin/ulauncher --hide-window";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-    };
-  
 
 
 
