@@ -306,6 +306,7 @@
   ##########################################
   inetutils #needed for telnet good to have
   hddtemp #needed for conky
+  lm_sensors #needed for conky
 
   ];
 
