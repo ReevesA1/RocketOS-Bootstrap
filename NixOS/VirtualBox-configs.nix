@@ -232,6 +232,9 @@
   zoxide
   cowsay
   dmidecode #I use this for laptop sound fix
+  inetutils #needed for telnet good to have
+  hddtemp #needed for conky
+  lm_sensors #needed for conky
 
 
 

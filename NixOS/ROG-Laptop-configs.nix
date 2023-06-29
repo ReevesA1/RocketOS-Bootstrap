@@ -230,6 +230,9 @@
   zoxide
   cowsay
   dmidecode #I use this for laptop sound fix
+  inetutils #needed for telnet good to have
+  hddtemp #needed for conky
+  lm_sensors #needed for conky
   
 
 
@@ -304,9 +307,7 @@
   ###########################################
   ### Testing Add to all other ones if yes###
   ##########################################
-  inetutils #needed for telnet good to have
-  hddtemp #needed for conky
-  lm_sensors #needed for conky
+  
 
   ];
 
