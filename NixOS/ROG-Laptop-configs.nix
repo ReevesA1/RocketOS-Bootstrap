@@ -476,9 +476,9 @@
 #Use the command below to see if it works
 #sudo journalctl -b | grep resumeCommands
 powerManagement.resumeCommands = ''
-  echo "Running resumeCommands" 
-  sleep 7 && protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
-  echo "Running resumeCommands2" 
+  echo "Running resumeCommands test before" 
+  protonvpn-cli ks --off && protonvpn-cli disconnect && protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
+  echo "Running resumeCommands test after" 
 '';
   ##########################
   ##  Insecure Packages   ##
