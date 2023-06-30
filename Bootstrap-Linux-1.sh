@@ -51,16 +51,21 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
   #TODO when I add new entries here remember to go update the pwsh alias rebuildnix
   case $choice in
+
+  #?ROG-Laptop
   1)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/ROG-Laptop-configs.nix
-    sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
     ;;
+  #?Ser3
   2)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Ser3-configs.nix
     ;;
+  #?VirtualBox
   3)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/VirtualBox-configs.nix
     ;;
+  #?Parallels
   4)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Parallels-configs.nix
     ;;
