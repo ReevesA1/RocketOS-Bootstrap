@@ -396,13 +396,7 @@
     before = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     serviceConfig = {
-      Type = "forking";
-      Environment = [
-        "PVPN_WAIT=300"
-        "PVPN_DEBUG=1"
-      ];
-      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn disconnect";
-      #ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --off && ${pkgs.protonvpn-cli}/bin/protonvpn disconnect'";
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --off && ${pkgs.protonvpn-cli}/bin/protonvpn disconnect'";
     };
   };
 
@@ -415,11 +409,6 @@
     after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     serviceConfig = {
-      Type = "forking";
-      Environment = [
-        "PVPN_WAIT=300"
-        "PVPN_DEBUG=1"
-      ];
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --permanent && ${pkgs.protonvpn-cli}/bin/protonvpn c --cc CA'";
     };
   };
