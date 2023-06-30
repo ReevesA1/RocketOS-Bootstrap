@@ -473,10 +473,11 @@
     };
 };
 
-
+#Use the command below to see if it works
+#sudo journalctl -b | grep resumeCommands
 powerManagement.resumeCommands = ''
-  echo "Running resumeCommands, sudo journalctl -b to see if it is working " 
-  protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
+  echo "Running resumeCommands" 
+  sleep 7 && protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
 '';
   ##########################
   ##  Insecure Packages   ##
