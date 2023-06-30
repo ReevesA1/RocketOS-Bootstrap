@@ -391,6 +391,37 @@
 
 
 
+  user.services.protonvpn-disconnect = {
+    description = "ProtonVPN-CLI disconnect before sleep";
+    before = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    serviceConfig = {
+      Type = "forking";
+      Environment = [
+        "PVPN_WAIT=300"
+        "PVPN_DEBUG=1"
+        "SUDO_USER=rocket"
+      ];
+      #ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn disconnect";
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --off && ${pkgs.protonvpn-cli}/bin/protonvpn disconnect'";
+    };
+  };
+
+  user.services.protonvpn-reconnect = {
+    description = "ProtonVPN-CLI reconnect after sleep";
+    requires = [ "network-online.target" ];
+    after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    serviceConfig = {
+      Type = "forking";
+      Environment = [
+        "PVPN_WAIT=300"
+        "PVPN_DEBUG=1"
+        "SUDO_USER=rocket"
+      ];
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --permanent && ${pkgs.protonvpn-cli}/bin/protonvpn c --cc CA'";
+    };
+  };
 
 };
 
@@ -479,9 +510,11 @@
 #sudo journalctl -b | grep resumeCommands
 powerManagement.resumeCommands = ''
   echo "Running resumeCommands test before" 
+  
   echo "Running resumeCommands test after" 
 '';
-#protonvpn-cli ks --off && protonvpn-cli disconnect && protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
+
+
   ##########################
   ##  Insecure Packages   ##
   ##########################
