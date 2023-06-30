@@ -390,29 +390,6 @@
     '';
 
 
-#! Only used for reconnect not the initial connection i do from a restart. (That is done with a .desktop file)
-  user.services.protonvpn-disconnect = {
-    description = "ProtonVPN-CLI disconnect before sleep";
-    before = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --off && ${pkgs.protonvpn-cli}/bin/protonvpn disconnect'";
-    };
-  };
-
-
-
-#! Only used for reconnect not the initial connection i do from a restart. (That is done with a .desktop file)
-  user.services.protonvpn-reconnect = {
-    description = "ProtonVPN-CLI reconnect after sleep";
-    requires = [ "network-online.target" ];
-    after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --permanent && ${pkgs.protonvpn-cli}/bin/protonvpn c --cc CA'";
-    };
-  };
-
 };
 
 
