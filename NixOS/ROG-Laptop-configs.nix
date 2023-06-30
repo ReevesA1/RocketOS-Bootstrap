@@ -10,165 +10,26 @@
   imports =
   [ # Include the results of the hardware scan.
   ./hardware-configuration.nix
+  ./nix-special-configs.nix
+  ./core-congfigs.nix
+  ./users.nix
   ./gnome.nix
-  ./kde.nix
+  #./kde.nix
   ];
 
-  # Bootloader.
-  # Use the systemd-boot EFI boot loader needed for sure for parallels on mac.
+  #! Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true; # this is usefule if I ever dual boot
-
-# here are grub options if ever I need them
-  #boot.loader.grub.enable = true; #!Needed if in a virtual machine (disable the two systemd lines above)
-  #boot.loader.grub.device = "/dev/sda"; #!Needed if in a virtual machine (disable the two systemd lines above)
-  #boot.loader.grub.useOSProber = true; #!Needed if in a virtual machine (disable the two systemd lines above)
-  #? Other Examples of lines I could use with grub
-  #boot.loader-grub.device = "/boot": #? Different path some OS use I guess
-  #boot.loader.grub.efiInstallAsRemovable = true;
-  #boot.loader.grub.efiSupport = true:
+  boot.loader.efi.canTouchEfiVariables = true; 
 
 
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  #networking.hostName = "nixos-xxx"; # Define your hostname. I don't use it so everything would have the same hostname?
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
+  #! Networking 
+  networking.hostName = "nixos"; 
+  networking.networkmanager.enable = true;  
 
 
   #! Wayland Support
-  #Original line that works
-  services.xserver.displayManager.gdm.wayland = false; #? wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
+  services.xserver.displayManager.gdm.wayland = false; 
 
-  #If statement depending on architecture (works)
-  /*
-  services.xserver.displayManager.gdm.wayland =
-    if builtins.currentSystem == "x86_64-linux" then #aka not parallels and x86 using barrier
-      false
-    else if builtins.currentSystem == "aarch64-linux" then #aka parallels
-      true
-    else
-      false;
-*/
-
-  #!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
-  #virtualisation.virtualbox.guest.enable = true;
-  #virtualisation.virtualbox.guest.x11 = true;
-
-  #A script I am trying to see if I can enable those two lines above automaticly by detecting if in a virtual box
-  # did not work even when added this to top level { config, pkgs, lib, ... }:
-  /*
-{
-  options.virtualisation.isVirtualBoxGuest = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
-    description = "Whether the system is running inside a VirtualBox virtual machine.";
-  };
-
-  config = lib.mkIf config.virtualisation.isVirtualBoxGuest {
-    virtualisation.virtualbox.guest.enable = true;
-    virtualisation.virtualbox.guest.x11 = true;
-  };
-}
-*/
-#!##########################
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rocket = {
-    isNormalUser = true;
-    description = "rocket";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      #I think this is where I would put user only apps not system wide
-    ];
-  };
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "rocket";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Allow Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Allow Unstable Packages
-  # Make sure to run these to commands first 
-  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-  # sudo nix-channel --update
-    nixpkgs.config = {
-    # Allow Unstable Packages
-    packageOverrides = pkgs: {
-      unstable = import <nixos-unstable> {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
-#######################
-#     Remove Bloat    #
-#######################
-
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    gnome-photos
-    #gnome-console #dont remove or ill lose the right click open in terminal option in nautilus
-  ] ++ (with pkgs.gnome; [
-    geary
-    totem
-    cheese
-    epiphany
-    gnome-contacts
-    gnome-weather
-    gnome-clocks
-    gnome-maps
-    gnome-calculator
-    gnome-connections
-  ]);
   
   #! List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
@@ -249,14 +110,6 @@
   git
 
 
-  #Gnome and Gnome Extensions
-  gnome.gnome-tweaks
-  gnome.gnome-session
-  guake
-  gnomeExtensions.dash-to-dock
-  gnomeExtensions.burn-my-windows
-  #gnomeExtensions.tray-icons-reloaded #Tray icons - this one works as of june 29 2023. (does not show protonvpn tho but its ok)
-  gnomeExtensions.appindicator #tray icon - This is the better one
 
   ###################
   ### NixOS Only  ###
