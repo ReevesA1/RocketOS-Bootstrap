@@ -56,18 +56,25 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   1)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/ROG-Laptop-configs.nix
     sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   #?Ser3
   2)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Ser3-configs.nix
+    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   #?VirtualBox
   3)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/VirtualBox-configs.nix
+    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   #?Parallels
   4)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Parallels-configs.nix
+    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   *)
     echo "Invalid choice."
