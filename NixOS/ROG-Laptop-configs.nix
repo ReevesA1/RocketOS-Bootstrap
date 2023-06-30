@@ -475,7 +475,6 @@
 
 
 powerManagement.resumeCommands = ''
-  echo "This should show up in the journal after resuming."
   protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
 '';
   ##########################
