@@ -400,10 +400,9 @@
       Environment = [
         "PVPN_WAIT=300"
         "PVPN_DEBUG=1"
-        "SUDO_USER=rocket"
       ];
-      #ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn disconnect";
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --off && ${pkgs.protonvpn-cli}/bin/protonvpn disconnect'";
+      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn disconnect";
+      #ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --off && ${pkgs.protonvpn-cli}/bin/protonvpn disconnect'";
     };
   };
 
@@ -420,7 +419,6 @@
       Environment = [
         "PVPN_WAIT=300"
         "PVPN_DEBUG=1"
-        "SUDO_USER=rocket"
       ];
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.protonvpn-cli}/bin/protonvpn ks --permanent && ${pkgs.protonvpn-cli}/bin/protonvpn c --cc CA'";
     };
