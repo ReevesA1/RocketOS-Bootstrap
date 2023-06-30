@@ -2,7 +2,7 @@
 #https://nixos.wiki/wiki/GNOME
 
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   #! Enable the GNOME Desktop Environment.

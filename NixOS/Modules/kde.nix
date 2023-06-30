@@ -2,7 +2,7 @@
 #https://nixos.wiki/wiki/KDE
 
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   #! Enable the KDE Desktop Environment.
