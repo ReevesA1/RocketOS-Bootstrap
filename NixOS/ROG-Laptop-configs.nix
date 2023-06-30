@@ -478,6 +478,7 @@
 powerManagement.resumeCommands = ''
   echo "Running resumeCommands" 
   sleep 7 && protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
+  echo "Running resumeCommands2" 
 '';
   ##########################
   ##  Insecure Packages   ##
