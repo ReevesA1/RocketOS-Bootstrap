@@ -49,7 +49,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo -n "Enter your choice [1-4]: "
   read choice
 
-  #TODO when I add new entries here remember to go update the pwsh alias rebuildnix
+  #TODO when I add new entries here remember to do the same with the powershell alias rebuildnix
   case $choice in
 
   #?ROG-Laptop
