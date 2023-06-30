@@ -475,6 +475,7 @@
 
 
 powerManagement.resumeCommands = ''
+  echo "Running resumeCommands, sudo journalctl -b to see if it is working " 
   protonvpn-cli ks --permanent && protonvpn-cli connect --cc CA
 '';
   ##########################
