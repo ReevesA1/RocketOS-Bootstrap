@@ -390,7 +390,7 @@
     '';
 
 
-
+#! Only used for reconnect not the initial connection i do from a restart. (That is done with a .desktop file)
   user.services.protonvpn-disconnect = {
     description = "ProtonVPN-CLI disconnect before sleep";
     before = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
@@ -407,6 +407,9 @@
     };
   };
 
+
+
+#! Only used for reconnect not the initial connection i do from a restart. (That is done with a .desktop file)
   user.services.protonvpn-reconnect = {
     description = "ProtonVPN-CLI reconnect after sleep";
     requires = [ "network-online.target" ];
