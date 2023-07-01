@@ -12,7 +12,7 @@
 
 #!Excluding some KDE Plasma applications from the default install
 environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-  discover
+  discover #though this would remove the icon in dock but it does not (the reason is that there is no back end for discover store on nix yet)
 ];
 
 #! Install Packages 
