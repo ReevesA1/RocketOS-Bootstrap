@@ -83,10 +83,10 @@
   gparted
   conky
   protonvpn-cli
-  #protonvpn-gui # might need this to login originaly if 2fa doesnt work but then just use protonvpn-cli
+  #protonvpn-gui #might need this to login originaly if 2fa doesnt work but then just use protonvpn-cli
   #synergy #outdate
   firefox
-  blackbox-terminal
+  #blackbox-terminal #doesnt work properly in kde use the flatpak version
   vlc
   appimage-run
   vscode #use this over the flatpak version so in shells they see the word code therefor my vspowershell custom profil will work 
