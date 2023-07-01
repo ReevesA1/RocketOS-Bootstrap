@@ -2,7 +2,7 @@
   
   {
   #! Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = true; #for sure need on parallels
   boot.loader.efi.canTouchEfiVariables = true; 
 
   #!polkit
