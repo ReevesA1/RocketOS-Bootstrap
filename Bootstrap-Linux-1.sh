@@ -38,7 +38,23 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   # Delete the script
   rm JetBrainsMonoFont-MacLinux.sh
 
-  #COPY My NixOS Config to Proper folder and rebuild nix
+  #!Download my NixOS modules
+  #TODO when I add new Modules here remember to do the same with the powershell alias rebuildnix
+  sudo curl -o /etc/nixos/core-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-configs.nix
+  sudo curl -o /etc/nixos/core-packages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages.nix
+  sudo curl -o /etc/nixos/Distrobox.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Distrobox.nix
+  sudo curl -o /etc/nixos/flatpaks-gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks-gnome.nix
+  sudo curl -o /etc/nixos/flatpaks.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks.nix
+  sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+  sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
+  sudo curl -o /etc/nixos/nix-special-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/nix-special-configs.nix
+  sudo curl -o /etc/nixos/Nvidia.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Nvidia.nix
+  sudo curl -o /etc/nixos/Openssh.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Openssh.nix
+  sudo curl -o /etc/nixos/SolaarLogitechMouse.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/SolaarLogitechMouse.nix
+  sudo curl -o /etc/nixos/systemd-services.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/systemd-services.nix
+  sudo curl -o /etc/nixos/users.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/users.nix
+
+  #!Choose Machine
   echo "Copying NixOS Configs and rebuilding NixOS...Press Enter To Continue..."
   read
   echo "Which config would you like to curl?"
@@ -71,22 +87,6 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
     echo "Invalid choice."
     ;;
   esac
-
-  #!Download my NixOS modules
-  #TODO when I add new Modules here remember to do the same with the powershell alias rebuildnix
-  sudo curl -o /etc/nixos/core-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-configs.nix
-  sudo curl -o /etc/nixos/core-packages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages.nix
-  sudo curl -o /etc/nixos/Distrobox.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Distrobox.nix
-  sudo curl -o /etc/nixos/flatpaks-gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks-gnome.nix
-  sudo curl -o /etc/nixos/flatpaks.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks.nix
-  sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
-  sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
-  sudo curl -o /etc/nixos/nix-special-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/nix-special-configs.nix
-  sudo curl -o /etc/nixos/Nvidia.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Nvidia.nix
-  sudo curl -o /etc/nixos/Openssh.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Openssh.nix
-  sudo curl -o /etc/nixos/SolaarLogitechMouse.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/SolaarLogitechMouse.nix
-  sudo curl -o /etc/nixos/systemd-services.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/systemd-services.nix
-  sudo curl -o /etc/nixos/users.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/users.nix
 
   #! Rebuild Nix
   sudo nixos-rebuild switch
