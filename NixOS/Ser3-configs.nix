@@ -15,6 +15,7 @@
   ./nix-special-configs.nix
   ./core-configs.nix
   ./core-packages.nix
+  ./core-packages-x86Only.nix
   ./users.nix
   ./systemd-services.nix
   #! Optional

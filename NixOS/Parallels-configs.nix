@@ -15,6 +15,7 @@
   ./nix-special-configs.nix
   ./core-configs.nix
   ./core-packages.nix
+  #./core-packages-x86Only.nix #parallels is aarch64 aka arm
   ./users.nix
   ./systemd-services.nix
   #! Optional
