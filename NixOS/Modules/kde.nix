@@ -22,4 +22,6 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
 
   ];
 
+programs.partition-manager.enable = true
+
 }
