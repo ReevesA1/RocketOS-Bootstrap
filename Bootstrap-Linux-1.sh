@@ -49,41 +49,49 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo -n "Enter your choice [1-4]: "
   read choice
 
-  #TODO when I add new entries here remember to do the same with the powershell alias rebuildnix
   case $choice in
 
   #?ROG-Laptop
   1)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/ROG-Laptop-configs.nix
-    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
-    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   #?Ser3
   2)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Ser3-configs.nix
-    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
-    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   #?VirtualBox
   3)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/VirtualBox-configs.nix
-    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
-    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   #?Parallels
   4)
     sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Parallels-configs.nix
-    sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
-    sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
     ;;
   *)
     echo "Invalid choice."
     ;;
   esac
 
+  #!Download the rest of my nix modules
+  #TODO when I add new Modules here remember to do the same with the powershell alias rebuildnix
+  sudo curl -o /etc/nixos/core-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-configs.nix
+  sudo curl -o /etc/nixos/core-packages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages.nix
+  sudo curl -o /etc/nixos/Distrobox.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Distrobox.nix
+  sudo curl -o /etc/nixos/flatpaks-gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks-gnome.nix
+  sudo curl -o /etc/nixos/flatpaks.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks.nix
+  sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
+  sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
+  sudo curl -o /etc/nixos/nix-special-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/nix-special-configs.nix
+  sudo curl -o /etc/nixos/Nvidia.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Nvidia.nix
+  sudo curl -o /etc/nixos/Openssh.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Openssh.nix
+  sudo curl -o /etc/nixos/SolaarLogitechMouse.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/SolaarLogitechMouse.nix
+  sudo curl -o /etc/nixos/systemd-services.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/systemd-services.nix
+  sudo curl -o /etc/nixos/users.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/users.nix
+
+  #! Rebuild Nix
   sudo nixos-rebuild switch
 
-  # Restart PC
+  #! Restart PC
   echo "Rebooting in 5 seconds...then run part 2."
   #read #Uncomment this for debugging
   sleep 5 # I get a black screen or else so this is my way around it so it reboots on its own
