@@ -18,4 +18,4 @@ xdg.portal = {
   #extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #Only needed if not using Gnome
 };
 
-  }
+}
