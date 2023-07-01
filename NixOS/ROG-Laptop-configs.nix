@@ -96,5 +96,15 @@ powerManagement.resumeCommands = ''
 # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 system.stateVersion = "23.05"; # Did you read the comment?
 
+
+#!Testing
+services.cron = {
+  enable = true;
+  systemCronJobs = [
+    "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
+    "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
+  ];
+};
+
 }
 
