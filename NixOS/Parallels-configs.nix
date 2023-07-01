@@ -45,7 +45,7 @@
 
 
 #! Networking 
-networking.hostName = "ROG-Laptop"; 
+networking.hostName = "M2-Parallels-NixOS"; 
 
 #! Wayland Support
 services.xserver.displayManager.gdm.wayland = true;  # wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
