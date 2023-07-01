@@ -70,7 +70,6 @@
   hddtemp #needed for conky
   lm_sensors #needed for conky
   nvme-cli #needed for conky
-
   autojump
   gh #github-cli
   gnugrep
