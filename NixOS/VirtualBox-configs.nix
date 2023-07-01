@@ -20,12 +20,12 @@
   #! Optional
 
   #Gnome
-  #./gnome.nix
-  #./flatpaks-gnome.nix
+  ./gnome.nix
+  ./flatpaks-gnome.nix
 
   #KDE
-  ./kde.nix
-  ./flatpaks.nix
+  #./kde.nix
+  #./flatpaks.nix
 
   #Apps with extra configs
   ./Distrobox.nix
