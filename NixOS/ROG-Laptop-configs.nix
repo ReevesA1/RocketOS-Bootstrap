@@ -89,13 +89,3 @@ system.stateVersion = "23.05"; # Did you read the comment?
 
 }
 
-
-
-#!Bootloader
-  boot.loader.grub.enable = true; #!Needed if in a vm with virtualbox
-  boot.loader.grub.device = "/dev/sda";  #!Needed if in a vm with virtualbox
-  boot.loader.grub.useOSProber = true;  #!Needed if in a vm with virtualbox
-
-#!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
