@@ -18,6 +18,7 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
 #! Install Packages 
   environment.systemPackages = with pkgs; [
     libsForQt5.yakuake
+    partition-manager
 
   ];
 
