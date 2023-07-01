@@ -10,18 +10,16 @@
   imports =
   [ # Include the results of the hardware scan.
   ./hardware-configuration.nix
-  ./nix-special-configs.nix
   ./core-congfigs.nix
+  ./nix-special-configs.nix
   ./users.nix
   ./gnome.nix
   #./kde.nix
   ];
 
-  #! Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true; 
-
-
+  ##########################################
+  ###      MACHINE SPECIFIC OPTIONS      ###
+  ##########################################
   #! Networking 
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;  
@@ -102,7 +100,6 @@
   ###################
 
   #Dependencies (all in read me)
-  #gnome.dconf-editor #gets installed in gnome setup
   unzip
   curl
   wget
@@ -208,14 +205,6 @@
 
   #Misc Stuff not sure if needed for flatpaks?
   security.polkit.enable = true;
-
-
-
-#?#######SYSTEMD BOOT SERVICES
-#? Diagnose with these next commands
-#journalctl --user-unit foo.service  
-#systemctl --user status foo 
-#systemctl --user start foo
 
 
 
