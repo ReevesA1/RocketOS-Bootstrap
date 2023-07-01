@@ -1,5 +1,4 @@
-
-
+#test
   #!FYI's
   # https://nixos.wiki/wiki/Nvidia
 
