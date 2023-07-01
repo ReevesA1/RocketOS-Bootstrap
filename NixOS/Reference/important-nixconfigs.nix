@@ -8,8 +8,8 @@
 
 {
   imports =
-  [ # Include the results of the hardware scan.
-  ./hardware-configuration.nix
+  [ 
+  ./hardware-configuration.nix # Include the results of the hardware scan. This file is created by default.
   ./gnome.nix
   ./kde.nix
   ];

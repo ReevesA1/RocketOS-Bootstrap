@@ -9,40 +9,40 @@
 
 {
   imports =
-  [ # Include the results of the hardware scan.
-  ./hardware-configuration.nix
-  ./core-congfigs.nix
+  [ 
+  #!Required
+  ./hardware-configuration.nix # Include the results of the hardware scan. This file is created by default.
   ./nix-special-configs.nix
+  ./core-configs.nix
+  ./core-packages.nix
   ./users.nix
+  ./systemd-services.nix
+  #! Optional
+
+  #Gnome
   ./gnome.nix
+  ./flatpaks-gnome.nix
+
+  #KDE
   #./kde.nix
-  ];
+  #./flatpaks.nix
 
-  ##########################################
-  ###      MACHINE Exclusive OPTIONS     ###
-  ##########################################
-  #! Networking 
-  networking.hostName = "ROG-Laptop"; 
-  networking.networkmanager.enable = true;  
-
-
-  #! Wayland Support
-  services.xserver.displayManager.gdm.wayland = false; 
-
-  
-  #!Apps
-  environment.systemPackages = with pkgs; [
-  #If Im testing apps make sure to add them to core-packages.nix if I want them on all systems after
-
+  #Apps with extra configs
+  ./Distrobox.nix
+  ./Nvidia.nix
+  #./Openssh.nix
+  ./SolaarLogitechMouse.nix
 
   ];
 
+#?#########################################
+#?##      MACHINE Exclusive OPTIONS     ###
+#?#########################################
+#! Networking 
+networking.hostName = "ROG-Laptop"; 
 
-
-
-
-
-
+#! Wayland Support
+services.xserver.displayManager.gdm.wayland = false; 
 
 #!Waking from Suspend Commands 
 #Use the command below to see if it works
@@ -61,12 +61,17 @@ powerManagement.resumeCommands = ''
   ];
 }
 
+#!Apps
+  environment.systemPackages = with pkgs; [
+  #If Im testing apps make sure to add them to core-packages.nix if I want them on all systems after
+
+
+  ];
+
 
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
 
-  
-}
 
 
 #!Boiler Plate Stuff 
@@ -77,3 +82,5 @@ powerManagement.resumeCommands = ''
 # Before changing this value read the documentation for this option
 # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 system.stateVersion = "23.05"; # Did you read the comment?
+
+}
