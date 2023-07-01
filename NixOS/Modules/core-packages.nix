@@ -77,11 +77,7 @@
   tldr
   variety
 
-  #languages
-  python3Full
-	python.pkgs.pip
-  nodejs
-  cargo
+
 
 
   ###########DEV
