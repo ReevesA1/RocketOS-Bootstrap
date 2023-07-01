@@ -55,9 +55,8 @@ powerManagement.resumeCommands = ''
 
 
 #!Insecure Packages 
-  permittedInsecurePackages = [
-  #Place Holder
-  ];
+  #nixpkgs.config.permittedInsecurePackages = [ "packageName" ];
+
 
 
 #!Apps
