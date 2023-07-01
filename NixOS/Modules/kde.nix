@@ -17,7 +17,7 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
 
 #! Install Packages 
   environment.systemPackages = with pkgs; [
-    # KDE applications
+    libsForQt5.yakuake
 
   ];
 
