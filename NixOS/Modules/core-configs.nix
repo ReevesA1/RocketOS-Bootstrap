@@ -11,7 +11,9 @@
 
   #!X11 stuff#######################################
   services.xserver.enable = true; #this line is needed by both gnome and kde!
-  #not sure I need these
+  
+  environment.systemPackages = with pkgs; [
+#not sure I need all these
   xorg.libX11
   xorg.libX11.dev
   xorg.libxcb
@@ -19,6 +21,7 @@
   xorg.libXinerama
 	xorg.xinit
   xorg.xinput
+  ];
   
   #? Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
