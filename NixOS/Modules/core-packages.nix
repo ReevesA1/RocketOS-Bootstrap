@@ -83,7 +83,7 @@
   gparted
   conky
   protonvpn-cli
-  protonvpn-gui #needed to login in then just use protonvpn-cli
+  #protonvpn-gui # might need this to login originaly if 2fa doesnt work but then just use protonvpn-cli
   #synergy #outdate
   firefox
   blackbox-terminal
