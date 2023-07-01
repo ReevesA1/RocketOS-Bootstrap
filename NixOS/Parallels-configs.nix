@@ -40,9 +40,13 @@
 #?#########################################
 
 #!Bootloader
+  #SystemD
   boot.loader.systemd-boot.enable = true; #this is the preferred way instead of grub and for sure needed for Parallels
   boot.loader.efi.canTouchEfiVariables = true; # this is usefule if I ever dual boot
-
+  #Grub
+  #boot.loader.grub.enable = true; #Needed if in a vm with virtualbox
+  #boot.loader.grub.device = "/dev/sda";  #Needed if in a vm with virtualbox
+  #boot.loader.grub.useOSProber = true;  #Needed if in a vm with virtualbox
 
 #! Networking 
 networking.hostName = "M2-Parallels-NixOS"; 
