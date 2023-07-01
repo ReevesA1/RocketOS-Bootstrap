@@ -41,6 +41,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   #!Download my NixOS modules
   #TODO when I add new Modules here remember to do the same with the powershell alias rebuildnix
   sudo curl -o /etc/nixos/core-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-configs.nix
+  sudo curl -o /etc/nixos/core-packages-x86Only.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages-x86Only.nix
   sudo curl -o /etc/nixos/core-packages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages.nix
   sudo curl -o /etc/nixos/Distrobox.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Distrobox.nix
   sudo curl -o /etc/nixos/flatpaks-gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks-gnome.nix
