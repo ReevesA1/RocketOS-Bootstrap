@@ -48,15 +48,18 @@
   boot.loader.grub.useOSProber = true;  #Needed if in a vm with virtualbox
 
 #!VirtualBox - Enable Guest edition (needed for copy paste - also must be x11 not wayland)
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
+virtualisation.virtualbox.guest.enable = true;
+virtualisation.virtualbox.guest.x11 = true;
 
 
 #! Networking 
 networking.hostName = "VirtualBox-NixOS"; 
 
 #! Wayland Support
+#Gnome Wayland
 services.xserver.displayManager.gdm.wayland = false;  # wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
+#KDE Wayland
+#services.xserver.displayManager.defaultSession = "plasmawayland"; # wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
 
 #!Waking from Suspend Commands 
 #Use the command below to see if it works
