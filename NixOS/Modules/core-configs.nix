@@ -4,7 +4,32 @@
   #! Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true; 
+
+  #!polkit
+  #I think flatpaks need this? but also kde and gnome for sudo? (gnome has extra steps but i think kde its all built in?)
+  security.polkit.enable = true;
+
+  #!X11 stuff#######################################
+  services.xserver.enable = true; #this line is needed by both gnome and kde!
+  #not sure I need these
+  xorg.libX11
+  xorg.libX11.dev
+  xorg.libxcb
+  xorg.libXft
+  xorg.libXinerama
+	xorg.xinit
+  xorg.xinput
   
+  #? Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  #! Configure keyboards in X11
+  services.xserver = {
+    layout = "us"; #United States keyboard
+    xkbVariant = "";
+  };
+#!##########################################################
+
   #! Set your time zone.
   time.timeZone = "America/Toronto";
 
@@ -12,15 +37,7 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
 
-
-  #! Configure keyboards in X11
-  services.xserver = {
-    layout = "us"; #United States keyboard
-    xkbVariant = "";
-  };
-
-  #! Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  
 
   #! Enable CUPS to print documents.
   services.printing.enable = true;
@@ -41,6 +58,40 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+
+
+  #!##################
+  #!     Firewall    #
+  #!##################
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  networking = {
+    enableIPv6 = false;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 24800 ]; #needed for barrier/synergy
+    };
+  };
+
+  #!######################
+  #!# Set Default SHELL ##
+  #!######################
+  users.defaultUserShell = pkgs.powershell;
+
+
+  #!#################
+  #!# Auto Upgrade ##
+  #!#################
+  # Copy the NixOS configuration file and link it from the resulting system
+  # (/run/current-system/configuration.nix). This is useful in case you
+  # accidentally delete configuration.nix.
+  system.copySystemConfiguration = true;
+  system.autoUpgrade.enable = true;  
+  system.autoUpgrade.allowReboot = true; 
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-23.05";
 
 
   }

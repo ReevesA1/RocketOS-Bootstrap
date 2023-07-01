@@ -6,7 +6,7 @@
 
 {
   #! Enable the GNOME Desktop Environment.
-  services.xserver.enable = true;
+  #services.xserver.enable = true; #this gets enabled in core-configs.nix
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
@@ -42,6 +42,8 @@ environment.systemPackages = with pkgs; [
   #gnomeExtensions.tray-icons-reloaded #Tray icons - this one works as of june 29 2023. (does not show protonvpn tho but its ok)
   gnomeExtensions.appindicator #tray icon - This is the better one - site https://nixos.wiki/wiki/GNOME SAYS I should enable this service? (services.dbus.packages = with pkgs; [ gnome2.GConf ];)
 
+  polkit_gnome
+
 ];
 
   #! Pole Kit from Chris Titus
@@ -62,5 +64,5 @@ environment.systemPackages = with pkgs; [
     extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
-
+  }
 }
