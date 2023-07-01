@@ -55,11 +55,10 @@ powerManagement.resumeCommands = ''
 
 
 #!Insecure Packages 
-{
   permittedInsecurePackages = [
   #Place Holder
   ];
-}
+
 
 #!Apps
   environment.systemPackages = with pkgs; [
