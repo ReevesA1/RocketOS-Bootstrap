@@ -84,6 +84,7 @@
   #!# Set Default SHELL ##
   #!######################
   users.defaultUserShell = pkgs.powershell;
+  environment.shells = [ pkgs.pwsh ]; #adds it to path in sudo cat /etc/shells
 
 
   #!#################
