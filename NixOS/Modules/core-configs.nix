@@ -84,7 +84,7 @@
   #!# Set Default SHELL ##
   #!######################
   users.defaultUserShell = pkgs.powershell;
-  environment.shells = [ pkgs.pwsh ]; #adds it to path in sudo cat /etc/shells #needed for gparted for some reason
+  environment.shells = [ pkgs.powershell ]; #adds it to path in sudo cat /etc/shells #needed for gparted for some reason
 
 
   #!#################
