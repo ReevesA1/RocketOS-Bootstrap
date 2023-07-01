@@ -6,7 +6,7 @@
   users.users.rocket = {
     isNormalUser = true;
     description = "rocket";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "input" "disk" "libvirtd" ];  # Enables ‘sudo’ for the user.
     packages = with pkgs; [
       #This is where I would put user only apps not system wide
     ];
@@ -21,3 +21,5 @@
   systemd.services."autovt@tty1".enable = false;
 
   }
+
+
