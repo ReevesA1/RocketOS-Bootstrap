@@ -1,9 +1,6 @@
   { config, pkgs, lib, ... }:
   
   {
-  #! Bootloader.
-  boot.loader.systemd-boot.enable = true; #for sure need on parallels
-  boot.loader.efi.canTouchEfiVariables = true; 
 
   #!polkit
   #I think flatpaks need this? but also kde and gnome for sudo? (gnome has extra steps but i think kde its all built in?)
