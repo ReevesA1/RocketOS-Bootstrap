@@ -83,6 +83,7 @@
   gparted
   conky
   protonvpn-cli
+  protonvpn-gui #needed to login in then just use protonvpn-cli
   #synergy #outdate
   firefox
   blackbox-terminal
