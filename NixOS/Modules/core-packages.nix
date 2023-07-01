@@ -39,7 +39,7 @@
   curl
   xclip
   fzf
-  gnumake # is this make?
+  gnumake
   binutils
   gcc
   fakeroot
@@ -70,6 +70,19 @@
   hddtemp #needed for conky
   lm_sensors #needed for conky
   nvme-cli #needed for conky
+
+  autojump
+  gh #github-cli
+  gnugrep
+  tldr
+  variety
+
+  #languages
+  python3Full
+	python.pkgs.pip
+  nodejs
+  cargo
+
 
   ###########DEV
   dotnet-sdk_7
