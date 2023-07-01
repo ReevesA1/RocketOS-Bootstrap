@@ -1,4 +1,3 @@
-#test
 #!FYI's
 #https://nixos.wiki/wiki/KDE
 

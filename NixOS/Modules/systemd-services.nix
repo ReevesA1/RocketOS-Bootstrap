@@ -1,4 +1,3 @@
-#test
 #? Diagnose with these next commands
 #journalctl --user-unit foo.service  
 #systemctl --user status foo 
