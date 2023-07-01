@@ -11,8 +11,9 @@
 #!##########################################################
 {
 
+/*
   systemd = {
-  /*
+
   #! Chris Titus Pole Kit
   user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
@@ -68,8 +69,9 @@ user.services.synergy = {
     Environment = "PATH=${pkgs.flatpak}/bin";
   };
 };
+}
+
 */
 
-  }
 
 }
