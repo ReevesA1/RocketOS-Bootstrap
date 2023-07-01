@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
     {
   
-  #! List packages installed in system profile. 
+  #!system wide packages
   environment.systemPackages = with pkgs; [
 
   ##########################################
@@ -76,18 +76,15 @@
   
 
 
-  ########################
-  ### Univeral Apps    ###
-  ########################
+  #############################
+  ### Univeral Base Apps    ###
+  #############################
 
-  #Base Apps
-  veracrypt #(Not aarch64)
   gparted
   conky
   protonvpn-cli
   #synergy #outdate
   firefox
-  megasync #(Not aarch64)
   blackbox-terminal
   vlc
   appimage-run
