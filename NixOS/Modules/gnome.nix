@@ -64,5 +64,5 @@ environment.systemPackages = with pkgs; [
     extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
-  }
+  };
 }
