@@ -31,7 +31,7 @@
   ./Distrobox.nix
   ./Nvidia.nix
   #./Openssh.nix
-  ./SolaarLogitechMouse.nix
+  #./SolaarLogitechMouse.nix
 
   ];
 
