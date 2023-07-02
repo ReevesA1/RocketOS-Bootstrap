@@ -34,7 +34,7 @@
 #}
 
 
-#! Official from https://nixos.wiki/wiki/Nvidia
+#! Official Way from https://nixos.wiki/wiki/Nvidia
 { config, pkgs, lib, ... }:
 
 {
