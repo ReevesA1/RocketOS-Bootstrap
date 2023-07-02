@@ -79,11 +79,12 @@ powerManagement.resumeCommands = ''
 
 
 #!Apps
-  environment.systemPackages = let
-    myFirefox = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-      extraPolicies = {
-        DisablePocket = true;
-        ExtensionSettings = {
+  programs.firefox = {
+  enable = true;
+  package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    extraPolicies = {
+      DisablePocket = true;
+      ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
           "installation_mode" = "force_installed";
           "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
@@ -91,7 +92,7 @@ powerManagement.resumeCommands = ''
       };
     };
   };
-  in [ myFirefox ];
+};
 
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
