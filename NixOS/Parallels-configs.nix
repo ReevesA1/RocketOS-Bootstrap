@@ -71,6 +71,16 @@ powerManagement.resumeCommands = ''
   echo "Running resumeCommands test after" 
 '';
 
+#!SystemD Servcies
+#Place Holder
+
+#!Crons
+services.cron = {
+  enable = true;
+  systemCronJobs = [
+#Place Holder
+  ];
+};
 
 #!Insecure Packages 
   #nixpkgs.config.permittedInsecurePackages = [ "packageName" ];
