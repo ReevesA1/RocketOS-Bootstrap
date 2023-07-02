@@ -139,9 +139,11 @@ chromium = {
     ];
     "SyncDisabled" = true;
   };
-}
-}
+};
 
 
+
+
+};
 
 }
