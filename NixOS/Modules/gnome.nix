@@ -75,7 +75,6 @@ environment.systemPackages = with pkgs; [
   services.gnome.gnome-keyring.enable = true; # I dont think I need this if im using actual gnome but keep it anyway
   security.pam.services.login.gnomeKeyring.enable = true;
 
-};
 
 
 
