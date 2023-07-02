@@ -19,8 +19,9 @@
   ./users.nix
   ./systemd-services.nix
   ./cron.nix
-  #! Optional
 
+
+  #! Optional
   #Gnome
   ./gnome.nix
   ./flatpaks-gnome.nix
