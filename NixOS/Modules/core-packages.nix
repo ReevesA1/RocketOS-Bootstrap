@@ -114,14 +114,14 @@ services.locate.interval = "hourly";
 programs.chromium = {
   enable = true;
   extensions = [
-    "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
-    "ejddcgojdblidajhngkogefpkknnebdh" # AutoplayStopper
-    "ajopnjidmegmdimjlfnijceegpefgped" # BetterTTV
-    "nomnklagbgmgghhjidfhnoelnjfndfpd" # Canvas Blocker
-    "gphhapmejobijbbhgpjhcjognlahblep" # GNOME Shell integration
-    "mlboohjioameadaedfjcpemcaangkkbp" # Linux Scroll Speed Fix
-    "pkehgijcmpdhfbdbbnkijodmdjhbjlgp" # Privacy Badger
-    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+    "cfhdojbkjhnklbpkdaibdccddilifddb", # Adblock Plus
+    "ejddcgojdblidajhngkogefpkknnebdh", # AutoplayStopper
+    "ajopnjidmegmdimjlfnijceegpefgped", # BetterTTV
+    "nomnklagbgmgghhjidfhnoelnjfndfpd", # Canvas Blocker
+    "gphhapmejobijbbhgpjhcjognlahblep", # GNOME Shell integration
+    "mlboohjioameadaedfjcpemcaangkkbp", # Linux Scroll Speed Fix
+    "pkehgijcmpdhfbdbbnkijodmdjhbjlgp", # Privacy Badger
+    "cjpalhdlnbpafiamejdnhcphjbkeiagm"  # uBlock Origin
   ];
   extraOpts = {
     "AutoplayAllowed" = false;
