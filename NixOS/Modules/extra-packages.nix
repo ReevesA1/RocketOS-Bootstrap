@@ -9,7 +9,6 @@
 environment.systemPackages = with pkgs; [
 #Productivity
 #Notion Used Edge FLATPAK shortcut App #(only other version was snap but I can't ctrl+f to find stuff and snaps dont work on nixos)
-todoist-electron
 obsidian
 
 
@@ -23,13 +22,8 @@ obsidian
 
 #TODO remember to add all to the nixpkgs list to BUT GREYED OUT?
 /*
-    #Productivity
-    #Notion Used Edge App #(only other version was snap but I can't ctrl+f to find stuff)
-    flatpak install --user --assumeyes flathub com.todoist.Todoist 
-    flatpak install --user --assumeyes flathub md.obsidian.Obsidian
 
-    #Media
-    #flatpak install --user --assumeyes flathub org.videolan.VLC #declared in nix
+
 
     #Security
     flatpak install --user --assumeyes flathub com.github.tchx84.Flatseal
