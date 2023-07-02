@@ -104,5 +104,8 @@
   ];
 
 #! services needed for some apps
+
+#plocate
 services.locate.enable = true;
+users.groups.plocate = {};
 }
