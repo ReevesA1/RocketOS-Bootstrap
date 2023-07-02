@@ -77,7 +77,9 @@
   variety
   zip
 
-
+  #Testing
+  xbindkeys
+  xbindkeys-config
 
 
   ###########DEV
