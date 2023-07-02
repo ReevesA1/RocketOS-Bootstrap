@@ -15,12 +15,22 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
   discover #though this would remove the icon in dock but it does not (the reason is that there is no back end for discover store on nix yet)
 ];
 
+
+#! Use KDE5 unstable
+nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
+    plasma5_stable = self.plasma5_latest;
+    kdeApps_stable = self.kdeApps_latest;
+};
+
+
 #! Install Packages 
   environment.systemPackages = with pkgs; [
     libsForQt5.yakuake
     partition-manager
 
   ];
+
+
 
 
 
