@@ -80,6 +80,7 @@
   #Testing
   xbindkeys
   xbindkeys-config
+  input-remapper
 
 
   ###########DEV
