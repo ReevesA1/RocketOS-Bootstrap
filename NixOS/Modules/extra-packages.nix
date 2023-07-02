@@ -8,7 +8,6 @@
 
 environment.systemPackages = with pkgs; [
 #Productivity
-#Notion Used Edge FLATPAK shortcut App #(only other version was snap but I can't ctrl+f to find stuff and snaps dont work on nixos)
 obsidian
 
 
