@@ -75,6 +75,7 @@
   gnugrep
   tldr
   variety
+  zip
 
 
 
