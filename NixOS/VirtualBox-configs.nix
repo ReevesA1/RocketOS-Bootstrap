@@ -89,17 +89,14 @@ powerManagement.resumeCommands = ''
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
 
-let
-  myFirefox = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-    extraPolicies = {
-      DisableFirefoxStudies = true;
-      DisablePocket = true;
+environment.systemPackages = let
+    myFirefox = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+      extraPolicies = {
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+      };
     };
-  };
-in
-{
-  environment.systemPackages = [ myFirefox ];
-}
+  in [ myFirefox ];
 
 #!Boiler Plate Stuff 
 # This value determines the NixOS release from which the default
