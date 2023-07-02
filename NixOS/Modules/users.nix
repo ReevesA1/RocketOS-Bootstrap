@@ -2,6 +2,13 @@
   
   {
 
+  #! Enable sudo
+    security.sudo = {
+        enable = true;
+        wheelNeedsPassword = true;
+    };
+
+
   #! Define a user account.
   users.mutableUsers = true;
   users.users.rocket = {
