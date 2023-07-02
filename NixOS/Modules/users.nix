@@ -2,10 +2,11 @@
   
   {
 
-  #! Define a user account. Don't forget to set a password with ‘passwd’.
+  #! Define a user account.
   users.users.rocket = {
     isNormalUser = true;
     description = "rocket";
+    #password = "myPassword"; # Don't forget to set a password with ‘passwd’or it will get created when I bot nixos during reformat
     extraGroups = [ "networkmanager" "wheel" "kvm" "input" "disk" "libvirtd" ];  # Enables ‘sudo’ for the user.
     packages = with pkgs; [
       #This is where I would put user only apps not system wide
