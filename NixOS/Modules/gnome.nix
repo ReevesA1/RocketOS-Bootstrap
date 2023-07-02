@@ -34,7 +34,8 @@ environment.systemPackages = with pkgs; [
   gnome.gnome-tweaks
   gnome.gnome-session
   guake
-  #dconf-editor #the flatpak version gets installed so its eaiser to manage when Im not on a nixos distro
+  gparted
+  dconf-editor
 
   #Extensions
   gnomeExtensions.dash-to-dock
