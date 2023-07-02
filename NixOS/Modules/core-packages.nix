@@ -110,35 +110,6 @@ services.locate.enable = true;
 users.groups.plocate = {};
 services.locate.interval = "hourly";
 
-#?chromium
-programs.chromium = {
-  enable = true;
-  extensions = [
-    "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
-    "ejddcgojdblidajhngkogefpkknnebdh" # AutoplayStopper
-    "ajopnjidmegmdimjlfnijceegpefgped" # BetterTTV
-    "nomnklagbgmgghhjidfhnoelnjfndfpd" # Canvas Blocker
-    "gphhapmejobijbbhgpjhcjognlahblep" # GNOME Shell integration
-    "mlboohjioameadaedfjcpemcaangkkbp" # Linux Scroll Speed Fix
-    "pkehgijcmpdhfbdbbnkijodmdjhbjlgp" # Privacy Badger
-    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
-  ];
-  extraOpts = {
-    "AutoplayAllowed" = false;
-    "BrowserSignin" = 0;
-    "PasswordManagerEnabled" = false;
-    "SpellcheckEnabled" = true;
-    "SpellcheckLanguage" = [
-      "de"
-      "en-NZ"
-      "fr-FR"
-      "nb-NO"
-    ];
-    "SyncDisabled" = true;
-  };
-};
-
-
 
 
 }
