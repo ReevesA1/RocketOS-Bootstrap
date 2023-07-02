@@ -35,7 +35,7 @@ environment.systemPackages = with pkgs; [
   gnome.gnome-session
   guake
   gparted
-  dconf-editor
+  dconf
 
   #Extensions
   gnomeExtensions.dash-to-dock
