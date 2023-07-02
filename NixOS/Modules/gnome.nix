@@ -77,7 +77,7 @@ environment.systemPackages = with pkgs; [
   login.gnomeKeyring.enable = true;
   gdm.gnomeKeyring.enable = true;
 };
-};
+
 
 
   #!Misc Options
