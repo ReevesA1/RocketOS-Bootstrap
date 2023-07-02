@@ -1,11 +1,15 @@
 #!FYI's
   # https://nixos.wiki/wiki/Nvidia
 
-{ config, pkgs, lib, ... }:
 
-{
-  services.xserver.videoDrivers = ["nvidia"];
-  programs.xwayland.enable = true; #was only needed for wayland to work
+{ config, pkgs, lib, ... }:
+  
+  {
+
+    services.xserver.videoDrivers = ["nvidia"]; 
+    programs.xwayland.enable = true; #was only needed for wayland to work
+
+  
 
   hardware = {
     nvidia.prime.sync.enable = true;
@@ -14,19 +18,17 @@
     nvidia.modesetting.enable = true; #needed for wayland to work
     nvidia.powerManagement.enable = true; #fix suspend/resume screen corruption in sync mode
     opengl = {
-      extraPackages = [
-        pkgs.mesa_drivers
-        pkgs.linuxPackages.nvidia_x11.out
-        pkgs.vaapiIntel
-        pkgs.vaapiVdpau
-        pkgs.libvdpau-va-gl
-      ];
-      driSupport = true;
-      driSupport32Bit = true;
+    extraPackages = [
+    pkgs.mesa_drivers
+    pkgs.linuxPackages.nvidia_x11.out
+    pkgs.vaapiIntel
+    pkgs.vaapiVdpau
+    pkgs.libvdpau-va-gl
+    ];
+    driSupport = true;
+    driSupport32Bit = true;
+
     };
-    #For turing (20 series) cards only:
-    nvidia.powerManagement.finegrained = true;
-  };
-  #For turing (20 series) cards only:
-  nvidiaPersistenced = true;
+};
+
 }
