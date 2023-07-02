@@ -89,40 +89,6 @@ powerManagement.resumeCommands = ''
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
-
-    programs.firefox = {
-      enable = true;
-      profiles = {
-        default = {
-          isDefault = true;
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            bitwarden
-            refined-github
-            sponsorblock
-            ublock-origin
-            decentraleyes
-            clearurls
-            kristofferhagen-nord-theme
-            old-reddit-redirect
-            betterttv
-            consent-o-matic
-          ];
-          settings = {
-            # Do not save passwords to Firefox...
-            "security.ask_for_password" = 0;
-
-
-          };
-        };
-      };
-    };
-  
-
 
 
 #!Boiler Plate Stuff 
