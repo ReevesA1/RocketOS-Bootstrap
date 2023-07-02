@@ -101,7 +101,7 @@ services.cron = {
 #!Apps
   environment.systemPackages = with pkgs; [
   #If Im testing apps make sure to add them to core-packages.nix if I want them on all systems after
-
+  sxhkd
 
   ];
 
