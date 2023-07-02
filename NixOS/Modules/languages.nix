@@ -3,7 +3,6 @@
 
 {
 
-#! Install these for flatpak support
 environment.systemPackages = with pkgs; [
 
 

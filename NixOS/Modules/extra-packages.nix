@@ -1,7 +1,11 @@
 { config, pkgs, lib, ... }:
 {
 
-#! Install these for flatpak support
+#!#####################################
+#!         THESE ALL HAVE FLATPAKS   ##
+#!######################################
+
+
 environment.systemPackages = with pkgs; [
 #place Holder for apps
 ];
