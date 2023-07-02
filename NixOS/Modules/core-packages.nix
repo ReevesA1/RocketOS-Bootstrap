@@ -77,15 +77,17 @@
   variety
   zip
 
-  #Testing
-  xbindkeys
-  xbindkeys-config
-  input-remapper
+  #!Testing
+  
 
 
   ###########DEV
   dotnet-sdk_7
   
+  ############only nixos
+  xbindkeys
+  xbindkeys-config
+
 
 
   #############################
