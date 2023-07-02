@@ -79,4 +79,18 @@ environment.systemPackages = with pkgs; [
   #!Misc Options
   programs.dconf.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
+
+
+  #!Keybindings
+  services.xserver.desktopManager.gnome3 = {
+    extraGSettingsOverrides = ''
+      [org.gnome.settings-daemon.plugins.media-keys]
+      custom-keybindings = ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0]
+      name = 'Terminal'
+      command = 'flatpak run com.raggesilver.BlackBox'
+      binding = '<Super>t'
+    '';
+  };
 }
