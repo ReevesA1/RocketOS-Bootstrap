@@ -106,6 +106,7 @@
   #!# Optomizations ##
   #!##################
   nix.settings.auto-optimise-store = true;
+  documentation.man.generateCaches = true;
 
 
   #!#######################
