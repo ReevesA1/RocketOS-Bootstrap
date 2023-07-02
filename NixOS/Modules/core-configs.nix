@@ -27,6 +27,8 @@
   services.xserver = {
     layout = "us"; #United States keyboard
     xkbVariant = "";
+    #videoDrivers = [ "amdgpu" "intel" "modesetting" ]; #not sure if need this I have not tested it just thought I would keep it
+    #videoDrivers = [ "amdgpu" "intel" "modesetting" "displaylink" ]; #not sure if need this I have not tested it just thought I would keep it
   };
 #!##########################################################
 
