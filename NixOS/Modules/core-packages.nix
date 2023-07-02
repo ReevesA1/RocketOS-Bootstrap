@@ -100,7 +100,6 @@
   vscode #use this over the flatpak version so in shells they see the word code therefor my vspowershell custom profil will work 
 
   
-  chromium
 
 
   ];
@@ -115,7 +114,7 @@ services.locate.interval = "hourly";
 #?chromium
 nixpkgs.config = {
 chromium = {
-  #enable = true;
+  enable = true;
   extensions = [
     "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
     "ejddcgojdblidajhngkogefpkknnebdh" # AutoplayStopper
