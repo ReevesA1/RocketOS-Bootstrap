@@ -6,7 +6,7 @@
 
 {
   #! Enable the GNOME Desktop Environment.
-  #services.xserver.enable = true; #this gets enabled in core-configs.nix
+  #services.xserver.enable = true; #this gets enabled in core-configs.nix because it is used by kde as well
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
@@ -73,7 +73,11 @@ environment.systemPackages = with pkgs; [
 
   #! Keyring
   services.gnome.gnome-keyring.enable = true; # I dont think I need this if im using actual gnome but keep it anyway
-  security.pam.services.gdm.gnomeKeyring.enable = true; #skip entering password at boot
+  security.pam.services = {
+  login.gnomeKeyring.enable = true;
+  gdm.gnomeKeyring.enable = true;
+};
+};
 
 
   #!Misc Options

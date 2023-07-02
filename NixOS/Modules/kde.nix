@@ -6,7 +6,7 @@
 
 {
   #! Enable the KDE Desktop Environment.
-  #services.xserver.enable = true; #this gets enabled in core-configs.nix
+  #services.xserver.enable = true; #this gets enabled in core-configs.nix because it gets used by gnome as well
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
