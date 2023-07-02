@@ -74,14 +74,6 @@ environment.systemPackages = with pkgs; [
   #! Keyring
   services.gnome.gnome-keyring.enable = true; # I dont think I need this if im using actual gnome but keep it anyway
   
-  #skip having to enter a password at boot
-  security.pam.services.login.text = ''
-  auth optional ${pkgs.gnome3.gnome-keyring}/lib/security/pam_gnome_keyring.so
-  session optional ${pkgs.gnome3.gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
-  password optional ${pkgs.gnome3.gnome-keyring}/lib/security/pam_gnome_keyring.so
-'';
-
-
 
 
   #!Misc Options
