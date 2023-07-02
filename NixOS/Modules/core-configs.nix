@@ -30,10 +30,6 @@
   };
 #!##########################################################
 
-  #! Networking 
-  networking.networkmanager.enable = true;  
-  
-
 
   #! Set your time zone.
   time.timeZone = "America/Toronto";
@@ -67,14 +63,16 @@
 
 
 
-  #!##################
-  #!     Firewall    #
-  #!##################
+  #!############################
+  #!     Network + Firewall    #
+  #!############################
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking = {
+    networkmanager.enable = true;
+    firewall.allowPing = false;  
     enableIPv6 = false;
     firewall = {
       enable = true;
