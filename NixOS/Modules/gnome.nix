@@ -89,7 +89,7 @@ environment.systemPackages = with pkgs; [
 
       [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0]
       name = 'Terminal'
-      command = 'blackbox'
+      command = 'flatpak run com.raggesilver.BlackBox' 
       binding = '<Super>t'
     '';
   };
