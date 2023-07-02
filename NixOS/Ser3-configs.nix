@@ -87,7 +87,9 @@ powerManagement.resumeCommands = ''
 services.cron = {
   #enable = true;#gets enabled in core-configs.nix
   systemCronJobs = [
-#Place Holder
+  #for some reason I always have lots of conkys in kde
+  "*/5 * * * * pgrep -c conky | if [[ $(pgrep -c conky) -gt 1 ]]; then pkill -o conky; sleep 1; conky; fi"
+
   ];
 };
 
