@@ -43,11 +43,15 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   sudo curl -o /etc/nixos/core-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-configs.nix
   sudo curl -o /etc/nixos/core-packages-x86Only.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages-x86Only.nix
   sudo curl -o /etc/nixos/core-packages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/core-packages.nix
+  sudo curl -o /etc/nixos/cron.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/cron.nix
   sudo curl -o /etc/nixos/Distrobox.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Distrobox.nix
+  sudo curl -o /etc/nixos/extra-packages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/extra-packages.nix
   sudo curl -o /etc/nixos/flatpaks-gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks-gnome.nix
   sudo curl -o /etc/nixos/flatpaks.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/flatpaks.nix
+  sudo curl -o /etc/nixos/Gaming.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Gaming.nix
   sudo curl -o /etc/nixos/gnome.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/gnome.nix
   sudo curl -o /etc/nixos/kde.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/kde.nix
+  sudo curl -o /etc/nixos/languages.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/languages.nix
   sudo curl -o /etc/nixos/nix-special-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/nix-special-configs.nix
   sudo curl -o /etc/nixos/Nvidia.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Nvidia.nix
   sudo curl -o /etc/nixos/Openssh.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Openssh.nix
