@@ -103,4 +103,6 @@
 
   ];
 
-  }
+#! services needed for some apps
+services.locate.enable = true;
+}
