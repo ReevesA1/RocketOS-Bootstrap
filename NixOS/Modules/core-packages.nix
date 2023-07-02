@@ -141,6 +141,5 @@ programs.chromium = {
 
 
 
-};
-
 }
+
