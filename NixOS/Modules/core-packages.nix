@@ -115,7 +115,7 @@ services.locate.interval = "hourly";
 #?chromium
 nixpkgs.config = {
 chromium = {
-  enable = true;
+  #enable = true;
   extensions = [
     "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
     "ejddcgojdblidajhngkogefpkknnebdh" # AutoplayStopper
