@@ -103,9 +103,10 @@ services.cron = {
   systemCronJobs = [
     "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
-    "0 21 * * 7 cd $HOME/MEGAsync/Backups/cron-backups/github-backups && find . -type f ! -name '*.zip' -exec zip "backup_$(date +'\%Y-wk\%V').zip" {} +" #zips up every sunday at 9pm the last 7 days
+    "0 21 * * 7 cd $HOME/MEGAsync/Backups/cron-backups/github-backups && find . -type f ! -name '*.zip' -exec zip \"backup_$(date +'%Y-wk%V').zip\" {} +" #zips up every sunday at 9pm the last 7 days
   ];
 };
+
 
 }
 
