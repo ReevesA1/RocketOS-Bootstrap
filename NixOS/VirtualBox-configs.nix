@@ -109,18 +109,6 @@ environment.systemPackages = with pkgs; [
       profiles = {
         default = {
           isDefault = true;
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            bitwarden
-            refined-github
-            sponsorblock
-            ublock-origin
-            decentraleyes
-            clearurls
-            kristofferhagen-nord-theme
-            old-reddit-redirect
-            betterttv
-            consent-o-matic
-          ];
           settings = {
             # Do not save passwords to Firefox...
             "security.ask_for_password" = 0;
