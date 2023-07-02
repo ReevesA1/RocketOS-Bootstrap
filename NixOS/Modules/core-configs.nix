@@ -41,7 +41,8 @@
   #! Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-
+  #! Enable Bluetooth
+  hardware.bluetooth.enable = true;
   
 
   #! Enable CUPS to print documents.
