@@ -81,7 +81,7 @@ powerManagement.resumeCommands = ''
 
 #!Crons
 services.cron = {
-  enable = true;
+  #enable = true;#gets enabled in core-configs.nix
   systemCronJobs = [
     "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"

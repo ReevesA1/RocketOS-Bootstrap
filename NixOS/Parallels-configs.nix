@@ -77,7 +77,7 @@ powerManagement.resumeCommands = ''
 
 #!Crons
 services.cron = {
-  enable = true;
+  #enable = true;#gets enabled in core-configs.nix
   systemCronJobs = [
 #Place Holder
   ];

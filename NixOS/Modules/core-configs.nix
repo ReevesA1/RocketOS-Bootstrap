@@ -2,9 +2,7 @@
   
   {
 
-  #!polkit
-  #I think flatpaks need this? but also kde and gnome for sudo? (gnome has extra steps but i think kde its all built in?)
-  security.polkit.enable = true;
+
 
   #!X11 stuff#######################################
   services.xserver.enable = true; #this line is needed by both gnome and kde!
@@ -31,6 +29,13 @@
     #videoDrivers = [ "amdgpu" "intel" "modesetting" "displaylink" ]; #not sure if need this I have not tested it just thought I would keep it
   };
 #!##########################################################
+
+  #!polkit
+  #I think flatpaks need this? but also kde and gnome for sudo? (gnome has extra steps but i think kde its all built in?)
+  security.polkit.enable = true;
+
+  #! Cron
+  services.cron.enable = true;
 
 
   #! Set your time zone.
