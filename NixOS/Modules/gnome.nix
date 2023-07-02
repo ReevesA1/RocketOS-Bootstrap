@@ -82,7 +82,7 @@ environment.systemPackages = with pkgs; [
 
 
   #!Keybindings
-  services.xserver.desktopManager.gnome3 = {
+    services.xserver.desktopManager.gnome = {
     extraGSettingsOverrides = ''
       [org.gnome.settings-daemon.plugins.media-keys]
       custom-keybindings = ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
