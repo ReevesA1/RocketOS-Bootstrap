@@ -84,8 +84,8 @@
   ###########DEV
   dotnet-sdk_7
   
-  ############only nixos
-  xbindkeys
+  ############only needed on nixos
+  xbindkeys #other distros hopefully my gnome gsettings work and im not sure how to handle kde and wayland then (kde could work with xbindkeys tho)
   xbindkeys-config
 
 
