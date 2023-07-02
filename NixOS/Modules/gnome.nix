@@ -78,5 +78,5 @@ environment.systemPackages = with pkgs; [
 
   #!Misc Options
   programs.dconf.enable = true;
-  gnome-online-accounts.enable = false;
+  services.gnome.gnome-online-accounts.enable = false;
 }
