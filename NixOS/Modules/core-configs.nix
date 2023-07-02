@@ -32,6 +32,7 @@
 
   #! Networking 
   networking.networkmanager.enable = true;  
+  
 
 
   #! Set your time zone.
