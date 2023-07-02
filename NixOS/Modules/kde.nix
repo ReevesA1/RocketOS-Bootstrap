@@ -22,6 +22,12 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
 
   ];
 
-programs.partition-manager.enable = true; #this must be on
+
+#!Keyring 
+security.pam.services.sddm.gnomeKeyring.enable = true; #skip entering password at boot
+
+
+#!Misc Options
+programs.partition-manager.enable = true; 
 
 }

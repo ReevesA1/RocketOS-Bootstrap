@@ -76,6 +76,6 @@ environment.systemPackages = with pkgs; [
   security.pam.services.gdm.gnomeKeyring.enable = true; #skip entering password at boot
 
 
-  #! Other Options
+  #!Misc Options
   programs.dconf.enable = true;
 }
