@@ -88,7 +88,7 @@ services.cron = {
   #enable = true;#gets enabled in core-configs.nix
   systemCronJobs = [
   #for some reason I always have lots of conkys in kde
-  "*/5 * * * * pgrep -c conky | if [[ $(pgrep -c conky) -gt 1 ]]; then pkill -o conky; sleep 1; conky; fi"
+  "*/5 * * * * pgrep -c conky | if [[ $(pgrep -c conky) -gt 1 ]]; then pkill conky; sleep 1; nohup conky & fi"
 
   ];
 };
