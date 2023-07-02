@@ -80,4 +80,48 @@ if ($architecture -eq "x86_64") {
     flatpak install --user --assumeyes flathub com.icons8.Lunacy #(Not aarch64)
     flatpak install --user --assumeyes flathub io.github.shiftey.Desktop #(Not aarch64 but nix packages has it covered for aarch64 systems)⠀
 
+if ($architecture -eq "aarch64") {
+
+    Write-Output "aarch64 only - Going to install Universal NIX Packages that fill in lack of flatpak support on aarch64 ...press enter to continue"
+    Read-Host
+
+    #! ONLY PACKAGES I CANNOT GET WORKING ON AARCH64 with nix or flatpaks
+    #Megasync
+    #Microsoft edge
+    #Spotify but I can use browser anyway
+    #Notion but I can use browser anyway
+
+
+    if ($ID -eq "nixos") {
+
+        #?###############################################################################
+        ###? PACKAGES THAT FILL IN aarch64 support missing packages                   ###
+        #?###############################################################################
+
+
+        #Media
+        $env:NIXPKGS_ALLOW_UNFREE = 1; nix-env -iA nixos.spotify #? did not work on parallels wtf but it worked on aarch64 ubuntu?
+
+
+        #Dev
+        $env:NIXPKGS_ALLOW_INSECURE = 1; nix-env -iA nixos.github-desktop #? did not work on parallels wtf but it worked on aarch64 ubuntu?
+        $env:NIXPKGS_ALLOW_UNFREE = 1; nix-env -iA nixos.jetbrains.rider #? did not work on parallels wtf but it worked on aarch64 ubuntu?
+        nix-env -iA nixos.icon-library
+
+    }
+
+    #!NOTE THAT THIS IS FOR OTHER DISTROS NOT FOR NIXOS
+    elseif ($ID -ne "nixos") {
+
+
+        #Media
+        $env:NIXPKGS_ALLOW_UNFREE = 1; nix-env -iA nixpkgs.spotify
+        
+        
+        #Dev
+        $env:NIXPKGS_ALLOW_INSECURE = 1; nix-env -iA nixpkgs.github-desktop
+        $env:NIXPKGS_ALLOW_UNFREE = 1; nix-env -iA nixpkgs.jetbrains.rider
+        nix-env -iA nixpkgs.icon-library
+
+
     */
