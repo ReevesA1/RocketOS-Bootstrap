@@ -16,7 +16,7 @@
   xdg.portal = {
     enable = true; # This for sure needs to be on
     wlr.enable = true;  #  for wlroots-based Wayland compositor
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #Only needed if not using Gnome
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #Only needed if not using Gnome works in kde
   };
 
 
