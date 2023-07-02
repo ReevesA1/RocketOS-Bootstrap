@@ -69,7 +69,13 @@ environment.systemPackages = with pkgs; [
     '';
   };
 
+  
+
+  #! Keyring
+  services.gnome.gnome-keyring.enable = true; # I dont think I need this if im using actual gnome but keep it anyway
+  security.pam.services.gdm.gnomeKeyring.enable = true; #skip entering password at boot
+
+
   #! Other Options
   programs.dconf.enable = true;
-  services.gnome.gnome-keyring.enable = true; # I dont think I need this if im using actual gnome but keep it anyway
 }
