@@ -61,7 +61,8 @@
     #media-session.enable = true;
   };
 
-
+ #! Enable Dbus
+ services.dbus.enable = true; # needed for flatpaks to talk to each other but maybe other programs to
 
   #!############################
   #!     Network + Firewall    #
@@ -113,5 +114,8 @@
   dates = "weekly";
   options = "--delete-older-than 30d";
 };
+
+
+
 
 }
