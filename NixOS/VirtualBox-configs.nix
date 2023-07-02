@@ -88,7 +88,7 @@ powerManagement.resumeCommands = ''
 
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
-{
+
     programs.firefox = {
       enable = true;
       profiles = {
@@ -222,7 +222,7 @@ powerManagement.resumeCommands = ''
         };
       };
     };
-  };
+  
 
 
 
