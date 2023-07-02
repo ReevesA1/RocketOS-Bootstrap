@@ -89,27 +89,11 @@ environment.systemPackages = with pkgs; [
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
 
-#  programs.firefox = {
-#  enable = true;
-#  package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-#    extraPolicies = {
-#      DisablePocket = true;
-#      ExtensionSettings = {
-#        "uBlock0@raymondhill.net" = {
-#          "installation_mode" = "force_installed";
-#          "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-#        };
-#      };
-#    };
-#  };
-#};
-
-    programs.firefox = {
-      enable = true;
-      profiles = {
-        default = {
-          isDefault = true;
-          settings = {
+  programs.firefox = {
+  enable = true;
+  package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    extraPolicies = {
+  
             # Do not save passwords to Firefox...
             "security.ask_for_password" = 0;
 
@@ -224,7 +208,6 @@ environment.systemPackages = with pkgs; [
           };
         };
       };
-    };
   
 
 #!Boiler Plate Stuff 
