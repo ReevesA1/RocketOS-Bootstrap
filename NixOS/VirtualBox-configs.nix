@@ -89,10 +89,16 @@ powerManagement.resumeCommands = ''
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
 
-pkgs.wrapFirefox pkgs.firefox-unwrapped {
-  extraPolicies = {
-    DisablePocket = true;
+let
+  myFirefox = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    extraPolicies = {
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+    };
   };
+in
+{
+  environment.systemPackages = [ myFirefox ];
 }
 
 #!Boiler Plate Stuff 
