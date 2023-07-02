@@ -105,7 +105,8 @@
 
 #! services needed for some apps
 
-#plocate
+#plocate (after do a sudo updatedb  and then sudo plocate Bitcoin.png should work)
 services.locate.enable = true;
 users.groups.plocate = {};
+services.plocate.interval = "hourly";
 }
