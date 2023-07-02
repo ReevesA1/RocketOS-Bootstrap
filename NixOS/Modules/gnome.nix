@@ -66,4 +66,6 @@ environment.systemPackages = with pkgs; [
       DefaultTimeoutStopSec=10s
     '';
   };
+
+  programs.dconf.enable = true;
 }
