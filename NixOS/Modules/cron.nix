@@ -4,7 +4,7 @@
 services.cron = {
   enable = true;
   systemCronJobs = [
-    #Place Holder
+    "0 7,19 * * * flatpak update && flatpak uninstall --unused"
   ];
 };
 
