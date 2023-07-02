@@ -8,6 +8,7 @@
     isNormalUser = true;
     description = "rocket is my main user";
     #password = "myPassword"; # Don't forget to set a password with ‘passwd’or it will get created when I bot nixos during reformat
+    #hashedPassword = "hashed-password-here"; #still not recomended
     uid = 1000;
     group = "users";
     extraGroups = [
