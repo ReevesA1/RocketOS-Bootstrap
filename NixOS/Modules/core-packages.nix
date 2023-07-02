@@ -93,7 +93,7 @@
   protonvpn-cli
   #protonvpn-gui #might need this to login originaly if 2fa doesnt work but then just use protonvpn-cli - command is protonvpn-cli login [ProtonVPN username]
   #synergy #outdate
-  firefox
+  #firefox 
   #blackbox-terminal #doesnt work properly in kde use the flatpak version
   vlc
   appimage-run
