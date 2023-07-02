@@ -64,11 +64,13 @@ services.xserver.displayManager.gdm.wayland = false;  # wayland is better for pa
 #!Waking from Suspend Commands 
 #Use the command below to see if it works
 #sudo journalctl -b | grep resumeCommands
+#testing to see if shutdown -c will help with pc rebooting after resuming from suspend
 powerManagement.resumeCommands = ''
   echo "Running resumeCommands test before" 
-  
+  shutdown -c
   echo "Running resumeCommands test after" 
 '';
+
 
 
 #!Insecure Packages 
