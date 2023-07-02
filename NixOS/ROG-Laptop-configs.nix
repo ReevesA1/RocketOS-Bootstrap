@@ -18,6 +18,7 @@
   ./core-packages-x86Only.nix
   ./users.nix
   ./systemd-services.nix
+  ./cron.nix
   #! Optional
 
   #Gnome
@@ -29,10 +30,14 @@
   #./flatpaks.nix
 
   #Apps with extra configs
+  ./extra-packages.nix
+  ./Gaming.nix
+  ./languages.nix
   ./Distrobox.nix
   ./Nvidia.nix
   #./Openssh.nix
   #./SolaarLogitechMouse.nix
+
 
   ];
 
