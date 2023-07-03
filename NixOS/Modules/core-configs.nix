@@ -53,7 +53,7 @@
 
   #! Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true; #titus had this off
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
