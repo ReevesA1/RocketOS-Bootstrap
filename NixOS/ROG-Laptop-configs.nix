@@ -55,7 +55,7 @@
   #boot.loader.grub.device = "/dev/sda";  #Needed if in a vm with virtualbox
   #boot.loader.grub.useOSProber = true;  #Needed if in a vm with virtualbox
 
-#! Sound Fix for ROG-laptop
+#! Sound Fix for ROG-laptop (do a reboot)
 boot.extraModprobeConfig = ''
 options snd-hda-intel model=asus-zenbook
 options snd_hda_intel enable=0,1
