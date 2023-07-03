@@ -70,7 +70,7 @@
         ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/daily-universal.ps1
       '';
       serviceConfig = {
-        User = "root";
+        User = "rocket";
         Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
       };
     };
