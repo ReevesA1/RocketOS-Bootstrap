@@ -2,7 +2,9 @@
 #journalctl --user-unit foo.service  
 #systemctl --user status foo 
 #systemctl --user start foo
+#* Timers
 #systemctl list-timers 
+#watch -n 1 systemctl list-timers #! watch in real time
 
 { config, pkgs, lib, ... }:
 
