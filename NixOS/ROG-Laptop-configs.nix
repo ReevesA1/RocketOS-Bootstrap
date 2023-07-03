@@ -104,6 +104,8 @@ services.cron = {
     "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "* * * * * $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
+    "* * * * * . /etc/profile; $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
+
   ];
 };
 
