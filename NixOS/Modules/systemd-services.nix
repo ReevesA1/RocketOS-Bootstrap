@@ -13,6 +13,8 @@
 #OnBootSec = 60;
 #*Other timersConfig
 #Persistent=true; #if missed because pc was off it will run the timer next boot
+#*important environemnt line put in all
+#Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
 
 { config, pkgs, lib, ... }:
 
@@ -46,6 +48,7 @@
       '';
       serviceConfig = {
         User = "rocket";
+        Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
       };
     };
 
@@ -66,7 +69,7 @@
       '';
       serviceConfig = {
         User = "rocket";
-        Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share";
+        Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
       };
     };
   

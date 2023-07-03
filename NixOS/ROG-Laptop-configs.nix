@@ -94,6 +94,7 @@ powerManagement.resumeCommands = ''
       '';
       serviceConfig = {
         User = "rocket";
+        Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
       };
     };
   
@@ -111,6 +112,7 @@ powerManagement.resumeCommands = ''
       '';
       serviceConfig = {
         User = "rocket";
+        Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
       };
     };
   };
