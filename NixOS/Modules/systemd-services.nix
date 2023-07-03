@@ -4,7 +4,7 @@
 #systemctl --user start foo
 #*add this line for thumbs up
 #Write-Host ([char]0xD83D + [char]0xDC4D)
-#Write-Host "NAMEOFSCRIPT `u{1F44D}" -ForegroundColor Green
+#Write-Host "NAMEOFSCRIPT Worked!  `u{1F44D}" -ForegroundColor Green
 #*Check Timers
 #systemctl list-timers 
 #systemctl --type=timer --all --failed 
