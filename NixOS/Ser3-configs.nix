@@ -78,7 +78,23 @@ powerManagement.resumeCommands = ''
 
 #!SystemD Services
   #systemd = {
-  #Place Holder
+      #? KDE Only 1 conky at a time
+    timers."conky-stop-multiple" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        #OnBootSec = 60;
+        OnCalendar = "*-*-* *:*:00"; #testing
+        Unit = "conky-stop-multiple.service";
+      };
+    };
+    services."conky-stop-multiple" = {
+      script = ''
+        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Ser3/conky-stop-multiple.ps1
+      '';
+      serviceConfig = {
+        User = "rocket";
+      };
+    };
   #};
 
 
