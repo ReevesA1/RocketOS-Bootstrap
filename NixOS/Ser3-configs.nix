@@ -77,7 +77,7 @@ powerManagement.resumeCommands = ''
 '';
 
 #!SystemD Services
-  #systemd = {
+  systemd = {
       #? KDE Only 1 conky at a time
     timers."conky-stop-multiple" = {
       wantedBy = [ "timers.target" ];
@@ -95,7 +95,7 @@ powerManagement.resumeCommands = ''
         User = "rocket";
       };
     };
-  #};
+  };
 
 
 
