@@ -89,7 +89,7 @@ services.cron = {
   systemCronJobs = [
     "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
-    "42 7 * * 1 pwsh -c 'Get-ChildItem \"$HOME/MEGAsync/Backups/cron-backups/github-backups\" -Directory | Where-Object { $_.Name -notlike \"*.zip\" } | ForEach-Object { Compress-Archive -Path $_.FullName -Update -DestinationPath \"GitRepo-Backup_$(Get-Date -UFormat \"%Y-wk%V\").zip\"; Remove-Item $_.FullName -Recurse -Force }'"
+    "9 8 * * 1 pwsh -c 'Get-ChildItem \"$HOME/MEGAsync/Backups/cron-backups/github-backups\" -Directory | Where-Object { $_.Name -notlike \"*.zip\" } | ForEach-Object { Compress-Archive -Path $_.FullName -Update -DestinationPath \"GitRepo-Backup_$(Get-Date -UFormat \"%Y-wk%V\").zip\"; Remove-Item $_.FullName -Recurse -Force }'"
   ];
 };
 
