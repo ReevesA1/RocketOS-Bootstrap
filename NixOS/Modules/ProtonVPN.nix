@@ -11,7 +11,7 @@
 
 
 
-  systemd = {
+  services.systemd  = {
     
     #? Monitor Internet connection
     timers."protonvpn-cli_connection_monitor" = {
