@@ -89,7 +89,7 @@ powerManagement.resumeCommands = ''
     };
     services."github-repo-backups" = {
       script = ''
-        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh
+        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/SystemD-Timers/github-repo-backups.sh
       '';
       serviceConfig = {
         User = "rocket";
@@ -106,7 +106,7 @@ powerManagement.resumeCommands = ''
     };
     services."zip-github-repo-backups-weekly" = {
       script = ''
-        ${pkgs.bash}/bin/bash -c 'source ./etc/profile; $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh'
+        ${pkgs.bash}/bin/bash -c 'source ./etc/profile; $HOME/MEGAsync/Scripts/SystemD-Timers/zip-github-repo-backups-weekly.sh'
       '';
       serviceConfig = {
         User = "rocket";
