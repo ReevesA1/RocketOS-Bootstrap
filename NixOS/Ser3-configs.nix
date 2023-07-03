@@ -79,12 +79,12 @@ powerManagement.resumeCommands = ''
 #!SystemD Services
   systemd = {
 
-    
+
   #? KDE Only 1 conky at a time
   timers."conky-stop-multiple" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "*-*-* *:*:00"; #testing
+      OnCalendar = "*-*-* *:*:00"; #every minute might be to much ?
       Unit = "conky-stop-multiple.service";
     };
   };

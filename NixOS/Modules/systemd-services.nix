@@ -45,6 +45,25 @@
         User = "rocket";
       };
     };
+
+
+
+    #? Daily Universal Update and Misc Timer
+    timers."daily-universal" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = 60;
+        Unit = "daily-universal.service";
+      };
+    };
+    services."daily-universal" = {
+      script = ''
+        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/daily-universal.ps1
+      '';
+      serviceConfig = {
+        User = "rocket";
+      };
+    };
   
 
   };
