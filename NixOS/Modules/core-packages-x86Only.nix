@@ -18,6 +18,9 @@
   mullvad-browser
   
 
+  #Media
+  spotify
+
   ];
 
   }

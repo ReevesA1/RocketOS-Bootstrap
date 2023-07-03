@@ -107,8 +107,6 @@
   obsidian
   qbittorrent
 
-  #Media
-  spotify
 
 
   #DEV
