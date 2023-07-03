@@ -63,6 +63,7 @@
       '';
       serviceConfig = {
         User = "rocket";
+        Environment = "PATH=${pkgs.flatpak}/bin";
       };
     };
   
