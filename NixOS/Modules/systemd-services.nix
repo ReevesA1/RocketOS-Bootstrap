@@ -10,6 +10,7 @@
 #watch -n 1 systemctl list-timers --all #! watch in real time
 #*Timers Triggers
 #OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
+#OnCalendar = "*-*-* 7,19:00:00"; #7am 7pm example
 #OnBootSec = 60;
 #*Other timersConfig
 #Persistent=true; #if missed because pc was off it will run the timer next boot
@@ -58,7 +59,7 @@
     timers."daily-universal" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar=*-*-* 7,19:00:00;
+        OnCalendar = "*-*-* 7,19:00:00";
         Unit = "daily-universal.service";
       };
     };
