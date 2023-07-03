@@ -77,6 +77,7 @@ powerManagement.resumeCommands = ''
 '';
 
 #!SystemD Services
+#${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/SER3/conky-stop-multiple.ps1 #worked but could not launch a new conky if there was none
   systemd = {
       #? KDE Only 1 conky at a time
     timers."conky-stop-multiple" = {
@@ -89,7 +90,7 @@ powerManagement.resumeCommands = ''
     };
     services."conky-stop-multiple" = {
       script = ''
-      ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/SER3/conky-stop-multiple.sh
+      ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/SystemD-Timers/SER3/conky-stop-multiple.sh
       '';
       serviceConfig = {
         User = "rocket";
