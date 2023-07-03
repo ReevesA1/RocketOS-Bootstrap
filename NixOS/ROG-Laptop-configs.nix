@@ -77,11 +77,6 @@ powerManagement.resumeCommands = ''
 
 
 #!SystemD Services
-#? Diagnose with these next commands
-#journalctl --user-unit foo.service  
-#systemctl --user status foo 
-#systemctl --user start foo
-#systemctl list-timers 
 
   systemd = {
     # github-repo-backups
@@ -105,7 +100,7 @@ powerManagement.resumeCommands = ''
     timers."zip-github-repo-backups-weekly" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* *:*:00";
+        OnCalendar = "Sun *-*-* 21:00:00";
         Unit = "zip-github-repo-backups-weekly.service";
       };
     };

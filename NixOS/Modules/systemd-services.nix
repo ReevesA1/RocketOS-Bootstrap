@@ -4,7 +4,9 @@
 #systemctl --user start foo
 #* Timers
 #systemctl list-timers 
-#watch -n 1 systemctl list-timers #! watch in real time
+#watch -n 1 systemctl list-timers --all #! watch in real time
+#*Test
+#OnCalendar = "*-*-* *:*:00"; #runs every minute
 
 { config, pkgs, lib, ... }:
 

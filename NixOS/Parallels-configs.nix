@@ -73,13 +73,10 @@ powerManagement.resumeCommands = ''
 '';
 
 #!SystemD Services
-#? Diagnose with these next commands
-#journalctl --user-unit foo.service  
-#systemctl --user status foo 
-#systemctl --user start foo
-#systemctl list-timers 
 
-#Place Holder
+  #systemd = {
+  #Place Holder
+  #};
 
 
 #!Insecure Packages 
