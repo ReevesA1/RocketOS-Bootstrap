@@ -55,6 +55,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   sudo curl -o /etc/nixos/nix-special-configs.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/nix-special-configs.nix
   sudo curl -o /etc/nixos/Nvidia.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Nvidia.nix
   sudo curl -o /etc/nixos/Openssh.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/Openssh.nix
+  sudo curl -o /etc/nixos/ProtonVPN.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/ProtonVPN.nix
   sudo curl -o /etc/nixos/SolaarLogitechMouse.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/SolaarLogitechMouse.nix
   sudo curl -o /etc/nixos/systemd-services.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/systemd-services.nix
   sudo curl -o /etc/nixos/users.nix https://raw.githubusercontent.com/ReevesA1/RocketOS-Bootstrap/main/NixOS/Modules/users.nix
