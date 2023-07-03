@@ -24,7 +24,7 @@
   ### Nix Packages - Command Line Core Utilities   ###
   ####################################################
   topgrade
-  cron
+  #cron #Depricated I use systemd timers now good cause I never had luck with cron jobs
   coreutils
   fish
   findutils
