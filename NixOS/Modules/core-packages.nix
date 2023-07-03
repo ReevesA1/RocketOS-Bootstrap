@@ -107,11 +107,14 @@
   obsidian
   qbittorrent
 
+  #Media
+  spotify
 
-  ###########DEV
+
+  #DEV
   godot_4
   gcolor3
-  spotify
+  jetbrains.rider
 
   ];
 
