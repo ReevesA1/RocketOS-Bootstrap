@@ -12,7 +12,7 @@
 #  
 #
 #  hardware = {
-#    nvidia.prime.sync.enable = true;
+#    nvidia.prime.sync.enable = true;  #! needed or else built in screen wont work
 #    nvidia.prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
 #    nvidia.prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
 #    nvidia.modesetting.enable = true; #needed for wayland to work
@@ -58,7 +58,7 @@
   programs.xwayland.enable = true; 
 
   hardware.nvidia = {
-    prime.sync.enable = true; 
+    prime.sync.enable = true; #! needed or else built in screen wont work
     prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
     prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
 
