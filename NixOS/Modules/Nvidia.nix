@@ -57,10 +57,10 @@
   #only needed for wayland to work
   programs.xwayland.enable = true; 
 
-  nvidia.prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
-  nvidia.prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
-
   hardware.nvidia = {
+    
+    prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
+    prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
 
     # Modesetting is needed for most wayland compositors
     modesetting.enable = true;
