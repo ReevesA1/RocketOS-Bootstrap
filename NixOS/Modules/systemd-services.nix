@@ -4,6 +4,7 @@
 #systemctl --user start foo
 #*add this line for thumbs up
 #Write-Host ([char]0xD83D + [char]0xDC4D)
+#Write-Host "NAMEOFSCRIPT `u{1F44D}" -ForegroundColor Green
 #*Check Timers
 #systemctl list-timers 
 #watch -n 1 systemctl list-timers --all #! watch in real time
