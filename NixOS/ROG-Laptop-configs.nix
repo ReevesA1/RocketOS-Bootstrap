@@ -101,10 +101,9 @@ powerManagement.resumeCommands = ''
 services.cron = {
   #enable = true;#gets enabled in core-configs.nix
   systemCronJobs = [
-    "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
-    "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
-    "* * * * * $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
-    "* * * * * . /etc/profile; $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
+    "0 8 * * * rocket $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
+    "0 18 * * * rocket $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
+    "* * * * * rocket ./etc/profile; $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
 
   ];
 };
