@@ -10,6 +10,8 @@ environment.systemPackages = with pkgs; [
 #Productivity
 obsidian
 
+#Security
+
 
 
 
