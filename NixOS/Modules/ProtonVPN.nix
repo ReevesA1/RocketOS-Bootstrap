@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
-    {
+
+{
   
   #!system wide packages
   environment.systemPackages = with pkgs; [
@@ -14,16 +15,16 @@
   systemd = {
     
     #? Monitor Internet connection
-    timers."make-systemd-timer-scripts-execuable" = {
+    timers."protonvpn-cli_connection_monitor" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
         OnBootSec = 60;
-        Unit = "make-systemd-timer-scripts-execuable.service";
+        Unit = "protonvpn-cli_connection_monitor.service";
       };
     };
-    services."make-systemd-timer-scripts-execuable" = {
+    services."protonvpn-cli_connection_monitor" = {
       script = ''
-        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/make-systemd-timer-scripts-execuable.ps1
+        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.ps1
       '';
       serviceConfig = {
         User = "rocket";
@@ -31,12 +32,6 @@
       };
     };
 
-
-
-
-
-
-
-
+  };
 }
 
