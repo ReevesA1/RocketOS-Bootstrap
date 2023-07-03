@@ -31,6 +31,7 @@
   ./flatpaks.nix
 
   #Apps with extra configs
+  ./ProtonVPN.nix
   #./extra-packages.nix
   #./Gaming.nix
   #./languages.nix
