@@ -88,6 +88,7 @@ powerManagement.resumeCommands = ''
 #? Diagnose with these next commands
 #journalctl -u cron -n 20
 #systemctl status cron
+#journalctl -f -u cron
 #journalctl -u cron -g CMD
 #journalctl -u cron -g CMD -f #!-f is to follow
 #journalctl -u cron -g CMD --since "2023-07-01 19:00:00" --until "2023-07-02 7:00:00"
@@ -103,7 +104,6 @@ services.cron = {
     "0 8 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "0 18 * * * $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
     "* * * * * $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
-
   ];
 };
 
