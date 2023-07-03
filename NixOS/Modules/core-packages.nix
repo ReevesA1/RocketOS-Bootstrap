@@ -111,6 +111,7 @@
   ###########DEV
   godot_4
   gcolor3
+  spotify
 
   ];
 
