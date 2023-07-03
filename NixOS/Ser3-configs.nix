@@ -78,24 +78,24 @@ powerManagement.resumeCommands = ''
 
 #!SystemD Services
   systemd = {
-      #? KDE Only 1 conky at a time
-    timers."conky-stop-multiple" = {
-      wantedBy = [ "timers.target" ];
-      timerConfig = {
-        OnCalendar = "*-*-* *:*:00"; #testing
-        Unit = "conky-stop-multiple.service";
-      };
-    };
-    services."conky-stop-multiple" = {
-      script = ''
-      ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/SER3/conky-stop-multiple.ps1 #worked but could not launch a new conky if there was none
-      '';
-      serviceConfig = {
-        User = "rocket";
-        ExecStartPost = "${pkgs.conky}/bin/conky"; 
-      };
+  #? KDE Only 1 conky at a time
+  timers."conky-stop-multiple" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "*-*-* *:*:00"; #testing
+      Unit = "conky-stop-multiple.service";
     };
   };
+  services."conky-stop-multiple" = {
+    script = ''
+    ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/SER3/conky-stop-multiple.ps1
+    '';
+    serviceConfig = {
+      User = "rocket";
+      ExecStartPre = "${pkgs.bash}/bin/bash -c 'nohup ${pkgs.conky}/bin/conky &'";
+    };
+  };
+};
 
 
 
