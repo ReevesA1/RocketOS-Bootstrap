@@ -58,7 +58,7 @@
   programs.xwayland.enable = true; 
 
   hardware.nvidia = {
-    
+    prime.sync.enable = true; 
     prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
     prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because ROG-laptop has both or else built in screen wont work
 
