@@ -58,8 +58,9 @@
 #! Sound Fix for ROG-laptop (do a reboot)
 boot.extraModprobeConfig = ''
 options snd-hda-intel model=asus-zenbook
+options snd_hda_intel enable=1
 ''; 
-#options snd_hda_intel enable=0,1
+
 
 #! Networking 
 networking.hostName = "ROG-Laptop-NixOS"; 
