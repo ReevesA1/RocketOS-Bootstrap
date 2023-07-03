@@ -21,6 +21,9 @@
   #Media
   spotify
 
+  #Dev
+  jetbrains.rider
+
   ];
 
   }

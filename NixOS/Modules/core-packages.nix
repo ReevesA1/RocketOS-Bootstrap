@@ -112,7 +112,6 @@
   #DEV
   godot_4
   gcolor3
-  jetbrains.rider
 
   ];
 
