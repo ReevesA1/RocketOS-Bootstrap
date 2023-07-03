@@ -7,7 +7,7 @@
 #watch -n 1 systemctl list-timers --all #! watch in real time
 #*Timers Triggers
 #OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
-#OnBootSec=60
+#OnBootSec = 60;
 #*Other timersConfig
 #Persistent=true; #if missed because pc was off it will run the timer next boot
 
@@ -33,7 +33,7 @@
     timers."make-systemd-timer-scripts-execuable" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnBootSec=60
+        OnBootSec = 60;
         Unit = "make-systemd-timer-scripts-execuable.service";
       };
     };
