@@ -1,3 +1,8 @@
+#! Diagnose with these next commands
+#journalctl -u cron -n 20
+#systemctl status cron
+
+
 { config, pkgs, lib, ... }:
 {
 #? to view use these commands
