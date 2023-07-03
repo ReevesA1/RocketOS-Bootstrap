@@ -18,7 +18,7 @@
   ./core-packages-x86Only.nix
   ./users.nix
   ./systemd-services.nix
-  ./cron.nix
+  #./cron.nix [DEPRECATED]
 
 
   #! Optional
@@ -76,7 +76,7 @@ powerManagement.resumeCommands = ''
 '';
 
 
-#!SystemD Servcies
+#!SystemD Services
 #? Diagnose with these next commands
 #journalctl --user-unit foo.service  
 #systemctl --user status foo 
@@ -84,29 +84,6 @@ powerManagement.resumeCommands = ''
 
 #Place Holder
 
-#!Crons
-#? Diagnose with these next commands
-#journalctl -u cron -n 20
-#systemctl status cron
-#journalctl -f -u cron
-#journalctl -u cron -g CMD
-#journalctl -u cron -g CMD -f #!-f is to follow
-#journalctl -u cron -g CMD --since "2023-07-01 19:00:00" --until "2023-07-02 7:00:00"
-#journalctl -u cron -g CMD --since "2 hours ago"
-#? to view use these commands
-#sudo cat /etc/crontab #*best one
-#crontab -l
-#sudo crontab -u rocket -l
-
-services.cron = {
-  #enable = true;#gets enabled in core-configs.nix
-  systemCronJobs = [
-    "0 8 * * * rocket $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
-    "0 18 * * * rocket $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh"
-    "* * * * * rocket ./etc/profile; $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh"
-
-  ];
-};
 
 #!Insecure Packages 
   #nixpkgs.config.permittedInsecurePackages = [ "packageName" ];
