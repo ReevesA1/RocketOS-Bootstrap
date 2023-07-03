@@ -83,7 +83,41 @@ powerManagement.resumeCommands = ''
 #systemctl --user start foo
 #systemctl list-timers 
 
-#Place Holder
+  systemd = {
+    # github-repo-backups
+    timers."github-repo-backups" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "*-*-* 8,18:00:00";
+        Unit = "github-repo-backups.service";
+      };
+    };
+    services."github-repo-backups" = {
+      script = ''
+        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/Crons/github-repo-backups.sh
+      '';
+      serviceConfig = {
+        User = "rocket";
+      };
+    };
+  
+    # zip-github-repo-backups-weekly
+    timers."zip-github-repo-backups-weekly" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "*-*-* *:*:00";
+        Unit = "zip-github-repo-backups-weekly.service";
+      };
+    };
+    services."zip-github-repo-backups-weekly" = {
+      script = ''
+        ${pkgs.bash}/bin/bash -c 'source ./etc/profile; $HOME/MEGAsync/Scripts/Crons/zip-github-repo-backups-weekly.sh'
+      '';
+      serviceConfig = {
+        User = "rocket";
+      };
+    };
+  };
 
 
 #!Insecure Packages 
