@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
   {
-  #!system wide packages
+  #!Install prootonvpn
   environment.systemPackages = with pkgs; [
 
 
@@ -11,6 +11,9 @@
 
   ];
 
+
+
+#! Timer
 systemd  = {
     
     #? Monitor Internet connection
