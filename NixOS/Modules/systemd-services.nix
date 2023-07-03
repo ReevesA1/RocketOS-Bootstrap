@@ -58,8 +58,7 @@
     timers."daily-universal" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        #OnBootSec = 60;
-        OnCalendar = "*-*-* *:*:00";#test
+        OnCalendar=*-*-* 7,19:00:00;
         Unit = "daily-universal.service";
       };
     };
