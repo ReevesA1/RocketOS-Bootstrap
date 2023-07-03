@@ -9,9 +9,9 @@
   #protonvpn-gui #might need this to login originaly if 2fa doesnt work but then just use protonvpn-cli - command is protonvpn-cli login [ProtonVPN username]
 
 
+  ];
 
-
-  services.systemd  = {
+systemd  = {
     
     #? Monitor Internet connection
     timers."protonvpn-cli_connection_monitor" = {
