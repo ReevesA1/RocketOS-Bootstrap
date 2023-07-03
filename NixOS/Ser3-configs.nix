@@ -88,7 +88,7 @@ services.cron = {
   #enable = true;#gets enabled in core-configs.nix
   systemCronJobs = [
   #for some reason I always have lots of conkys in kde so if there is more then one process every 5 minutes it terminats all and restarts 1 #todo IT WORKS  move it to kde?
-  "*/5 * * * * bash -c \"pgrep -c conky | if [[ $(pgrep -c conky) -gt 1 ]]; then pkill conky; sleep 1; nohup conky & fi\""
+  "* * * * * bash -c \"pgrep -c conky | if [[ $(pgrep -c conky) -gt 1 ]]; then pkill conky; sleep 1; nohup conky & fi\""
 
   ];
 };
