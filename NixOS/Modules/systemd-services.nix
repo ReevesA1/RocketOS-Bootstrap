@@ -7,6 +7,8 @@
 #Write-Host "NAMEOFSCRIPT `u{1F44D}" -ForegroundColor Green
 #*Check Timers
 #systemctl list-timers 
+#systemctl --type=timer --all --failed 
+#systemctl list-unit-files
 #watch -n 1 systemctl list-timers --all #! watch in real time
 #*Timers Triggers
 #OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
