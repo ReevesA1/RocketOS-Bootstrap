@@ -79,7 +79,8 @@ powerManagement.resumeCommands = ''
 #!SystemD Services
 
   systemd = {
-    # github-repo-backups
+    
+    #? github-repo-backups
     timers."github-repo-backups" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
@@ -96,7 +97,7 @@ powerManagement.resumeCommands = ''
       };
     };
   
-    # zip-github-repo-backups-weekly
+    #? zip-github-repo-backups-weekly
     timers."zip-github-repo-backups-weekly" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {

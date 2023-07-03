@@ -2,11 +2,14 @@
 #journalctl --user-unit foo.service  
 #systemctl --user status foo 
 #systemctl --user start foo
-#* Timers
+#*Check Timers
 #systemctl list-timers 
 #watch -n 1 systemctl list-timers --all #! watch in real time
-#*Test
-#OnCalendar = "*-*-* *:*:00"; #runs every minute
+#*Timers Triggers
+#OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
+#OnBootSec=60
+#*Other timersConfig
+#Persistent=true; #if missed because pc was off it will run the timer next boot
 
 { config, pkgs, lib, ... }:
 
@@ -22,6 +25,32 @@
 #!                    TIMERS TO REPLACES DEPRECATED CRONS                        ##
 #!#################################################################################
 #!According to this https://nixos.wiki/wiki/Cron crons are depricated and these should be used https://nixos.wiki/wiki/Systemd/Timers
+
+
+  systemd = {
+    
+    #? Makes Sure Timers are executable
+    timers."make-systemd-timer-scripts-execuable" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        #OnBootSec=60
+        OnCalendar = "*-*-* *:*:00"; #testing
+        Unit = "make-systemd-timer-scripts-execuable.service";
+      };
+    };
+    services."make-systemd-timer-scripts-execuable" = {
+      script = ''
+        ${pkgs.pwsh}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/make-systemd-timer-scripts-execuable.ps1
+      '';
+      serviceConfig = {
+        User = "rocket";
+      };
+    };
+  
+
+  };
+
+
 
   
 
