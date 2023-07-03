@@ -33,8 +33,7 @@
     timers."make-systemd-timer-scripts-execuable" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        #OnBootSec=60
-        OnCalendar = "*-*-* *:*:00"; #testing
+        OnBootSec=60
         Unit = "make-systemd-timer-scripts-execuable.service";
       };
     };
