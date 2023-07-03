@@ -18,7 +18,7 @@
     timers."protonvpn-cli_connection_monitor" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnBootSec = 60;
+        OnCalendar = "*-*-* *:*:00"; #Testing every minute
         Unit = "protonvpn-cli_connection_monitor.service";
       };
     };
