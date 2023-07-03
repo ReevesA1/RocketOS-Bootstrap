@@ -7,14 +7,14 @@
 #  {
 #
 #    services.xserver.videoDrivers = ["nvidia"]; 
-#    programs.xwayland.enable = true; #was only needed for wayland to work
+#    programs.xwayland.enable = true; # only needed for wayland to work
 #
 #  
 #
 #  hardware = {
 #    nvidia.prime.sync.enable = true;
-#    nvidia.prime.intelBusId = "PCI:00:02:0"; # fyi need both nvidia and intel because laptop has both or else built in screen wont work
-#    nvidia.prime.nvidiaBusId = "PCI:01:00:0";
+#    nvidia.prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because laptop has both or else built in screen wont work
+#    nvidia.prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because laptop has both or else built in screen wont work
 #    nvidia.modesetting.enable = true; #needed for wayland to work
 #    nvidia.powerManagement.enable = true; #fix suspend/resume screen corruption in sync mode
 #    opengl = {
@@ -54,6 +54,11 @@
 
   # Tell Xorg to use the nvidia driver
   services.xserver.videoDrivers = ["nvidia"];
+  #only needed for wayland to work
+  programs.xwayland.enable = true; 
+
+  nvidia.prime.intelBusId = "PCI:00:02:0"; #! fyi need both nvidia and intel because laptop has both or else built in screen wont work
+  nvidia.prime.nvidiaBusId = "PCI:01:00:0";  #! fyi need both nvidia and intel because laptop has both or else built in screen wont work
 
   hardware.nvidia = {
 
