@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
-{
-  
+  {
   #!system wide packages
   environment.systemPackages = with pkgs; [
 
@@ -31,7 +30,6 @@
         Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
       };
     };
-
   };
 }
 
