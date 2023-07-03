@@ -40,7 +40,7 @@
     };
     services."make-systemd-timer-scripts-execuable" = {
       script = ''
-        ${pkgs.pwsh}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/make-systemd-timer-scripts-execuable.ps1
+        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/make-systemd-timer-scripts-execuable.ps1
       '';
       serviceConfig = {
         User = "rocket";
