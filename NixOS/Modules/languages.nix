@@ -10,6 +10,7 @@ environment.systemPackages = with pkgs; [
 	#python.pkgs.pip
   nodejs
   cargo
+  dotnet-sdk_7
 
 
 ];
