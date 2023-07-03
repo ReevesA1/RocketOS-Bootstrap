@@ -6,12 +6,18 @@
 { config, pkgs, lib, ... }:
 
 
-#!##########################################################
-#!                      EXAMPLES                          ##
-#!##########################################################
+
 {
+}
+
+
 
 /*
+#!###############################################################
+#!                    OTHER  EXAMPLES                          ##
+#!###############################################################
+#? I don't use these anymore because I was able to make .desktop files in $HOME/.config/autostart
+
   systemd = {
 
   #! Chris Titus Pole Kit
@@ -71,7 +77,4 @@ user.services.synergy = {
 };
 }
 
-*/
 
-
-}
