@@ -92,7 +92,6 @@ powerManagement.resumeCommands = ''
     '';
     serviceConfig = {
       User = "rocket";
-      ExecStartPre = "${pkgs.bash}/bin/bash -c 'nohup ${pkgs.conky}/bin/conky &'";
     };
   };
 };
