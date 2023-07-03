@@ -82,7 +82,6 @@ powerManagement.resumeCommands = ''
     timers."conky-stop-multiple" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        #OnBootSec = 60;
         OnCalendar = "*-*-* *:*:00"; #testing
         Unit = "conky-stop-multiple.service";
       };
