@@ -5,11 +5,12 @@
 #*add this line for thumbs up
 #Write-Host ([char]0xD83D + [char]0xDC4D)
 #Write-Host "NAMEOFSCRIPT Worked!  `u{1F44D}" -ForegroundColor Green
-#*Check Timers
-#systemctl list-timers 
+#*Check Timers/Trouble Shooting
+#systemctl list-timers  
 #systemctl --type=timer --all --failed 
 #systemctl list-unit-files
 #watch -n 1 systemctl list-timers --all #! watch in real time
+#journalctl -fu foo.service #!another good one
 #*Timers Triggers
 #OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
 #OnCalendar = "*-*-* 7,19:00:00"; #7am 7pm example
