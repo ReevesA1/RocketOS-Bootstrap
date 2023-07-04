@@ -29,7 +29,7 @@ systemd  = {
         ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.ps1
       '';
       serviceConfig = {
-        User = "root";
+        User = "rocket";
         Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus";
       };
     };
