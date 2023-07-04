@@ -10,7 +10,7 @@
 #systemctl --type=timer --all --failed 
 #systemctl list-unit-files
 #watch -n 1 systemctl list-timers --all #! watch in real time
-#journalctl -fu foo.service #!another good one to see what program i should add to environment like so ->  "PATH=${pkgs.flatpak}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
+#journalctl -fu foo.service #! ( can do -f ! )another good one to see what program i should add to environment like so ->  "PATH=${pkgs.flatpak}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
 #*Timers Triggers
 #OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
 #OnCalendar = "*-*-* 7,19:00:00"; #7am 7pm example
