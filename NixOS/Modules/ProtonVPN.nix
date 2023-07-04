@@ -13,7 +13,11 @@
 
 
 
-#! Timer
+
+}
+
+/*
+#! Timer NO GO DBUS KEYRING ISSUES
 systemd  = {
     
     #? Monitor Internet connection
@@ -34,5 +38,5 @@ systemd  = {
       };
     };
   };
-}
 
+  */
