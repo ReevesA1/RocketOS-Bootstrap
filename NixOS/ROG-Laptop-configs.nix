@@ -87,11 +87,12 @@ powerManagement.resumeCommands = ''
 
   systemd = {
     
-    #? github-repo-backups
+    #? github-repo-download-backups
     timers."github-repo-backups" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* 8,18:00:00";
+        #OnCalendar = "*-*-* 8,18:00:00";
+        OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
         Unit = "github-repo-backups.service";
       };
     };
@@ -101,7 +102,8 @@ powerManagement.resumeCommands = ''
       '';
       serviceConfig = {
         User = "rocket";
-        Environment = "PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib";
+        Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
+                      
       };
     };
   
