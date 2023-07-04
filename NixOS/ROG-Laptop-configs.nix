@@ -91,8 +91,7 @@ powerManagement.resumeCommands = ''
     timers."github-repo-backups" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        #OnCalendar = "*-*-* 8,18:00:00";
-        OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
+        OnCalendar = "*-*-* 8,18:00:00"; #8am and 6pm
         Unit = "github-repo-backups.service";
       };
     };

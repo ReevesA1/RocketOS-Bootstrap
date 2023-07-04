@@ -11,12 +11,6 @@
 
   ];
 
-
-
-
-}
-
-/*
 #! Timer NO GO DBUS KEYRING ISSUES
 systemd  = {
     
@@ -39,4 +33,10 @@ systemd  = {
     };
   };
 
-  */
+
+}
+
+
+
+
+  
