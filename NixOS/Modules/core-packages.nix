@@ -110,7 +110,7 @@
   gcolor3
 
   #? TESTING
-  dbus #needed for protonvpn systemd timer
+  
 
   ];
 
