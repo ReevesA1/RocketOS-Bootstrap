@@ -28,10 +28,10 @@ systemd  = {
       '';
       serviceConfig = {
         User = "rocket";
-        Environment = ''
-          PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/
-          DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-          '';                                                                                                                                                  
+      Environment = ''
+        PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.dbus-daemon}/bin/
+        DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+        '';                                                                                                                                               
       };
     };
   };
