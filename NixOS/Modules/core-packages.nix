@@ -109,6 +109,9 @@
   godot_4
   gcolor3
 
+  #? TESTING
+  dbus
+
   ];
 
 #! services needed for some apps
