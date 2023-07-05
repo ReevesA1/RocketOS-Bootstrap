@@ -14,7 +14,7 @@
 
 
 #!Connect at boot
-services.protonvpn-boot = {
+systemd.services.protonvpn-boot = {
   script = ''
     ${pkgs.protonvpn-cli}/bin/protonvpn-cli connect -f
   '';
@@ -31,7 +31,7 @@ services.protonvpn-boot = {
 };
 
 #!Reconnect after suspend
-services.protonvpn-resume = {
+systemd.services.protonvpn-resume = {
   script = ''
     ${pkgs.protonvpn-cli}/bin/protonvpn-cli reconnect
   '';
@@ -39,6 +39,7 @@ services.protonvpn-resume = {
     Type = "oneshot";
   };
 };
+
 
 }
 
