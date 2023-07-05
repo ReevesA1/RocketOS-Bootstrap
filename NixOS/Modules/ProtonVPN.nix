@@ -27,6 +27,7 @@ systemd.services.protonvpn-boot = {
     RestartSec = 5;
     StartLimitIntervalSec = 500;
     StartLimitBurst = 5;
+    User = "rocket";
   };
 };
 
@@ -37,6 +38,7 @@ systemd.services.protonvpn-resume = {
   '';
   serviceConfig = {
     Type = "oneshot";
+    User = "rocket";
   };
 };
 
