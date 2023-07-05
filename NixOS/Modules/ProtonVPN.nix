@@ -30,8 +30,6 @@ systemd  = {
         User = "rocket";
         Environment = ''
         PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.dbus}/bin/ ${pkgs.bash}/bin ${pkgs.starship}/bin
-        DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-        XDG_CURRENT_DESKTOP=GNOME
         '';   
       };
     };
