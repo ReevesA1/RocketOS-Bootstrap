@@ -18,7 +18,7 @@
 #*Other timersConfig
 #Persistent=true; #if missed because pc was off it will run the timer next boot
 #*Ultimate environemnt line put in all
-#Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin";
+#Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
 
 { config, pkgs, lib, ... }:
 
@@ -52,7 +52,7 @@
       '';
       serviceConfig = {
         User = "rocket";
-        Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin";
+        Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
       };
     };
 
@@ -72,7 +72,7 @@
       '';
       serviceConfig = {
         User = "rocket";
-        Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin";
+        Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
       };
     };
   
