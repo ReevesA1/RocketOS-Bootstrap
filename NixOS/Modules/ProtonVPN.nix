@@ -28,12 +28,9 @@ systemd  = {
       '';
       serviceConfig = {
         User = "rocket";
-    Environment="PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.dbus}/bin/:${pkgs.bash}/bin/:${pkgs.starship}/bin/:" "XDG_CURRENT_DESKTOP=GNOME"                                                                                                                                             
-      };
+        Environment="PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.dbus}/bin/:${pkgs.bash}/bin/:${pkgs.starship}/bin/:" "XDG_CURRENT_DESKTOP=GNOME"                                                                                                                                             
     };
   };
-
-
 }
 
 
