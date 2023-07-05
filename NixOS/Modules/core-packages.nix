@@ -79,10 +79,13 @@
   appimage-run
 
   #!Testing add to pkgs if yes
+  #bash
   bash-completion
   nix-bash-completions
+  #zsh
   zsh-completions
   nix-zsh-completions
+  zsh-syntax-highlighting
 
 
 
