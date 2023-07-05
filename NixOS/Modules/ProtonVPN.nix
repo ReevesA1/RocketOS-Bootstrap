@@ -28,9 +28,7 @@ systemd  = {
       '';
       serviceConfig = {
         User = "rocket";
-        Environment = ''
-        PATH=${pkgs.flatpak}/bin:$HOME/.local/share:/run/current-system:/var/lib:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.dbus}/bin/ ${pkgs.bash}/bin ${pkgs.starship}/bin
-        '';   
+        Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.dbus}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin";
       };
     };
   };

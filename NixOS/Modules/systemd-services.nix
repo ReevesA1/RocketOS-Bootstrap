@@ -3,8 +3,8 @@
 #systemctl --user status foo 
 #systemctl --user start foo
 #*add this line for thumbs up
-#Write-Host ([char]0xD83D + [char]0xDC4D)
-#Write-Host "NAMEOFSCRIPT Worked!  `u{1F44D}" -ForegroundColor Green
+#Write-Host "It Worked!  `u{1F44D}" -ForegroundColor Green
+#Write-Host "Thumbs down!  `u{1F44E}"
 #*Check Timers/Trouble Shooting
 #systemctl list-timers  
 #systemctl --type=timer --all --failed 
