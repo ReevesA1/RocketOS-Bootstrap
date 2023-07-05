@@ -78,6 +78,12 @@
   zip
   appimage-run
 
+  #!Testing add to pkgs if yes
+  bash-completion
+  nix-bash-completions
+  zsh-completions
+  nix-zsh-completions
+
 
 
 
