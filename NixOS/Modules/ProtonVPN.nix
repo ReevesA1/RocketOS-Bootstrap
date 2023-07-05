@@ -24,7 +24,7 @@ systemd  = {
     };
     services."protonvpn-cli_connection_monitor" = {
       script = ''
-        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.sh
+        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.ps1
       '';
       serviceConfig = {
         User = "rocket";
