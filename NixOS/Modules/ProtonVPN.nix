@@ -23,9 +23,22 @@ systemd  = {
         Unit = "protonvpn-cli_connection_monitor.service";
       };
     };
-    services."protonvpn-cli_connection_monitor" = {
+
+    #!Powershell Version
+    # services."protonvpn-cli_connection_monitor" = {
+    #   script = ''
+    #     ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.ps1
+    #   '';
+    #   serviceConfig = {
+    #     User = "rocket";
+    #     Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
+    #   };
+    # };
+
+    #!Bash Version
+        services."protonvpn-cli_connection_monitor" = {
       script = ''
-        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.ps1
+        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.sh
       '';
       serviceConfig = {
         User = "rocket";
