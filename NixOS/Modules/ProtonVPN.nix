@@ -19,7 +19,7 @@ systemd  = {
     timers."protonvpn-cli_connection_monitor" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* *:*:00"; #set to everyminute
+        OnCalendar = "*-*-* *:*:00"; #set to everyminute is it to much?
         Unit = "protonvpn-cli_connection_monitor.service";
       };
     };
