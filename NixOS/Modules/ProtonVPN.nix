@@ -24,7 +24,7 @@ systemd  = {
       };
     };
 
-    #!Powershell Version
+    #!Powershell Version Works only for Gnome
     # services."protonvpn-cli_connection_monitor" = {
     #   script = ''
     #     ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.ps1
@@ -35,11 +35,11 @@ systemd  = {
     #   };
     # };
 
-    #!Bash Version
+    #!Bash Version 
         services."protonvpn-cli_connection_monitor" = {
-      script = ''
-        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/protonvpn-cli_connection_monitor.sh
-      '';
+  script = ''
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"; export $(dbus-launch); if [[ $(protonvpn-cli status) =~ \bCanada\b ]]; then echo -e "Ping succeeded. You have an internet connection! \U1F44D"; else protonvpn-cli connect --cc CA && protonvpn-cli ks --permanent && echo -e "ProtonVPN-cli_connection_monitor.ps1 reconnection job ran! \nRECONNECTED TO VPN!!! \U1F44D"; fi
+  '';
       serviceConfig = {
         User = "root";
         Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
