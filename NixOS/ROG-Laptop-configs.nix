@@ -56,6 +56,9 @@
   #boot.loader.grub.device = "/dev/sda";  #Needed if in a vm with virtualbox
   #boot.loader.grub.useOSProber = true;  #Needed if in a vm with virtualbox
 
+  #*FOR HIGHER END MACHINES WITH LOTS OF RAM DEFAULT IS 60 use "cat /proc/sys/vm/swappiness" to check
+  boot.kernel.sysctl = { "vm.swappiness" = 10;};
+
 #! Sound Fix for ROG-laptop (do a reboot)
 boot.extraModprobeConfig = ''
 options snd-hda-intel model=asus-zenbook
