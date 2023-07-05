@@ -38,7 +38,7 @@ systemd  = {
     #!Bash Version 
         services."protonvpn-cli_connection_monitor" = {
   script = ''
-    export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"; export $(dbus-launch); if [[ $(protonvpn-cli status) =~ \bCanada\b ]]; then echo -e "Ping succeeded. You have an internet connection! \U1F44D"; else protonvpn-cli connect --cc CA && protonvpn-cli ks --permanent && echo -e "ProtonVPN-cli_connection_monitor.ps1 reconnection job ran! \nRECONNECTED TO VPN!!! \U1F44D"; fi
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"; eval $(/usr/bin/dbus-launch --sh-syntax) ;  if [[ $(protonvpn-cli status) =~ \bCanada\b ]]; then echo -e "Ping succeeded. You have an internet connection! \U1F44D"; else protonvpn-cli connect --cc CA && protonvpn-cli ks --permanent && echo -e "ProtonVPN-cli_connection_monitor.ps1 reconnection job ran! \nRECONNECTED TO VPN!!! \U1F44D"; fi
   '';
       serviceConfig = {
         User = "root";
