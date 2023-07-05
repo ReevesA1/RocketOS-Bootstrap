@@ -18,7 +18,9 @@
   curl
   wget
   zsh
+  bash
   git
+  
 
   ####################################################
   ### Nix Packages - Command Line Core Utilities   ###
