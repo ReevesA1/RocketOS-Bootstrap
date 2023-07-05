@@ -25,7 +25,7 @@ systemd.services.protonvpn-boot = {
     RemainAfterExit = "yes";
     Restart = "on-failure";
     RestartSec = 5;
-    StartLimitIntervalSec = 500;
+    StartLimitInterval = 500;
     StartLimitBurst = 5;
     User = "rocket";
   };
