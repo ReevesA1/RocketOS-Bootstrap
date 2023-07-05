@@ -12,6 +12,7 @@
   ];
 
 #! RECONNECT Timer ONLY WORKS ON GNOME
+#! DOES NOT WORK ON KDE - I could not figure out how to export this dynamicaly "dbus-launch --auto-syntax"
 systemd  = {
     
     #? Monitor Internet connection
