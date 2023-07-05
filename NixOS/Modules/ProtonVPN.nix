@@ -11,14 +11,14 @@
 
   ];
 
-#! Timer NO GO DBUS KEYRING ISSUES
+#! RECONNECT Timer ONLY WORKS ON GNOME
 systemd  = {
     
     #? Monitor Internet connection
     timers."protonvpn-cli_connection_monitor" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* *:*:00"; #Testing every minute
+        OnCalendar = "*-*-* *:*:00"; #set to everyminute
         Unit = "protonvpn-cli_connection_monitor.service";
       };
     };
