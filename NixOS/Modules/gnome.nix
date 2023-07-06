@@ -86,6 +86,6 @@ environment.systemPackages = with pkgs; [
   pkgs.gst_all_1.gst-plugins-bad
   pkgs.gst_all_1.gst-plugins-ugly
   pkgs.gst_all_1.gst-plugins-libav
-]
+];
 
 }
