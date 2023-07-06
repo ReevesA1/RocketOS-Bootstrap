@@ -32,6 +32,7 @@
 environment.systemPackages = with pkgs; [
   gnome.gnome-tweaks
   gnome.gnome-session
+  gnome.sushi
   guake
   gparted
   dconf #cli version
