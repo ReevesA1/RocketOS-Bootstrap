@@ -89,6 +89,10 @@
   nix-zsh-completions
   zsh-syntax-highlighting
 
+  #Google Remote Desktop
+  gnome.gnome-remote-desktop
+  gnomeExtensions.allow-locked-remote-desktop
+
 
 
 
