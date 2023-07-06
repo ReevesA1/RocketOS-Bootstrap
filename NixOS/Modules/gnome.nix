@@ -18,7 +18,6 @@
     #gnome-console #dont remove or ill lose the right click open in terminal option in nautilus
   ] ++ (with pkgs.gnome; [
     geary
-    totem
     cheese
     epiphany
     gnome-contacts
@@ -79,5 +78,14 @@ environment.systemPackages = with pkgs; [
   #!Misc Options
   programs.dconf.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
+
+
+
+  environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" [
+  pkgs.gst_all_1.gst-plugins-good
+  pkgs.gst_all_1.gst-plugins-bad
+  pkgs.gst_all_1.gst-plugins-ugly
+  pkgs.gst_all_1.gst-plugins-libav
+]
 
 }
