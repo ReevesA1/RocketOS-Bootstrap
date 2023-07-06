@@ -45,8 +45,8 @@
   binutils
   gcc
   fakeroot
-  dmenu
-  rofi
+  #dmenu
+  #rofi
   ulauncher
   cmatrix
   asciiquarium
