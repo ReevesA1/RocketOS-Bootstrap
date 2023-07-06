@@ -72,6 +72,7 @@ networking.hostName = "ROG-Laptop-NixOS";
 #! Wayland Support
 #Gnome Wayland
 services.xserver.displayManager.gdm.wayland = false;  # wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
+
 #KDE Wayland
 #services.xserver.displayManager.defaultSession = "plasmawayland"; # wayland is better for parallels but not virtualbox also wayland no good for barrier or synergy yet!!!
 
@@ -146,7 +147,7 @@ powerManagement.resumeCommands = ''
 
 #!TESTING New Options
 #If Im testing new options make sure to add them to core-configs.nix if I want them on all systems after
-
+services.gnome.gnome-remote-desktop.enable  = true;
 
 
 #!Boiler Plate Stuff 
