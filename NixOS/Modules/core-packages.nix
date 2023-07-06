@@ -53,7 +53,7 @@
   figlet
   colordiff
   sysstat
-  pciutils
+  pciutils #important for something?
   shellcheck
   trash-cli
   gnome.zenity
