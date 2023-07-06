@@ -111,7 +111,8 @@
   #synergy #out of date must download manualy from website
   firefox 
   #blackbox-terminal #?doesnt work properly in kde use the flatpak version cause i cant change any settings
-  vlc
+  #vlc # I use totem now
+  totem
   vscode #use this over the flatpak version so in shells they see the word code therefor my vspowershell custom profil will work 
   sticky 
   whatip
