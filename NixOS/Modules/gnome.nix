@@ -47,6 +47,10 @@ environment.systemPackages = with pkgs; [
   #Only for NixOS not other distro flavours
   polkit_gnome
 
+
+  #!Testing
+  gnome3.gvfs
+
 ];
 
   #! Pole Kit from Chris Titus
