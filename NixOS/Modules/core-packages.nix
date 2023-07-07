@@ -94,7 +94,10 @@
   #gnomeExtensions.allow-locked-remote-desktop
 
   xfce.thunar
-  xfce.thunar-dropbox-plugin
+  #xfce.thunar-dropbox-plugin
+  xfce.thunar-volman
+  xfce.thunar-archive-plugin
+  xfce.thunar-media-tags-plugin
 
 
 
