@@ -1,0 +1,1 @@
+  virtualisation.libvirtd.enable = true; 
