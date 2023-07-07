@@ -93,6 +93,8 @@
   #gnome.gnome-remote-desktop
   #gnomeExtensions.allow-locked-remote-desktop
 
+  xfce.thunar
+
 
 
 
