@@ -113,6 +113,7 @@
   nix.settings.auto-optimise-store = true;
   documentation.man.generateCaches = true;
 
+  #faster reboot
   systemd.extraConfig = ''
   DefaultTimeoutStopSec=10s
   '';
