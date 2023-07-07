@@ -113,6 +113,10 @@
   nix.settings.auto-optimise-store = true;
   documentation.man.generateCaches = true;
 
+  systemd.extraConfig = ''
+  DefaultTimeoutStopSec=10s
+  '';
+
 
   #!#######################
   #!# Garbage Collection ##
