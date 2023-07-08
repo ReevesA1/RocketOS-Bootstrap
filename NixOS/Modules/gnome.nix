@@ -39,6 +39,10 @@ environment.systemPackages = with pkgs; [
   dconf #cli version
   gnome.dconf-editor
   #gsettings-desktop-schemas #I use dconf to change everything
+
+  #Theming 
+  gradience
+  papirus-icon-theme
   papirus-folders #folder colors in nautilus
 
   #Extensions
