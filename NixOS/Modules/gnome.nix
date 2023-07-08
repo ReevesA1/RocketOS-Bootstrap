@@ -108,12 +108,6 @@ environment.systemPackages = with pkgs; [
 
 
 
-gtk = {
-    enable = true;
-    theme = {
-    name = "nordic-darker";
-    package = pkgs.nordic;
-    };
 
 }
 
