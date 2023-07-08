@@ -104,8 +104,6 @@ environment.systemPackages = with pkgs; [
   gst-libav
 ]);
 
-  #! Testing
-  gtk.iconCache.enable = true;
 
 }
 
