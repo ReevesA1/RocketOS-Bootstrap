@@ -109,25 +109,3 @@ environment.systemPackages = with pkgs; [
 
 }
 
-/*
-#!TESTING
-      gtk = {
-          enable = true;
-          theme = {
-            name = "materia-theme";
-            package = pkgs.materia-theme;
-          };
-
-          iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme.override {
-              color = "teal";
-            };
-          };
-
-
-          };
-        }
-
-
-*?
