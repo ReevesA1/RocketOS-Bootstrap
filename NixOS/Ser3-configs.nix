@@ -24,10 +24,11 @@
   #! Optional
   #Gnome
   #./gnome.nix
-  #./flatpaks-gnome.nix
 
   #KDE
   ./kde.nix
+
+  #Flatpak Support
   ./flatpaks.nix
 
   #Apps with extra configs

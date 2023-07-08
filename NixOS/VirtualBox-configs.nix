@@ -24,11 +24,12 @@
   #! Optional
   #Gnome
   ./gnome.nix
-  ./flatpaks-gnome.nix
 
   #KDE
   #./kde.nix
-  #./flatpaks.nix
+
+  #Flatpak Support
+  ./flatpaks.nix
 
   #Apps with extra configs
   #./ProtonVPN.nix
