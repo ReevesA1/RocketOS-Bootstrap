@@ -30,8 +30,6 @@ nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
     libsForQt5.yakuake
     partition-manager
 
-    #Test
-    gnome.gnome-keyring
 
   ];
 
