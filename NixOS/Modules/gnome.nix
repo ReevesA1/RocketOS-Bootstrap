@@ -42,8 +42,7 @@ environment.systemPackages = with pkgs; [
 
   #Theming 
   gradience
-  papirus-icon-theme
-  papirus-folders #folder colors in nautilus
+
 
   #Extensions
   gnome-extension-manager
