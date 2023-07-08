@@ -38,7 +38,7 @@ environment.systemPackages = with pkgs; [
   gparted
   dconf #cli version
   gnome.dconf-editor
-  gsettings-desktop-schemas
+  #gsettings-desktop-schemas #DONT USE THIS IT FUCKS SHIT UP
 
   #Extensions
   gnome-extension-manager
