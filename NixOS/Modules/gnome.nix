@@ -33,6 +33,7 @@ environment.systemPackages = with pkgs; [
   gnome.gnome-tweaks
   gnome.gnome-session
   gnome.sushi
+  nautilus-open-any-terminal
   guake
   gparted
   dconf #cli version
