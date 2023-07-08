@@ -110,7 +110,7 @@ environment.systemPackages = with pkgs; [
           enable = true;
           theme = {
             name = "materia-theme";
-            package = materia-theme;
+            package = pkgs.materia-theme;
           };
 
           iconTheme = {
