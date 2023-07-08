@@ -16,6 +16,11 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
 ];
 
 
+#! Fix some sandbox issues
+programs.dconf.enable = true; #MAKE BLACKBOX NIX PACKAGE USABLE! + FIX GTK themes are not applied in Wayland applications
+
+
+
 #! Use KDE5 unstable
 nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
     plasma5_stable = self.plasma5_latest;
@@ -38,8 +43,6 @@ nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
     xdg-desktop-portal-gtk #needed for flatpaks
     libsForQt5.kde-gtk-config
 
-    #!Testing
-    blackbox-terminal 
 
 
   ];
@@ -48,7 +51,5 @@ nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
 #!Misc Options
 programs.partition-manager.enable = true; 
 
-#!testing
-programs.dconf.enable = true; #GTK themes are not applied in Wayland applications
 
 }
