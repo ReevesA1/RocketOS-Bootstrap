@@ -54,8 +54,8 @@ environment.systemPackages = with pkgs; [
   #?PORTALS
   xdg-desktop-portal #needed for flatpaks
   xdg-desktop-portal-wlr #Backend for wlroots-based Wayland compositor
-  libsForQt5.xdg-desktop-portal-kde
-  #dg-desktop-portal-gtk #gnome is gtk so i dont need this plus it wont work anyway
+  #libsForQt5.xdg-desktop-portal-kde #I think this is better suited to have in the kde section
+  #xdg-desktop-portal-gtk #gnome is gtk so i dont need this plus it wont work anyway
 
   #
 
