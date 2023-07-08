@@ -6,6 +6,7 @@
     steam
     steam-run
     heroic
+    #playonlinux #found this have not tested it
     lutris
     (lutris.override {
       extraPkgs = pkgs: [
