@@ -40,10 +40,12 @@ environment.systemPackages = with pkgs; [
   gsettings-desktop-schemas
 
   #Extensions
+  gnome-extension-manager
   gnomeExtensions.dash-to-dock
   gnomeExtensions.burn-my-windows
   #gnomeExtensions.tray-icons-reloaded #Tray icons - this one works as of june 29 2023. (does not show protonvpn tho but its ok)
   gnomeExtensions.appindicator #tray icon - This is the better one - site https://nixos.wiki/wiki/GNOME SAYS I should enable this service? (services.dbus.packages = with pkgs; [ gnome2.GConf ];)
+  gnomeExtensions.systemd-manager
 
   #Only for NixOS not other distro flavours
   polkit_gnome
