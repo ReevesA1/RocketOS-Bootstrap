@@ -37,6 +37,7 @@ environment.systemPackages = with pkgs; [
   gparted
   dconf #cli version
   gnome.dconf-editor
+  gsettings-desktop-schemas
 
   #Extensions
   gnomeExtensions.dash-to-dock
