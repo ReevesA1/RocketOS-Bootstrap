@@ -68,8 +68,16 @@
     #media-session.enable = true;
   };
 
- #! Enable Dbus
- services.dbus.enable = true; # needed for flatpaks to talk to each other but maybe other programs to
+
+  #!#####################################
+  #!     FLATPAK FOR SURE NEEDS THESE   #
+  #!#####################################
+  #! Enable Dbus - NEEDED for Flatpaks to talk to each other but maybe other programs to
+  services.dbus.enable = true;
+  
+  #! PORTALS - NEEDED FOR FLATPAKS AND GNOME APPS TO WORK IN KDE
+  xdg.portal.enable = true;
+
 
   #!############################
   #!     Network + Firewall    #

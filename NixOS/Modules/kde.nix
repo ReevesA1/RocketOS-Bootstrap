@@ -31,10 +31,14 @@ nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
     partition-manager
 
 
+    #?PORTALS
+    xdg-desktop-portal #needed for flatpaks
+    xdg-desktop-portal-wlr #Backend for wlroots-based Wayland compositor
+    xdg-desktop-portal-gnome #needed for flatpaks
+    xdg-desktop-portal-gtk #needed for flatpaks
+
+
   ];
-
-
-
 
 
 #!Misc Options

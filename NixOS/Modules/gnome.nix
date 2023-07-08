@@ -47,9 +47,17 @@ environment.systemPackages = with pkgs; [
   gnomeExtensions.appindicator #tray icon - This is the better one - site https://nixos.wiki/wiki/GNOME SAYS I should enable this service? (services.dbus.packages = with pkgs; [ gnome2.GConf ];)
   gnomeExtensions.systemd-manager
 
-  #Only for NixOS not other distro flavours
+  #KDE does not need a polkit
   polkit_gnome
 
+
+  #?PORTALS
+  xdg-desktop-portal #needed for flatpaks
+  xdg-desktop-portal-wlr #Backend for wlroots-based Wayland compositor
+  libsForQt5.xdg-desktop-portal-kde
+  #dg-desktop-portal-gtk #gnome is gtk so i dont need this plus it wont work anyway
+
+  #
 
   #!Testing
   gnome3.gvfs
@@ -96,5 +104,7 @@ environment.systemPackages = with pkgs; [
   gst-plugins-ugly
   gst-libav
 ]);
+
+
 
 }
