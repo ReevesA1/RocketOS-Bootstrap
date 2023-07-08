@@ -1,6 +1,12 @@
 { config, pkgs, lib, ... }:
 
+
 {
+
+  environment.systemPackages = with pkgs; [
+  jellyfin
+  ];
+
   networking.firewall = {
     allowedTCPPorts = [
       8096 8920 # Web frontend

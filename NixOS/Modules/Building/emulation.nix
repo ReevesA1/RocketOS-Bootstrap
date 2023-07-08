@@ -1,3 +1,10 @@
 { config, pkgs, lib, ... }:
 
-yuzu-mainline
+
+{
+
+  environment.systemPackages = with pkgs; [
+  yuzu-mainline
+  ];
+
+}
