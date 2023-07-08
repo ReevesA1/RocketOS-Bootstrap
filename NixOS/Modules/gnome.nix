@@ -60,6 +60,7 @@ environment.systemPackages = with pkgs; [
   #!Testing
   gnome3.gvfs
   gradience
+  libsecret #foor unlocking the keyring with a command
         
 
 
