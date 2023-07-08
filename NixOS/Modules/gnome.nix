@@ -38,7 +38,8 @@ environment.systemPackages = with pkgs; [
   gparted
   dconf #cli version
   gnome.dconf-editor
-  #gsettings-desktop-schemas #DONT USE THIS IT FUCKS SHIT UP
+  #gsettings-desktop-schemas #I use dconf to change everything
+  papirus-folders #folder colors in nautilus
 
   #Extensions
   gnome-extension-manager
