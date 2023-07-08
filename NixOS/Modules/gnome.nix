@@ -105,7 +105,7 @@ environment.systemPackages = with pkgs; [
 ]);
 
 #! Testing
-gtk.iconCache.enable
+gtk.iconCache.enable;
 
 }
 
