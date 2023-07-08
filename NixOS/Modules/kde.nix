@@ -25,8 +25,13 @@ nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
 
 #! Install Packages 
   environment.systemPackages = with pkgs; [
+    libsForQt5.kaccounts-providers
+    libsForQt5.kaccounts-integration
     libsForQt5.yakuake
     partition-manager
+
+    #Test
+    gnome.gnome-keyring
 
   ];
 
