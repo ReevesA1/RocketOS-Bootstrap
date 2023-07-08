@@ -40,10 +40,6 @@ environment.systemPackages = with pkgs; [
   gnome.dconf-editor
   #gsettings-desktop-schemas #I use dconf to change everything
 
-  #Theming 
-  gradience
-
-
   #Extensions
   gnome-extension-manager
   gnomeExtensions.dash-to-dock
@@ -63,6 +59,7 @@ environment.systemPackages = with pkgs; [
 
   #!Testing
   gnome3.gvfs
+  gradience
 
 ];
 
@@ -107,6 +104,25 @@ environment.systemPackages = with pkgs; [
   gst-libav
 ]);
 
+
+#!TESTING
+      gtk = {
+          enable = true;
+          theme = {
+            name = "materia-theme";
+            package = materia-theme;
+          };
+
+          iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme.override {
+              color = "teal";
+            };
+          };
+
+
+          };
+        };
 
 
 }
