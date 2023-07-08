@@ -38,11 +38,17 @@ nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
     xdg-desktop-portal-gtk #needed for flatpaks
     libsForQt5.kde-gtk-config
 
+    #!Testing
+    blackbox-terminal 
+
 
   ];
 
 
 #!Misc Options
 programs.partition-manager.enable = true; 
+
+#!testing
+programs.dconf.enable = true; #GTK themes are not applied in Wayland applications
 
 }
