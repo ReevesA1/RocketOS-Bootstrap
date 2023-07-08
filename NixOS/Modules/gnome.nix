@@ -30,7 +30,6 @@
 
 #! Install Packages 
 environment.systemPackages = with pkgs; [
-  blackbox-terminal 
   gnome.gnome-tweaks
   gnome.gnome-session
   gnome.sushi

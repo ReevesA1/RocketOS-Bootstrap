@@ -80,26 +80,6 @@
   zip
   appimage-run
 
-  #!Testing add to pkgs if yes
-  #bash
-  bash-completion
-  nix-bash-completions
-  #zsh
-  zsh-completions
-  nix-zsh-completions
-  zsh-syntax-highlighting
-
-  #Remote Desktop
-  #gnome.gnome-remote-desktop
-  #gnomeExtensions.allow-locked-remote-desktop
-
-  xfce.thunar
-  #xfce.thunar-dropbox-plugin
-  xfce.thunar-volman
-  xfce.thunar-archive-plugin
-  xfce.thunar-media-tags-plugin
-
-
 
   
   ############only needed on nixos
@@ -111,7 +91,7 @@
   #############################
   ### Univeral Base Apps    ###
   #############################
-
+  blackbox-terminal 
   conky
   #synergy #out of date must download manualy from website
   firefox 
@@ -131,8 +111,26 @@
   godot_4
   gcolor3
 
-  #? TESTING
   
+  #!Testing add to pkgs if yes
+  #bash
+  bash-completion
+  nix-bash-completions
+  #zsh
+  zsh-completions
+  nix-zsh-completions
+  zsh-syntax-highlighting
+
+  #Remote Desktop
+  #gnome.gnome-remote-desktop
+  #gnomeExtensions.allow-locked-remote-desktop
+
+  xfce.thunar
+  #xfce.thunar-dropbox-plugin
+  xfce.thunar-volman
+  xfce.thunar-archive-plugin
+  xfce.thunar-media-tags-plugin
+
 
   ];
 
