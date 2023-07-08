@@ -94,8 +94,6 @@ environment.systemPackages = with pkgs; [
   programs.dconf.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
 
-  #! Testing
-  gtk.iconCache.enable;
 
 
   #! Helped with Video Thumbnails in nautilus
@@ -106,7 +104,8 @@ environment.systemPackages = with pkgs; [
   gst-libav
 ]);
 
-
+  #! Testing
+  gtk.iconCache.enable = true;
 
 }
 
