@@ -60,23 +60,6 @@ environment.systemPackages = with pkgs; [
   #!Testing
   gnome3.gvfs
   gradience
-
-        gtk = {
-          enable = true;
-          theme = {
-            name = "materia-theme";
-            package = pkgs.materia-theme;
-          };
-
-          iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme.override {
-              color = "teal";
-            };
-          };
-
-
-          };
         
 
 
@@ -123,6 +106,14 @@ environment.systemPackages = with pkgs; [
   gst-libav
 ]);
 
+
+
+gtk = {
+    enable = true;
+    theme = {
+    name = "nordic-darker";
+    package = pkgs.nordic;
+    };
 
 }
 
