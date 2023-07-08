@@ -61,6 +61,25 @@ environment.systemPackages = with pkgs; [
   gnome3.gvfs
   gradience
 
+        gtk = {
+          enable = true;
+          theme = {
+            name = "materia-theme";
+            package = pkgs.materia-theme;
+          };
+
+          iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme.override {
+              color = "teal";
+            };
+          };
+
+
+          };
+        
+
+
 ];
 
   #! Pole Kit from Chris Titus
