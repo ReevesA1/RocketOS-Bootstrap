@@ -20,6 +20,7 @@
 #⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⠏⠀⠀⢻⣿⣿⣿⡄⠀⠀⠀⠹⣿⡿⡟⠀⠀⠀⠀⠀⠀⠀
 if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
 
+
   #Add Unstable Channel
   echo "Adding unstable channel...Press Enter To Continue..."
   read

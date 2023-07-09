@@ -28,6 +28,14 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   echo "Reboot Again ...Press Enter To Continue..."
   read
+
+  #Download SystemD-Timers-Scripts
+  echo "Setting up SystemD Timer Scripts...Press Enter To Continue..."
+  read
+  git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
+  mv "$HOME/RocketOS-Bootstrap/NixOS/SystemD-Timer-Scripts" "$HOME/Timers" #move and rename folder
+  rm -rf "$HOME/RocketOS-Bootstrap" #delete the original clone no need for it
+
 #!##################################################################################################################################
 #!##################################################################################################################################
 #!##################################################################################################################################
