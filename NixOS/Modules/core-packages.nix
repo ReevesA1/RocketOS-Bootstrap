@@ -138,6 +138,7 @@
 
   #Misc
   fsearch
+  popsicle #Usb Writer
 
 
   ];
