@@ -92,7 +92,7 @@ powerManagement.resumeCommands = ''
   };
   services."conky-stop-multiple" = {
     script = ''
-    ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/SER3/conky-stop-multiple.ps1
+    ${pkgs.powershell}/bin/pwsh $HOME/Timers/SER3/conky-stop-multiple.ps1
     '';
     serviceConfig = {
       User = "rocket";

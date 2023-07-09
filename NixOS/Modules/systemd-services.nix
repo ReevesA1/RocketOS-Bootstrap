@@ -48,7 +48,7 @@
     };
     services."make-systemd-timer-scripts-execuable" = {
       script = ''
-        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/make-systemd-timer-scripts-execuable.ps1
+        ${pkgs.powershell}/bin/pwsh $HOME/Timers/Universal/make-systemd-timer-scripts-execuable.ps1
       '';
       serviceConfig = {
         User = "rocket";
@@ -68,7 +68,7 @@
     };
     services."daily-universal" = {
       script = ''
-        ${pkgs.powershell}/bin/pwsh $HOME/MEGAsync/Scripts/SystemD-Timers/Universal/daily-universal.ps1
+        ${pkgs.powershell}/bin/pwsh $HOME/Timers/Universal/daily-universal.ps1
       '';
       serviceConfig = {
         User = "rocket";

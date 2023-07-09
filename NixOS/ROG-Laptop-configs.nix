@@ -102,7 +102,7 @@ powerManagement.resumeCommands = ''
     };
     services."github-repo-backups" = {
       script = ''
-        ${pkgs.bash}/bin/bash $HOME/MEGAsync/Scripts/SystemD-Timers/ROG-Laptop/github-repo-backups.sh
+        ${pkgs.bash}/bin/bash $HOME/Timers/ROG-Laptop/github-repo-backups.sh
       '';
       serviceConfig = {
         User = "rocket";
@@ -121,7 +121,7 @@ powerManagement.resumeCommands = ''
     };
     services."zip-github-repo-backups-weekly" = {
       script = ''
-        ${pkgs.bash}/bin/bash -c 'source ./etc/profile; $HOME/MEGAsync/Scripts/SystemD-Timers/ROG-Laptop/zip-github-repo-backups-weekly.sh'
+        ${pkgs.bash}/bin/bash -c 'source ./etc/profile; $HOME/Timers/ROG-Laptop/zip-github-repo-backups-weekly.sh'
       '';
       serviceConfig = {
         User = "rocket";
