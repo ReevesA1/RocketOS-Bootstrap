@@ -2,18 +2,20 @@
 {
 
   environment.systemPackages = with pkgs; [
-    protonup-ng
     steam
     steam-run
-    heroic
+    #heroic
+    bottles
+    protontricks
+    #protonup-qt
     #playonlinux #found this have not tested it
-    lutris
-    (lutris.override {
-      extraPkgs = pkgs: [
-        wineWowPackages.stable
-        winetricks
-      ];
-    })
+    #lutris
+    #(lutris.override {
+    #  extraPkgs = pkgs: [
+    #    wineWowPackages.stable
+    #    winetricks
+    #  ];
+    #})
   ];
 
 

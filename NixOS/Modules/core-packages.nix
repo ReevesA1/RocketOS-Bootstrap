@@ -57,6 +57,7 @@
   shellcheck
   trash-cli
   gnome.zenity
+  yad #like zenity
   gdu
   ffmpeg
   plocate
