@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     steam
     steam-run
-    #heroic
+    #heroic #i dont use epic so dont bother installing it for now
     bottles
     protontricks
     #protonup-qt
