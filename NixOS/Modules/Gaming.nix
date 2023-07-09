@@ -5,7 +5,9 @@
     steam
     steam-run
     #heroic #?i dont use epic so dont bother installing it for now
-    #bottles #!Giving me Issues but I think its cause I deleted it after it was build worth trying again if not use the flatpak
+
+    #!HAVE NOT HAD ANY LUCK RUNNING ANYTHING THROUGH STEAM BECAUSE BOTTLES AND LUTRIS DO NOT SEE MY NVIDA CARD?
+    #bottles #?Giving me Issues but I think its cause I deleted it after it was build worth trying again if not use the flatpak
     #protontricks #?dont know how to use
     #protonup-qt #?dont know how to use
     #playonlinux #?dont know how to use
