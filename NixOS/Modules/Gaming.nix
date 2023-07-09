@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     steam
     steam-run
-    #heroic #i dont use epic so dont bother installing it for now
+    #heroic #?i dont use epic so dont bother installing it for now
     #bottles #!Giving me Issues but I think its cause I deleted it after it was build worth trying again if not use the flatpak
     #protontricks
     #protonup-qt
