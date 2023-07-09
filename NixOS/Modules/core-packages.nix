@@ -102,9 +102,6 @@
   obsidian
   qbittorrent
 
-  #vlc # I use totem now
-  gnome.totem
-  totem-pl-parser
 
 
 
@@ -126,11 +123,21 @@
   #gnome.gnome-remote-desktop
   #gnomeExtensions.allow-locked-remote-desktop
 
+  #Thunar
   xfce.thunar
   #xfce.thunar-dropbox-plugin
   xfce.thunar-volman
   xfce.thunar-archive-plugin
   xfce.thunar-media-tags-plugin
+
+  #vlc # I use totem now
+  gnome.totem #videos
+  totem-pl-parser
+  amberol#music
+
+
+  #Misc
+  fsearch
 
 
   ];
