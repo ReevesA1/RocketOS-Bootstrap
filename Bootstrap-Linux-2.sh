@@ -29,12 +29,7 @@ if [ "$(grep "^ID=" /etc/*-release | cut -d= -f2 | tr -d '"')" = "nixos" ]; then
   echo "Reboot Again ...Press Enter To Continue..."
   read
 
-  #Download SystemD-Timers-Scripts
-  echo "Setting up SystemD Timer Scripts...Press Enter To Continue..."
-  read
-  git clone https://github.com/ReevesA1/RocketOS-Bootstrap.git
-  mv "$HOME/RocketOS-Bootstrap/NixOS/SystemD-Timer-Scripts" "$HOME/Timers"
-  rm -rf "$HOME/RocketOS-Bootstrap" 
+
 
 #!##################################################################################################################################
 #!##################################################################################################################################
