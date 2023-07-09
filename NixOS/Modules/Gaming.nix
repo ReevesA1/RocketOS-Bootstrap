@@ -5,7 +5,7 @@
     steam
     steam-run
     #heroic #i dont use epic so dont bother installing it for now
-    #bottles
+    bottles
     #protontricks
     #protonup-qt
     #playonlinux #found this have not tested it
