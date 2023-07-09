@@ -46,6 +46,13 @@
 
   #! Enable Bluetooth
   hardware.bluetooth.enable = true;
+  # had to follow commands from here https://nixos.wiki/wiki/Bluetooth for the gui to see my speakers
+  #DO THESE IN ORDER
+  #bluetoothctl
+  #power on
+  #agent on
+  #default-agent
+  #scan on
   
 
   #! Enable CUPS to print documents.
