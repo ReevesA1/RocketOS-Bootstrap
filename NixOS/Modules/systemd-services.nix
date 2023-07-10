@@ -15,7 +15,7 @@
 #OnCalendar = "*-*-* *:*:00"; #runs every minute (good for testing)
 #OnCalendar = "*-*-* 7,19:00:00"; #7am 7pm example
 #OnBootSec = 60;
-#*Other timersConfig
+#*Other Timer Jobs Configs (not for services)
 #Persistent=true; #if missed because pc was off it will run the timer next boot
 #*Ultimate environemnt line put in all
 #Environment = "PATH=${pkgs.flatpak}/bin:${pkgs.protonvpn-cli}/bin/:${pkgs.powershell}/bin/:${pkgs.bash}/bin:${pkgs.starship}/bin:${pkgs.git}/bin:${pkgs.curl}/bin:${pkgs.coreutils}/bin";
@@ -44,6 +44,7 @@
       timerConfig = {
         OnBootSec = 60;
         Unit = "make-systemd-timer-scripts-execuable.service";
+        Persistent = true;
       };
     };
     services."make-systemd-timer-scripts-execuable" = {
@@ -64,6 +65,7 @@
       timerConfig = {
         OnCalendar = "*-*-* 7,19:00:00";
         Unit = "daily-universal.service";
+        Persistent = true;
       };
     };
     services."daily-universal" = {
