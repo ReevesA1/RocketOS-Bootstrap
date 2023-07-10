@@ -98,6 +98,7 @@ powerManagement.resumeCommands = ''
       timerConfig = {
         OnCalendar = "*-*-* 8,18:00:00"; #8am and 6pm
         Unit = "github-repo-backups.service";
+        Persistent = true;
       };
     };
     services."github-repo-backups" = {
@@ -117,6 +118,7 @@ powerManagement.resumeCommands = ''
       timerConfig = {
         OnCalendar = "Sun *-*-* 21:00:00";
         Unit = "zip-github-repo-backups-weekly.service";
+        Persistent = true;
       };
     };
     services."zip-github-repo-backups-weekly" = {

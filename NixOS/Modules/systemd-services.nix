@@ -44,7 +44,6 @@
       timerConfig = {
         OnBootSec = 60;
         Unit = "make-systemd-timer-scripts-execuable.service";
-        Persistent = true;
       };
     };
     services."make-systemd-timer-scripts-execuable" = {
