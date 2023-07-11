@@ -38,17 +38,17 @@
 
   systemd = {
     
-    #? Makes Sure Timers are executable
-    timers."make-systemd-timer-scripts-execuable" = {
+    #? Makes Sure Directories with scripts are all executable
+    timers."make-scripts-execuable" = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
         OnBootSec = 60;
-        Unit = "make-systemd-timer-scripts-execuable.service";
+        Unit = "make-scripts-execuable.service";
       };
     };
-    services."make-systemd-timer-scripts-execuable" = {
+    services."make-scripts-execuable" = {
       script = ''
-        ${pkgs.powershell}/bin/pwsh $HOME/Timers/Universal/make-systemd-timer-scripts-execuable.ps1
+        ${pkgs.powershell}/bin/pwsh $HOME/Timers/Universal/make-scripts-execuable.ps1
       '';
       serviceConfig = {
         User = "rocket";
